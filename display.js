@@ -68,7 +68,7 @@ export function displayItems(spec, totals, ignore) {
         display.building = spec.getBuilding(recipe)
         display.count = spec.getCount(recipe, rate)
         display.overclock = overclockString
-        display.powerShardCount = Math.ceil(Math.max(overclock.toFloat() - 1, 0) / 0.5)
+        display.powerShardCount = display.ignore ? 0 : Math.ceil(Math.max(overclock.toFloat() - 1, 0) / 0.5)
         powerShardsUsed += display.powerShardCount
         display.average = average
         display.peak = peak
@@ -213,7 +213,7 @@ export function displayItems(spec, totals, ignore) {
         // ...update the counts of each power shard cell, and hide any power
         // shard cell with a count of 0:
         buildingRow.selectAll("tt.power-shard-count").text(d => d.powerShardCount)
-        buildingRow.selectAll(".power-shard").classed("hide", d => d.powerShardCount == 0)
+        buildingRow.selectAll(".power-shard").classed("hide-power-shard", d => d.powerShardCount == 0)
     }
     
     // Otherwise, remove all power shard cells, and mark the table's power
@@ -226,7 +226,7 @@ export function displayItems(spec, totals, ignore) {
     buildingRow.selectAll("tt.power")
         .text(d => spec.format.alignCount(d.average) + " MW")
     buildingRow.selectAll(".building")
-        .classed("hide", d => d.ignore)
+        .classed("hide-building", d => d.ignore)
 
     let totalPower = [totalAveragePower, totalPeakPower]
     let footerPowerRow = table.selectAll("tfoot tr.power")

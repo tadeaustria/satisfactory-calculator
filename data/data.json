@@ -585,9 +585,9 @@
             "name": "Iron Plate",
             "key_name": "iron-plate",
             "category": "crafting1",
-            "time": 4,
+            "time": 6,
             "ingredients": [
-                ["iron-ingot", 2]
+                ["iron-ingot", 3]
             ],
             "product": ["iron-plate", 1]
         },
@@ -609,7 +609,7 @@
             "ingredients": [
                 ["copper-ingot", 1]
             ],
-            "product": ["wire", 3]
+            "product": ["wire", 2]
         },
         {
             "name": "Alternate: Iron Wire",
@@ -635,7 +635,7 @@
             "name": "Cable",
             "key_name": "cable",
             "category": "crafting1",
-            "time": 4,
+            "time": 2,
             "ingredients": [
                 ["wire", 2]
             ],
@@ -656,11 +656,21 @@
             "name": "Biomass",
             "key_name": "biomass-from-leaves",
             "category": "crafting1",
-            "time": 4,
+            "time": 5,
             "ingredients": [
                 ["leaves", 10]
             ],
-            "product": ["biomass", 6]
+            "product": ["biomass", 5]
+        },
+		{
+            "name": "Solid Biofuel",
+            "key_name": "solidbiofuel",
+            "category": "crafting1",
+            "time": 4,
+            "ingredients": [
+                ["biomass", 8]
+            ],
+            "product": ["solid-biofuel", 4]
         },
         {
             "name": "Concrete",
@@ -676,21 +686,31 @@
             "name": "Screw",
             "key_name": "screw",
             "category": "crafting1",
-            "time": 4,
+            "time": 6,
             "ingredients": [
                 ["iron-rod", 1]
             ],
-            "product": ["screw", 6]
+            "product": ["screw", 4]
         },
         {
+            "name": "Copper Sheet",
+            "key_name": "coppersheet",
+            "category": "crafting1",
+            "time": 6,
+            "ingredients": [
+                ["copper-ingot", 2]
+            ],
+            "product": ["copper-sheet", 1]
+        },
+		{
             "name": "Alternate: Screw",
             "key_name": "alt-screw",
             "category": "crafting1",
-            "time": 8,
+            "time": 24,
             "ingredients": [
-                ["iron-ingot", 2]
+                ["iron-ingot", 5]
             ],
-            "product": ["screw", 12]
+            "product": ["screw", 20]
         },
         {
             "name": "Alternate: Steel Screw",
@@ -708,9 +728,9 @@
             "category": "crafting1",
             "time": 4,
             "ingredients": [
-                ["wood", 5]
+                ["wood", 4]
             ],
-            "product": ["biomass", 25]
+            "product": ["biomass", 20]
         },
         {
             "name": "Biomass",
@@ -778,8 +798,8 @@
             "category": "crafting2",
             "time": 12,
             "ingredients": [
-                ["iron-plate", 4],
-                ["screw", 24]
+                ["iron-plate", 6],
+                ["screw", 12]
             ],
             "product": ["reinforced-iron-plate", 1]
         },
@@ -809,14 +829,25 @@
             "name": "Rotor",
             "key_name": "rotor",
             "category": "crafting2",
-            "time": 10,
+            "time": 15,
             "ingredients": [
-                ["iron-rod", 3],
-                ["screw", 22]
+                ["iron-rod", 5],
+                ["screw", 25]
             ],
             "product": ["rotor", 1]
         },
         {
+            "name": "Smart Plating",
+            "key_name": "smart-plating",
+            "category": "crafting1",
+            "time": 30,
+            "ingredients": [
+                ["reinforced-iron-plate", 1],
+				["rotor", 1]
+            ],
+            "product": ["smart-plating", 1]
+        },
+		{
             "name": "Alternate: Rotor",
             "key_name": "alt-rotor",
             "category": "crafting2",
@@ -831,12 +862,12 @@
             "name": "Modular Frame",
             "key_name": "modular-frame",
             "category": "crafting2",
-            "time": 15,
+            "time": 60,
             "ingredients": [
                 ["reinforced-iron-plate", 3],
-                ["iron-rod", 6]
+                ["iron-rod", 12]
             ],
-            "product": ["modular-frame", 1]
+            "product": ["modular-frame", 2]
         },
         {
             "name": "Alternate: Modular Frame",
@@ -1284,12 +1315,12 @@
             "name": "Alternate: Compacted Coal",
             "key_name": "alt-coal",
             "category": "crafting2",
-            "time": 6,
+            "time": 12,
             "ingredients": [
-                ["coal", 3],
-                ["sulfur", 3]
+                ["coal", 5],
+                ["sulfur", 5]
             ],
-            "product": ["compacted-coal", 3]
+            "product": ["compacted-coal", 5]
         },
         {
             "name": "Alternate: Wood Coal",

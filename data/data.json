@@ -557,7 +557,7 @@
                 ["iron-ore", 3],
                 ["coal", 3]
             ],
-            "product": ["steel-ingot", 2]
+            "product": ["steel-ingot", 3]
         },
         {
             "name": "Alternate: Steel Ingot",
@@ -615,9 +615,9 @@
             "name": "Alternate: Iron Wire",
             "key_name": "alt-iron-wire",
             "category": "crafting1",
-            "time": 8,
+            "time": 24,
             "ingredients": [
-                ["iron-ingot", 2]
+                ["iron-ingot", 5]
             ],
             "product": ["wire", 9]
         },
@@ -625,11 +625,11 @@
             "name": "Alternate: Caterium Wire",
             "key_name": "alt-caterium-wire",
             "category": "crafting1",
-            "time": 8,
+            "time": 4,
             "ingredients": [
                 ["caterium-ingot", 1]
             ],
-            "product": ["wire", 9]
+            "product": ["wire", 8]
         },
         {
             "name": "Cable",
@@ -730,7 +730,7 @@
             "ingredients": [
                 ["mycelia", 10]
             ],
-            "product": ["biomass", 10]
+            "product": ["biomass", 150]
         },
         {
             "name": "Biofuel",
@@ -756,9 +756,9 @@
             "name": "Steel Beam",
             "key_name": "steel-beam",
             "category": "crafting1",
-            "time": 6,
+            "time": 4,
             "ingredients": [
-                ["steel-ingot", 3]
+                ["steel-ingot", 4]
             ],
             "product": ["steel-beam", 1]
         },
@@ -766,11 +766,11 @@
             "name": "Steel Pipe",
             "key_name": "steel-pipe",
             "category": "crafting1",
-            "time": 4,
+            "time": 6,
             "ingredients": [
-                ["steel-ingot", 1]
+                ["steel-ingot", 3]
             ],
-            "product": ["steel-pipe", 1]
+            "product": ["steel-pipe", 2]
         },
         {
             "name": "Reinforced Iron Plate",
@@ -798,10 +798,10 @@
             "name": "Alternate: Stitched Iron Plate",
             "key_name": "alt-stitched-iron-plate",
             "category": "crafting2",
-            "time": 24,
+            "time": 32,
             "ingredients": [
-                ["iron-plate", 6],
-                ["wire", 30]
+                ["iron-plate", 10],
+                ["wire", 26]
             ],
             "product": ["reinforced-iron-plate", 3]
         },

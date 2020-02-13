@@ -574,12 +574,12 @@
             "name": "Alternate: Enriched Steel Ingot",
             "key_name": "alt-enriched-steel-ingot",
             "category": "smelting2",
-            "time": 8,
+            "time": 16,
             "ingredients": [
                 ["iron-ore", 6],
                 ["compacted-coal", 3]
             ],
-            "product": ["steel-ingot", 6]
+            "product": ["steel-ingot", 10]
         },
         {
             "name": "Iron Plate",
@@ -589,7 +589,7 @@
             "ingredients": [
                 ["iron-ingot", 3]
             ],
-            "product": ["iron-plate", 1]
+            "product": ["iron-plate", 2]
         },
         {
             "name": "Iron Rod",

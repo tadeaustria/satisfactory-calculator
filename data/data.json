@@ -663,16 +663,6 @@
             "product": ["biomass", 5]
         },
 		{
-            "name": "Solid Biofuel",
-            "key_name": "solidbiofuel",
-            "category": "crafting1",
-            "time": 4,
-            "ingredients": [
-                ["biomass", 8]
-            ],
-            "product": ["solid-biofuel", 4]
-        },
-        {
             "name": "Concrete",
             "key_name": "concrete",
             "category": "crafting1",
@@ -693,16 +683,6 @@
             "product": ["screw", 4]
         },
         {
-            "name": "Copper Sheet",
-            "key_name": "coppersheet",
-            "category": "crafting1",
-            "time": 6,
-            "ingredients": [
-                ["copper-ingot", 2]
-            ],
-            "product": ["copper-sheet", 1]
-        },
-		{
             "name": "Alternate: Screw",
             "key_name": "alt-screw",
             "category": "crafting1",
@@ -837,17 +817,6 @@
             "product": ["rotor", 1]
         },
         {
-            "name": "Smart Plating",
-            "key_name": "smart-plating",
-            "category": "crafting1",
-            "time": 30,
-            "ingredients": [
-                ["reinforced-iron-plate", 1],
-				["rotor", 1]
-            ],
-            "product": ["smart-plating", 1]
-        },
-		{
             "name": "Alternate: Rotor",
             "key_name": "alt-rotor",
             "category": "crafting2",

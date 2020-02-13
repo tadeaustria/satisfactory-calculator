@@ -1272,13 +1272,15 @@
         {
             "name": "Cartridge",
             "key_name": "cartridge",
-            "category": "crafting2",
+            "category": "crafting3",
             "time": 20,
             "ingredients": [
-                ["nobelisk", 1],
-                ["steel-pipe", 4]
+                ["beacon", 1],
+                ["steel-pipe", 10],
+				["black-powder", 10],
+				["rubber", 10]
             ],
-            "product": ["cartridge", 4]
+            "product": ["cartridge", 5]
         },
         {
             "name": "Alternate: Compacted Coal",
@@ -1297,7 +1299,7 @@
             "category": "crafting1",
             "time": 4,
             "ingredients": [
-                ["wood", 3]
+                ["wood", 1]
             ],
             "product": ["coal", 10]
         },
@@ -1317,7 +1319,7 @@
             "category": "crafting2",
             "time": 16,
             "ingredients": [
-                ["fuel", 5],
+                ["fuel", 6],
                 ["compacted-coal", 4]
             ],
             "product": ["turbofuel", 5]
@@ -1326,55 +1328,55 @@
             "name": "Alternate: Concrete",
             "key_name": "alt-concrete",
             "category": "crafting2",
-            "time": 8,
+            "time": 24,
             "ingredients": [
-                ["silica", 1],
-                ["limestone", 4]
+                ["silica", 5],
+                ["limestone", 12]
             ],
-            "product": ["concrete", 3]
+            "product": ["concrete", 10]
         },
         {
             "name": "Silica",
             "key_name": "silica",
             "category": "crafting1",
-            "time": 4,
+            "time": 8,
             "ingredients": [
-                ["raw-quartz", 2]
+                ["raw-quartz", 3]
             ],
-            "product": ["silica", 3]
+            "product": ["silica", 5]
         },
         {
             "name": "Alternate: Silica",
             "key_name": "alt-silica",
             "category": "crafting2",
-            "time": 8,
+            "time": 16,
             "ingredients": [
-                ["raw-quartz", 4],
-                ["limestone", 2]
+                ["raw-quartz", 3],
+                ["limestone", 5]
             ],
-            "product": ["silica", 9]
+            "product": ["silica", 7]
         },
         {
             "name": "Aluminum Ingot",
             "key_name": "aluminum-ingot",
             "category": "smelting2",
-            "time": 4,
+            "time": 3,
             "ingredients": [
-                ["bauxite", 7],
-                ["silica", 6]
+                ["bauxite", 12],
+                ["silica", 7]
             ],
-            "product": ["aluminum-ingot", 2]
+            "product": ["aluminum-ingot", 4]
         },
         {
             "name": "Alclad Aluminum Sheet",
             "key_name": "alclad-aluminum-sheet",
             "category": "crafting2",
-            "time": 12,
+            "time": 8,
             "ingredients": [
-                ["aluminum-ingot", 3],
-                ["copper-ingot", 2]
+                ["aluminum-ingot", 8],
+                ["copper-ingot", 3]
             ],
-            "product": ["alclad-aluminum-sheet", 3]
+            "product": ["alclad-aluminum-sheet", 4]
         },
         {
             "name": "Heat Sink",
@@ -1382,21 +1384,21 @@
             "category": "crafting2",
             "time": 12,
             "ingredients": [
-                ["alclad-aluminum-sheet", 4],
-                ["rubber", 10]
+                ["alclad-aluminum-sheet", 8],
+                ["rubber", 14]
             ],
-            "product": ["heat-sink", 1]
+            "product": ["heat-sink", 2]
         },
         {
             "name": "Alternate: Heat Sink",
             "key_name": "alt-heat-sink",
             "category": "crafting2",
-            "time": 24,
+            "time": 32,
             "ingredients": [
-                ["alclad-aluminum-sheet", 8],
-                ["wire", 36]
+                ["alclad-aluminum-sheet", 20],
+                ["wire", 30]
             ],
-            "product": ["heat-sink", 3]
+            "product": ["heat-sink", 7]
         },
         {
             "name": "Radio Control Unit",
@@ -1405,7 +1407,7 @@
             "time": 24,
             "ingredients": [
                 ["heat-sink", 4],
-                ["rubber", 24],
+                ["rubber", 16],
                 ["crystal-oscillator", 1],
                 ["computer", 1]
             ],
@@ -1432,7 +1434,7 @@
                 ["heat-sink", 4],
                 ["radio-control-unit", 2],
                 ["motor", 4],
-                ["rubber", 40]
+                ["rubber", 24]
             ],
             "product": ["turbo-motor", 1]
         },
@@ -1456,9 +1458,9 @@
             "time": 32,
             "ingredients": [
                 ["alclad-aluminum-sheet", 8],
-                ["wire", 24],
+                ["wire", 16],
                 ["sulfur", 20],
-                ["plastic", 9]
+                ["plastic", 8]
             ],
             "product": ["battery", 3]
         },
@@ -1468,7 +1470,7 @@
             "category": "crafting2",
             "time": 60,
             "ingredients": [
-                ["uranium", 45],
+                ["uranium", 40],
                 ["concrete", 9]
             ],
             "product": ["uranium-cell", 10]
@@ -1479,10 +1481,10 @@
             "category": "crafting3",
             "time": 120,
             "ingredients": [
-                ["uranium", 45],
+                ["uranium", 40],
                 ["sulfur", 45],
                 ["silica", 45],
-                ["quickwire", 60]
+                ["quickwire", 75]
             ],
             "product": ["uranium-cell", 35]
         },
@@ -1495,7 +1497,7 @@
                 ["stator", 3],
                 ["ai-limiter", 2]
             ],
-            "product": ["em-control-rod", 1]
+            "product": ["em-control-rod", 2]
         },
         {
             "name": "Alternate: Electromagnetic Control Rod",
@@ -1506,7 +1508,7 @@
                 ["stator", 6],
                 ["high-speed-connector", 3]
             ],
-            "product": ["em-control-rod", 3]
+            "product": ["em-control-rod", 6]
         },
         {
             "name": "Nuclear Fuel Rod",

@@ -104,8 +104,20 @@
         {
             "name": "Smart Plating",
             "key_name": "smart-plating",
-            "tier": -1,
-            "stack_size": 100
+            "tier": 2,
+            "stack_size": 50
+        },
+		{
+            "name": "Versatile Framework",
+            "key_name": "versatile-framework",
+            "tier": 3,
+            "stack_size": 50
+        },
+		{
+            "name": "Automated Wiring",
+            "key_name": "automated-wiring",
+            "tier": 4,
+            "stack_size": 50
         },
 		{
             "name": "Iron Ore",
@@ -533,6 +545,28 @@
 				["rotor", 1]
             ],
             "product": ["smart-plating", 1]
+        },
+		{
+            "name": "Versatile Framework",
+            "key_name": "versatile-framework",
+            "category": "crafting2",
+            "time": 24,
+            "ingredients": [
+                ["modular-frame", 1],
+				["steel-beam", 12]
+            ],
+            "product": ["versatile-framework", 2]
+        },
+		{
+            "name": "Automated Wiring",
+            "key_name": "automated-wiring",
+            "category": "crafting2",
+            "time": 72,
+            "ingredients": [
+                ["stator", 3],
+				["cable", 60]
+            ],
+            "product": ["automated-wiring", 3]
         },
 		{
             "name": "Iron Ingot",

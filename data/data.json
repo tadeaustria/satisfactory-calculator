@@ -102,6 +102,12 @@
     ],
     "items": [
         {
+            "name": "Smart Plating",
+            "key_name": "smart-plating",
+            "tier": -1,
+            "stack_size": 100
+        },
+		{
             "name": "Iron Ore",
             "key_name": "iron-ore",
             "tier": -1,
@@ -518,6 +524,17 @@
     ],
     "recipes": [
         {
+            "name": "Smart Plating",
+            "key_name": "smart-plating",
+            "category": "crafting2",
+            "time": 30,
+            "ingredients": [
+                ["reinforced-iron-plate", 1],
+				["rotor", 1]
+            ],
+            "product": ["smart-plating", 1]
+        },
+		{
             "name": "Iron Ingot",
             "key_name": "iron-ingot",
             "category": "smelting1",

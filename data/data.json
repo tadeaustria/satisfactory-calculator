@@ -622,15 +622,15 @@
             "product": ["iron-ingot", 1]
         },
         {
-            "name": "Alternate: Iron Ingot Alloy",
+            "name": "Alternate: Iron Alloy Ingot",
             "key_name": "alt-iron-ingot",
             "category": "smelting2",
-            "time": 4,
+            "time": 6,
             "ingredients": [
-                ["iron-ore", 1],
-                ["copper-ore", 1]
+                ["iron-ore", 2],
+                ["copper-ore", 2]
             ],
-            "product": ["iron-ingot", 3]
+            "product": ["iron-ingot", 5]
         },
         {
             "name": "Copper Ingot",
@@ -654,18 +654,18 @@
             "product": ["steel-ingot", 3]
         },
         {
-            "name": "Alternate: Steel Ingot",
+            "name": "Alternate: Solid Steel Ingot",
             "key_name": "alt-steel-ingot",
             "category": "smelting2",
-            "time": 8,
+            "time": 3,
             "ingredients": [
-                ["iron-ingot", 3],
-                ["coal", 6]
+                ["iron-ingot", 2],
+                ["coal", 2]
             ],
-            "product": ["steel-ingot", 6]
+            "product": ["steel-ingot", 3]
         },
         {
-            "name": "Alternate: Enriched Steel Ingot",
+            "name": "Alternate: Compacted Steel Ingot",
             "key_name": "alt-enriched-steel-ingot",
             "category": "smelting2",
             "time": 16,
@@ -736,7 +736,7 @@
             "product": ["cable", 1]
         },
         {
-            "name": "Alternate: Rubber Cable",
+            "name": "Alternate: Insulated Cable",
             "key_name": "alt-cable",
             "category": "crafting2",
             "time": 12,
@@ -777,7 +777,7 @@
             "product": ["screw", 4]
         },
         {
-            "name": "Alternate: Screw",
+            "name": "Alternate: Casted Screw",
             "key_name": "alt-screw",
             "category": "crafting1",
             "time": 24,
@@ -888,7 +888,7 @@
             "product": ["reinforced-iron-plate", 1]
         },
         {
-            "name": "Alternate: Reinforced Iron Plate",
+            "name": "Alternate: Bolted Iron Plate",
             "key_name": "alt-reinforced-iron-plate",
             "category": "crafting2",
             "time": 12,
@@ -921,7 +921,7 @@
             "product": ["rotor", 1]
         },
         {
-            "name": "Alternate: Rotor",
+            "name": "Alternate: Steel Rotor",
             "key_name": "alt-rotor",
             "category": "crafting2",
             "time": 12,
@@ -943,7 +943,7 @@
             "product": ["modular-frame", 2]
         },
         {
-            "name": "Alternate: Modular Frame",
+            "name": "Alternate: Steeled Frame",
             "key_name": "alt-modular-frame",
             "category": "crafting2",
             "time": 60,
@@ -965,7 +965,7 @@
             "product": ["encased-industrial-beam", 1]
         },
         {
-            "name": "Alternate: Encased Industrial Beam",
+            "name": "Alternate: Encased Industrial Pipe",
             "key_name": "alt-encased-industrial-beam",
             "category": "crafting2",
             "time": 15,
@@ -987,7 +987,7 @@
             "product": ["stator", 1]
         },
         {
-            "name": "Alternate: Stator",
+            "name": "Alternate: Quickwire Stator",
             "key_name": "alt-stator",
             "category": "crafting2",
             "time": 15,
@@ -1009,7 +1009,7 @@
             "product": ["motor", 1]
         },
         {
-            "name": "Alternate: Motor",
+            "name": "Alternate: Rigour Motor",
             "key_name": "alt-motor",
             "category": "crafting3",
             "time": 40,
@@ -1032,18 +1032,18 @@
             "product": ["circuit-board", 1]
         },
         {
-            "name": "Alternate: Circuit Board",
+            "name": "Alternate: Silicone Circuit Board",
             "key_name": "alt-circuit-board",
             "category": "crafting2",
             "time": 24,
             "ingredients": [
-                ["rubber", 16],
-                ["wire", 24]
+                ["copper-sheet", 11],
+                ["silica", 1]
             ],
-            "product": ["circuit-board", 6]
+            "product": ["circuit-board", 5]
         },
         {
-            "name": "Alternate: Quickwire Circuit Board",
+            "name": "Alternate: Caterium Circuit Board",
             "key_name": "alt-quickwire-circuit-board",
             "category": "crafting2",
             "time": 48,
@@ -1064,7 +1064,7 @@
             "product": ["plastic", 2]
         },
         {
-            "name": "Alternate: Plastic",
+            "name": "Alternate: Recycled Plastic",
             "key_name": "alt-plastic",
             "category": "crafting2",
             "time": 12,
@@ -1108,7 +1108,7 @@
             "product": ["heavy-modular-frame", 1]
         },
         {
-            "name": "Alternate: Heavy Modular Frame",
+            "name": "Alternate: Heavy Encased Frame",
             "key_name": "alt-heavy-modular-frame",
             "category": "crafting3",
             "time": 64,
@@ -1134,7 +1134,7 @@
             "product": ["computer", 1]
         },
         {
-            "name": "Alternate: Quickwire Computer",
+            "name": "Alternate: Caterium Computer",
             "key_name": "alt-computer",
             "category": "crafting3",
             "time": 16,
@@ -1177,7 +1177,7 @@
             "product": ["quickwire", 5]
         },
         {
-            "name": "Alternate: Quickwire",
+            "name": "Alternate: Fused Quickwire",
             "key_name": "alt-quickwire",
             "category": "crafting2",
             "time": 8,
@@ -1213,7 +1213,7 @@
             "product": ["high-speed-connector", 1]
         },
         {
-            "name": "Alternate: High-Speed Connector",
+            "name": "Alternate: Silicone High-Speed Connector",
             "key_name": "alt-high-speed-connector",
             "category": "crafting3",
             "time": 40,
@@ -1222,7 +1222,7 @@
                 ["silica", 25],
                 ["circuit-board", 2]
             ],
-            "product": ["high-speed-connector", 3]
+            "product": ["high-speed-connector", 2]
         },
         {
             "name": "A.I. Limiter",
@@ -1272,7 +1272,7 @@
             "product": ["beacon", 1]
         },
         {
-            "name": "Alternate: Beacon",
+            "name": "Alternate: Crystal Beacon",
             "key_name": "alt-beacon",
             "category": "crafting3",
             "time": 120,
@@ -1306,7 +1306,7 @@
             "product": ["crystal-oscillator", 2]
         },
         {
-            "name": "Alternate: Crystal Oscillator",
+            "name": "Alternate: Insulated Crystal Oscillator",
             "key_name": "alt-crystal-oscillator",
             "category": "crafting3",
             "time": 32,
@@ -1329,7 +1329,7 @@
             "product": ["black-powder", 1]
         },
         {
-            "name": "Alternate: Black Powder",
+            "name": "Alternate: Fine Black Powder",
             "key_name": "alt-black-powder",
             "category": "crafting2",
             "time": 16,
@@ -1352,7 +1352,7 @@
             "product": ["nobelisk", 1]
         },
         {
-            "name": "Alternate: Nobelisk",
+            "name": "Alternate: Seismic Nobelisk",
             "key_name": "alt-nobelisk",
             "category": "crafting3",
             "time": 40,
@@ -1429,7 +1429,7 @@
             "product": ["turbofuel", 5]
         },
         {
-            "name": "Alternate: Concrete",
+            "name": "Alternate: Fine Concrete",
             "key_name": "alt-concrete",
             "category": "crafting2",
             "time": 24,
@@ -1450,7 +1450,7 @@
             "product": ["silica", 5]
         },
         {
-            "name": "Alternate: Silica",
+            "name": "Alternate: Cheap Silica",
             "key_name": "alt-silica",
             "category": "crafting2",
             "time": 16,
@@ -1494,13 +1494,13 @@
             "product": ["heat-sink", 2]
         },
         {
-            "name": "Alternate: Heat Sink",
+            "name": "Alternate: Heat Exchanger",
             "key_name": "alt-heat-sink",
             "category": "crafting2",
             "time": 32,
             "ingredients": [
                 ["alclad-aluminum-sheet", 20],
-                ["wire", 30]
+                ["copper-sheet", 30]
             ],
             "product": ["heat-sink", 7]
         },
@@ -1543,7 +1543,7 @@
             "product": ["turbo-motor", 1]
         },
         {
-            "name": "Alternate: Turbo Motor",
+            "name": "Alternate: Turbo Rigour Motor",
             "key_name": "alt-turbo-motor",
             "category": "crafting3",
             "time": 64,
@@ -1580,7 +1580,7 @@
             "product": ["uranium-cell", 10]
         },
         {
-            "name": "Alternate: Uranium Cell",
+            "name": "Alternate: Infused Uranium Cell",
             "key_name": "alt-uranium-cell",
             "category": "crafting3",
             "time": 120,
@@ -1604,7 +1604,7 @@
             "product": ["em-control-rod", 2]
         },
         {
-            "name": "Alternate: Electromagnetic Control Rod",
+            "name": "Alternate: Electromagnetic Connection Rod",
             "key_name": "alt-em-control-rod",
             "category": "crafting2",
             "time": 60,

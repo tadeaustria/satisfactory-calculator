@@ -120,6 +120,24 @@
             "stack_size": 50
         },
 		{
+            "name": "Modular Engine",
+            "key_name": "modular-engine",
+            "tier": 5,
+            "stack_size": 50
+        },
+		{
+            "name": "Adaptive Control Unit",
+            "key_name": "adaptive-control-unit",
+            "tier": 5,
+            "stack_size": 50
+        },
+		{
+            "name": "Copper Sheet",
+            "key_name": "copper-sheet",
+            "tier": 2,
+            "stack_size": 100
+        },
+		{
             "name": "Iron Ore",
             "key_name": "iron-ore",
             "tier": -1,
@@ -569,6 +587,31 @@
             "product": ["automated-wiring", 3]
         },
 		{
+            "name": "Modular Engine",
+            "key_name": "modular-engine",
+            "category": "crafting3",
+            "time": 60,
+            "ingredients": [
+                ["motor", 2],
+				["rubber", 15],
+				["smart-plating", 2]
+            ],
+            "product": ["modular-engine", 1]
+        },
+		{
+            "name": "Adaptive Control Unit",
+            "key_name": "adaptive-control-unit",
+            "category": "crafting3",
+            "time": 120,
+            "ingredients": [
+                ["automated-wiring", 15],
+				["circuit-board", 10],
+				["heavy-modular-frame", 2],
+				["computer", 2]
+            ],
+            "product": ["adaptive-control-unit", 2]
+        },
+		{
             "name": "Iron Ingot",
             "key_name": "iron-ingot",
             "category": "smelting1",
@@ -822,6 +865,16 @@
                 ["steel-ingot", 3]
             ],
             "product": ["steel-pipe", 2]
+        },
+		{
+            "name": "Copper Sheet",
+            "key_name": "copper-sheet",
+            "category": "crafting1",
+            "time": 6,
+            "ingredients": [
+                ["copper-ingot", 2]
+            ],
+            "product": ["copper-sheet", 1]
         },
         {
             "name": "Reinforced Iron Plate",

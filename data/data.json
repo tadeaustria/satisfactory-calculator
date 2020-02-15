@@ -109,6 +109,12 @@
     ],
     "items": [
         {
+            "name": "Power Production",
+            "key_name": "power-production",
+            "tier": 1,
+            "stack_size": 500
+        },
+		{
             "name": "Smart Plating",
             "key_name": "smart-plating",
             "tier": 2,
@@ -585,6 +591,17 @@
     ],
     "recipes": [
         {
+            "name": "Coal Power",
+            "key_name": "coal-power",
+            "category": "crafting2",
+            "time": 4,
+            "ingredients": [
+                ["coal", 1],
+				["water", .75]
+            ],
+            "product": ["power-production", 1.25]
+        },
+		{
             "name": "Smart Plating",
             "key_name": "smart-plating",
             "category": "crafting2",

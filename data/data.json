@@ -92,6 +92,13 @@
             "base_rate": 240,
             "power": 30
         },
+		{
+            "name": "Water Extractor",
+            "key_name": "water-extractor",
+            "category": "water",
+            "base_rate": 120,
+            "power": 20
+        },
         {
             "name": "Oil Pump",
             "key_name": "oil-pump",

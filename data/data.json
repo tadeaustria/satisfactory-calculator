@@ -364,7 +364,7 @@
             "name": "Petroleum Coke",
             "key_name": "petroleum-coke",
             "tier": 5,
-            "stack_size": 100
+            "stack_size": 200
         },
 		{
             "name": "Water",
@@ -1108,6 +1108,17 @@
             ],
             "product": ["circuit-board", 7]
         },
+		{
+            "name": "Alternate: Electrode Circuit Board",
+            "key_name": "alt-electrode-circuit-board",
+            "category": "crafting2",
+            "time": 12,
+            "ingredients": [
+                ["rubber", 6],
+                ["petroleum-coke", 9]
+            ],
+            "product": ["circuit-board", 1]
+        },
         {
             "name": "Plastic",
             "key_name": "plastic",
@@ -1558,27 +1569,6 @@
             ],
             "product": ["silica", 7]
         },
-        {
-            "name": "Aluminum Ingot",
-            "key_name": "aluminum-ingot",
-            "category": "smelting2",
-            "time": 3,
-            "ingredients": [
-                ["aluminum-scrap", 12],
-                ["silica", 7]
-            ],
-            "product": ["aluminum-ingot", 4]
-        },
-		{
-            "name": "Alternate: Pure Aluminum Ingot",
-            "key_name": "alt-aluminum-ingot",
-            "category": "smelting1",
-            "time": 5,
-            "ingredients": [
-                ["aluminum-scrap", 12]
-               ],
-            "product": ["aluminum-ingot", 3]
-        },
 		{
             "name": "Alumina Solution",
             "key_name": "alumina-solution",
@@ -1611,6 +1601,27 @@
                 ["coal", 1]
             ],
             "product": ["aluminum-scrap", 5]
+        },
+        {
+            "name": "Aluminum Ingot",
+            "key_name": "aluminum-ingot",
+            "category": "smelting2",
+            "time": 3,
+            "ingredients": [
+                ["aluminum-scrap", 12],
+                ["silica", 7]
+            ],
+            "product": ["aluminum-ingot", 4]
+        },
+		{
+            "name": "Alternate: Pure Aluminum Ingot",
+            "key_name": "alt-aluminum-ingot",
+            "category": "smelting1",
+            "time": 5,
+            "ingredients": [
+                ["aluminum-scrap", 12]
+               ],
+            "product": ["aluminum-ingot", 3]
         },
         {
             "name": "Alclad Aluminum Sheet",

@@ -1315,7 +1315,7 @@
             "category": "crafting2",
             "time": 12,
             "ingredients": [
-                ["circuit-board", 2],
+                ["copper-sheet", 5],
                 ["quickwire", 20]
             ],
             "product": ["ai-limiter", 1]

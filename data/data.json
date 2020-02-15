@@ -522,6 +522,18 @@
             "tier": 7,
             "stack_size": 100
         },
+		{
+            "name": "Aluminum Scrap",
+            "key_name": "aluminum-scrap",
+            "tier": 7,
+            "stack_size": 500
+        },
+		{
+            "name": "Alumina Solution",
+            "key_name": "alumina-solution",
+            "tier": 7,
+            "stack_size": 50
+        },
         {
             "name": "Alclad Aluminum Sheet",
             "key_name": "alclad-aluminum-sheet",
@@ -616,6 +628,18 @@
 				["cable", 60]
             ],
             "product": ["automated-wiring", 3]
+        },
+		{
+            "name": "Alternate: High-Speed Wiring",
+            "key_name": "alt-automated-wiring",
+            "category": "crafting3",
+            "time": 32,
+            "ingredients": [
+                ["stator", 2],
+				["cable", 40],
+				["high-speed-connector", 2]
+            ],
+            "product": ["automated-wiring", 4]
         },
 		{
             "name": "Modular Engine",
@@ -1540,10 +1564,53 @@
             "category": "smelting2",
             "time": 3,
             "ingredients": [
-                ["bauxite", 12],
+                ["aluminum-scrap", 12],
                 ["silica", 7]
             ],
             "product": ["aluminum-ingot", 4]
+        },
+		{
+            "name": "Alternate: Pure Aluminum Ingot",
+            "key_name": "alt-aluminum-ingot",
+            "category": "smelting1",
+            "time": 5,
+            "ingredients": [
+                ["aluminum-scrap", 12]
+               ],
+            "product": ["aluminum-ingot", 3]
+        },
+		{
+            "name": "Alumina Solution",
+            "key_name": "alumina-solution",
+            "category": "refinery",
+            "time": 6,
+            "ingredients": [
+                ["bauxite", 7],
+                ["water", 10]
+            ],
+            "product": ["alumina-solution", 8]
+        },
+		{
+            "name": "Aluminum Scrap",
+            "key_name": "aluminum-scrap",
+            "category": "refinery",
+            "time": 1,
+            "ingredients": [
+                ["alumina-solution", 4],
+                ["petroleum-coke", 1]
+            ],
+            "product": ["aluminum-scrap", 6]
+        },
+		{
+            "name": "Alternate: Electrode-Aluminum Scrap",
+            "key_name": "alt-aluminum-scrap",
+            "category": "refinery",
+            "time": 2,
+            "ingredients": [
+                ["alumina-solution", 3],
+                ["coal", 1]
+            ],
+            "product": ["aluminum-scrap", 5]
         },
         {
             "name": "Alclad Aluminum Sheet",

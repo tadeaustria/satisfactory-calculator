@@ -517,22 +517,22 @@
             "stack_size": 100
         },
         {
-            "name": "Aluminum Ingot",
-            "key_name": "aluminum-ingot",
-            "tier": 7,
-            "stack_size": 100
-        },
+                "name": "Alumina Solution",
+                "key_name": "alumina-solution",
+                "tier": 7,
+                "stack_size": 50
+            },
 		{
             "name": "Aluminum Scrap",
             "key_name": "aluminum-scrap",
             "tier": 7,
             "stack_size": 500
         },
-		{
-            "name": "Alumina Solution",
-            "key_name": "alumina-solution",
+        {
+            "name": "Aluminum Ingot",
+            "key_name": "aluminum-ingot",
             "tier": 7,
-            "stack_size": 50
+            "stack_size": 100
         },
         {
             "name": "Alclad Aluminum Sheet",
@@ -1211,7 +1211,7 @@
             "ingredients": [
                 ["heavy-oil-residue", 2]
             ],
-            "product": 
+            "product":
 				["petroleum-coke", 6]
         },
         {

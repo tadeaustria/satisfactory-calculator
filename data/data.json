@@ -327,19 +327,7 @@
             "name": "Crude Oil",
             "key_name": "crude-oil",
             "tier": 5,
-            "stack_size": 50
-        },
-		{
-            "name": "Heavy Oil Residue",
-            "key_name": "heavy-oil-residue",
-            "tier": 5,
-            "stack_size": 50
-        },
-		{
-            "name": "Polymer Resin",
-            "key_name": "polymer-resin",
-            "tier": 5,
-            "stack_size": 50
+            "stack_size": 100
         },
         {
             "name": "Fuel",
@@ -354,18 +342,12 @@
             "stack_size": 100
         },
 		{
-            "name": "Petroleum Coke",
-            "key_name": "petroleum-coke",
+            "name": "Heavy Oil Residue",
+            "key_name": " heavy-oil-residue",
             "tier": 5,
-            "stack_size": 100
-        },
-		{
-            "name": "Water",
-            "key_name": "water",
-            "tier": 2,
             "stack_size": 50
         },
-        {
+       	{
             "name": "Heavy Modular Frame",
             "key_name": "heavy-modular-frame",
             "tier": 4,
@@ -495,7 +477,7 @@
             "name": "Turbofuel",
             "key_name": "turbofuel",
             "tier": 6,
-            "stack_size": 50
+            "stack_size": 100
         },
         {
             "name": "Silica",
@@ -1085,32 +1067,18 @@
             "ingredients": [
                 ["crude-oil", 3]
             ],
-            "product": [
-				["plastic", 2],
-				["heavy-oil-residue", 2]
-			],
+            "product": ["plastic", 2]
         },
         {
             "name": "Alternate: Recycled Plastic",
             "key_name": "alt-plastic",
-            "category": "refining",
+            "category": "crafting2",
             "time": 12,
             "ingredients": [
                 ["rubber", 6],
                 ["fuel", 5]
             ],
             "product": ["plastic", 12]
-        },
-		{
-            "name": "Residual Plastic",
-            "key_name": "residual-plastic",
-            "category": "refining",
-            "time": 6,
-            "ingredients": [
-                ["polymer-resin", 3],
-                ["water", 2]
-            ],
-            "product": ["plastic", 1]
         },
         {
             "name": "Fuel",
@@ -1120,33 +1088,9 @@
             "ingredients": [
                 ["crude-oil", 6]
             ],
-            "product": [
-				["fuel", 4],
-				["polymer-resin", 3]
-			],
-        },
-        {
-            "name": "Turbofuel",
-            "key_name": "turbofuel",
-            "category": "refining",
-            "time": 16,
-            "ingredients": [
-                ["fuel", 6],
-				["compacted-coal", 4]
-            ],
-            "product": ["turbofuel", 5]
-        },
-		{
-            "name": "Residual Fuel",
-            "key_name": "fuel",
-            "category": "refining",
-            "time": 6,
-            "ingredients": [
-                ["heavy-oil-residue", 3]
-            ],
             "product": ["fuel", 4]
         },
-		{
+        {
             "name": "Rubber",
             "key_name": "rubber",
             "category": "refining",
@@ -1154,32 +1098,10 @@
             "ingredients": [
                 ["crude-oil", 3]
             ],
-            "product": [
-				["rubber", 2],
+            "product":	[
+				["rubber", 2]
 				["heavy-oil-residue", 1]
 			],
-        },
-		{
-            "name": "Residual Rubber",
-            "key_name": "residual-rubber",
-            "category": "refining",
-            "time": 6,
-            "ingredients": [
-                ["polymer-resin", 2],
-				["water", 4]
-            ],
-            "product": ["rubber", 1]
-        },
-		{
-            "name": "Petroleum Coke",
-            "key_name": "petroleum-coke",
-            "category": "refining",
-            "time": 6,
-            "ingredients": [
-                ["heavy-oil-residue", 2]
-            ],
-            "product": 
-				["petroleum-coke", 6]
         },
         {
             "name": "Heavy Modular Frame",
@@ -1503,6 +1425,17 @@
                 ["biomass", 5]
             ],
             "product": ["coal", 6]
+        },
+        {
+            "name": "Turbofuel",
+            "key_name": "turbofuel",
+            "category": "crafting2",
+            "time": 16,
+            "ingredients": [
+                ["fuel", 6],
+                ["compacted-coal", 4]
+            ],
+            "product": ["turbofuel", 5]
         },
         {
             "name": "Alternate: Fine Concrete",

@@ -253,8 +253,8 @@
             "stack_size": 200
         },
         {
-            "name": "Biofuel",
-            "key_name": "biofuel",
+            "name": "Solid Biofuel",
+            "key_name": "solid-biofuel",
             "tier": 1,
             "stack_size": 200
         },
@@ -354,6 +354,12 @@
             "tier": 5,
             "stack_size": 100
         },
+		{
+            "name": "Liquid Biofuel",
+            "key_name": "fuel",
+            "tier": 5,
+            "stack_size": 100
+        },
         {
             "name": "Rubber",
             "key_name": "rubber",
@@ -365,6 +371,48 @@
             "key_name": "petroleum-coke",
             "tier": 5,
             "stack_size": 200
+        },
+		{
+            "name": "Empty Canister",
+            "key_name": "empty-canister",
+            "tier": 5,
+            "stack_size": 100
+        },
+		{
+            "name": "Packaged Water",
+            "key_name": "packaged-water",
+            "tier": 5,
+            "stack_size": 100
+        },
+		{
+            "name": "Packaged Oil",
+            "key_name": "packaged-oil",
+            "tier": 5,
+            "stack_size": 100
+        },
+		{
+            "name": "Packaged Fuel",
+            "key_name": "packaged-fuel",
+            "tier": 5,
+            "stack_size": 100
+        },
+		{
+            "name": "Packaged Turbofuel",
+            "key_name": "packaged-turbofuel",
+            "tier": 5,
+            "stack_size": 100
+        },
+		{
+            "name": "Packaged Heavy Oil Residue",
+            "key_name": "packaged-heavy-oil-residue",
+            "tier": 5,
+            "stack_size": 100
+        },
+		{
+            "name": "Packaged Liquid Biofuel",
+            "key_name": "packaged-liquid-biofuel",
+            "tier": 5,
+            "stack_size": 100
         },
 		{
             "name": "Water",
@@ -937,14 +985,14 @@
             "product": ["biomass", 150]
         },
         {
-            "name": "Biofuel",
-            "key_name": "biofuel",
+            "name": "Solid Biofuel",
+            "key_name": "solid-biofuel",
             "category": "crafting1",
             "time": 4,
             "ingredients": [
                 ["biomass", 8]
             ],
-            "product": ["biofuel", 4]
+            "product": ["solid-biofuel", 4]
         },
         {
             "name": "Color Cartridge",
@@ -1239,6 +1287,17 @@
             "product": ["plastic", 1]
         },
         {
+            "name": "Liquid Biofuel",
+            "key_name": "liquid-biofuel",
+            "category": "refining",
+            "time": 4,
+            "ingredients": [
+                ["solid-biofuel", 6],
+				["water", 3]
+            ],
+            "product": ["liquid-biofuel", 4]
+        },
+		{
             "name": "Fuel",
             "key_name": "fuel",
             "category": "refining",
@@ -1260,6 +1319,71 @@
             "product": ["turbofuel", 5]
         },
 		{
+            "name": "Empty Canister",
+            "key_name": "empty-canister",
+            "category": "crafting1",
+            "time": 6,
+            "ingredients": [
+                ["plastic", 6]
+				],
+            "product": ["empty-canister", 1]
+        },
+		{
+            "name": "Packaged Water",
+            "key_name": "packaged-water",
+            "category": "refining",
+            "time": 2,
+            "ingredients": [
+                ["water", 1],
+				["empty-canister", 1]
+            ],
+            "product": ["packaged-water", 1]
+        },
+		{
+            "name": "Packaged Oil",
+            "key_name": "packaged-oil",
+            "category": "refining",
+            "time": 5,
+            "ingredients": [
+                ["crude-oil", 1],
+				["empty-canister", 1]
+            ],
+            "product": ["packaged-oil", 1]
+        },
+		{
+            "name": "Packaged Heavy Oil Residue",
+            "key_name": "packaged-heavy-oil-residue",
+            "category": "refining",
+            "time": 6,
+            "ingredients": [
+                ["heavy-oil-residue", 1],
+				["empty-canister", 1]
+            ],
+            "product": ["packaged-heavy-oil-residue", 1]
+        },
+		{
+            "name": "Packaged Fuel",
+            "key_name": "packaged-fuel",
+            "category": "refining",
+            "time": 3,
+            "ingredients": [
+                ["fuel", 1],
+				["empty-canister", 1]
+            ],
+            "product": ["packaged-fuel", 1]
+        },
+		{
+            "name": "Alternate: Diluted Packaged Fuel",
+            "key_name": "alt-diluted-packaged-fuel",
+            "category": "refining",
+            "time": 4,
+            "ingredients": [
+                ["packaged-heavy-oil-residue", 1],
+				["water", 3]
+            ],
+            "product": ["packaged-fuel", 4]
+        },
+		{
             "name": "Residual Fuel",
             "key_name": "fuel",
             "category": "refining",
@@ -1268,6 +1392,28 @@
                 ["heavy-oil-residue", 3]
             ],
             "product": ["fuel", 4]
+        },
+		{
+            "name": "Packaged Turbofuel",
+            "key_name": "packaged-turbofuel",
+            "category": "refining",
+            "time": 6,
+            "ingredients": [
+                ["turbofuel", 1],
+				["empty-canister", 1]
+            ],
+            "product": ["packaged-turbofuel", 1]
+        },
+		{
+            "name": "Packaged Liquid Biofuel",
+            "key_name": "packaged-liquid-biofuel",
+            "category": "refining",
+            "time": 4,
+            "ingredients": [
+                ["liquid-biofuel", 1],
+				["empty-canister", 1]
+            ],
+            "product": ["packaged-fuel", 1]
         },
 		{
             "name": "Rubber",

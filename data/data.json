@@ -346,7 +346,7 @@
             "name": "Polymer Resin",
             "key_name": "polymer-resin",
             "tier": 5,
-            "stack_size": 50
+            "stack_size": 200
         },
         {
             "name": "Fuel",
@@ -801,6 +801,28 @@
             ],
             "product": ["cable", 20]
         },
+		{
+            "name": "Alternate: Coated Cable",
+            "key_name": "alt-coated-cable",
+            "category": "refinery",
+            "time": 8,
+            "ingredients": [
+                ["wire", 7],
+                ["heavy-oil-residue", 2]
+            ],
+            "product": ["cable", 9]
+        },
+		{
+            "name": "Alternate: Quickwire Cable",
+            "key_name": "alt-quickwire-cable",
+            "category": "crafting2",
+            "time": 24,
+            "ingredients": [
+                ["quickwire", 3],
+                ["rubber", 2]
+            ],
+            "product": ["cable", 9]
+        },
         {
             "name": "Biomass",
             "key_name": "biomass-from-leaves",
@@ -820,6 +842,39 @@
                 ["limestone", 3]
             ],
             "product": ["concrete", 1]
+        },
+		{
+            "name": "Alternate: Fine Concrete",
+            "key_name": "alt-concrete",
+            "category": "crafting2",
+            "time": 24,
+            "ingredients": [
+                ["silica", 5],
+                ["limestone", 12]
+            ],
+            "product": ["concrete", 10]
+        },
+		{
+            "name": "Alternate: Rubber Concrete",
+            "key_name": "alt-rubber-concrete",
+            "category": "crafting2",
+            "time": 212,
+            "ingredients": [
+                ["limestone", 10],
+                ["rubber", 4]
+            ],
+            "product": ["concrete", 9]
+        },
+		{
+            "name": "Alternate: Wet Concrete",
+            "key_name": "alt-wet-concrete",
+            "category": "refinery",
+            "time": 6,
+            "ingredients": [
+                ["limestone", 12],
+                ["water", 5]
+            ],
+            "product": ["concrete", 8]
         },
         {
             "name": "Screw",
@@ -931,6 +986,17 @@
             ],
             "product": ["copper-sheet", 1]
         },
+		{
+            "name": "Alternate: Steamed Copper Sheet",
+            "key_name": "alt-steamed-copper-sheet",
+            "category": "refinery",
+            "time": 8,
+            "ingredients": [
+                ["copper-ingot", 3],
+				["water", 3]
+            ],
+            "product": ["copper-sheet", 3]
+        },
         {
             "name": "Reinforced Iron Plate",
             "key_name": "reinforced-iron-plate",
@@ -963,6 +1029,17 @@
                 ["wire", 26]
             ],
             "product": ["reinforced-iron-plate", 3]
+        },
+		{
+            "name": "Alternate: Adhered Iron Plate",
+            "key_name": "alt-adhered-iron-plate",
+            "category": "crafting2",
+            "time": 16,
+            "ingredients": [
+                ["iron-plate", 3],
+                ["rubber", 2]
+            ],
+            "product": ["reinforced-iron-plate", 1]
         },
         {
             "name": "Rotor",
@@ -1081,7 +1158,7 @@
             "category": "crafting2",
             "time": 8,
             "ingredients": [
-                ["wire", 2],
+                ["copper-sheet", 2],
                 ["plastic", 4]
             ],
             "product": ["circuit-board", 1]
@@ -1120,6 +1197,17 @@
             "product": ["circuit-board", 1]
         },
         {
+            "name": "Alternate: Polymer Resin",
+            "key_name": "alt-polymer-resin",
+            "category": "refining",
+            "time": 6,
+            "ingredients": [
+                ["crude-oil", 6]
+            ],
+            "product": ["polymer-resin", 13]
+        },
+        {
+		{
             "name": "Plastic",
             "key_name": "plastic",
             "category": "refining",
@@ -1240,6 +1328,19 @@
             ],
             "product": ["heavy-modular-frame", 3]
         },
+		{
+            "name": "Alternate: Heavy Flexible Frame",
+            "key_name": "alt-heavy-flexible-frame",
+            "category": "crafting3",
+            "time": 16,
+            "ingredients": [
+                ["modular-frame", 5],
+                ["encased-industrial-beam", 3],
+                ["rubber", 20],
+                ["screw", 104]
+            ],
+            "product": ["heavy-modular-frame", 3]
+        },
         {
             "name": "Computer",
             "key_name": "computer",
@@ -1283,6 +1384,17 @@
             "time": 4,
             "ingredients": [
                 ["caterium-ore", 3]
+            ],
+            "product": ["caterium-ingot", 1]
+        },
+		{
+            "name": "Alternate: Pure Caterium Ingot",
+            "key_name": "alt-pure-caterium-ingot",
+            "category": "refinery",
+            "time": 5,
+            "ingredients": [
+                ["caterium-ore", 2],
+				["water", 2]
             ],
             "product": ["caterium-ingot", 1]
         },
@@ -1363,6 +1475,17 @@
             "ingredients": [
                 ["mycelia", 1],
                 ["biomass", 5]
+            ],
+            "product": ["fabric", 1]
+        },
+		{
+            "name": "Alternate: Polyester Fabric",
+            "key_name": "alt-poly-fabric",
+            "category": "refinery",
+            "time": 12,
+            "ingredients": [
+                ["polymer-resin", 16],
+                ["water", 10]
             ],
             "product": ["fabric", 1]
         },
@@ -1536,17 +1659,6 @@
                 ["biomass", 5]
             ],
             "product": ["coal", 6]
-        },
-        {
-            "name": "Alternate: Fine Concrete",
-            "key_name": "alt-concrete",
-            "category": "crafting2",
-            "time": 24,
-            "ingredients": [
-                ["silica", 5],
-                ["limestone", 12]
-            ],
-            "product": ["concrete", 10]
         },
         {
             "name": "Silica",

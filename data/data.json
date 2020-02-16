@@ -1845,5 +1845,9 @@
             "key_name": "uranium",
             "category": "mineral"
         }
+		{
+            "key_name": "water",
+            "category": "water"
+        }
     ]
 }

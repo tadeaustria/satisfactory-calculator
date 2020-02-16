@@ -360,7 +360,7 @@
             "tier": 5,
             "stack_size": 100
         },
-        {
+    {
             "name": "Rubber",
             "key_name": "rubber",
             "tier": 5,
@@ -1293,7 +1293,7 @@
             "time": 4,
             "ingredients": [
                 ["solid-biofuel", 6],
-				["water", 3]
+                ["water", 3]
             ],
             "product": ["liquid-biofuel", 4]
         },
@@ -1314,7 +1314,7 @@
             "time": 16,
             "ingredients": [
                 ["fuel", 6],
-				["compacted-coal", 4]
+                ["compacted-coal", 4]
             ],
             "product": ["turbofuel", 5]
         },
@@ -1335,7 +1335,7 @@
             "time": 2,
             "ingredients": [
                 ["water", 1],
-				["empty-canister", 1]
+                ["empty-canister", 1]
             ],
             "product": ["packaged-water", 1]
         },
@@ -1346,7 +1346,7 @@
             "time": 5,
             "ingredients": [
                 ["crude-oil", 1],
-				["empty-canister", 1]
+                ["empty-canister", 1]
             ],
             "product": ["packaged-oil", 1]
         },
@@ -1357,7 +1357,7 @@
             "time": 6,
             "ingredients": [
                 ["heavy-oil-residue", 1],
-				["empty-canister", 1]
+                ["empty-canister", 1]
             ],
             "product": ["packaged-heavy-oil-residue", 1]
         },
@@ -1368,7 +1368,7 @@
             "time": 3,
             "ingredients": [
                 ["fuel", 1],
-				["empty-canister", 1]
+                ["empty-canister", 1]
             ],
             "product": ["packaged-fuel", 1]
         },
@@ -1379,7 +1379,7 @@
             "time": 4,
             "ingredients": [
                 ["packaged-heavy-oil-residue", 1],
-				["water", 3]
+                ["water", 3]
             ],
             "product": ["packaged-fuel", 4]
         },
@@ -1400,7 +1400,7 @@
             "time": 6,
             "ingredients": [
                 ["turbofuel", 1],
-				["empty-canister", 1]
+                ["empty-canister", 1]
             ],
             "product": ["packaged-turbofuel", 1]
         },
@@ -1411,9 +1411,9 @@
             "time": 4,
             "ingredients": [
                 ["liquid-biofuel", 1],
-				["empty-canister", 1]
+                ["empty-canister", 1]
             ],
-            "product": ["packaged-fuel", 1]
+            "product": ["packaged-liquid-biofuel", 1]
         },
 		{
             "name": "Rubber",
@@ -1432,7 +1432,7 @@
             "time": 6,
             "ingredients": [
                 ["polymer-resin", 2],
-				["water", 4]
+                ["water", 4]
             ],
             "product": ["rubber", 1]
         },
@@ -1444,8 +1444,7 @@
             "ingredients": [
                 ["heavy-oil-residue", 2]
             ],
-            "product":
-				["petroleum-coke", 6]
+            "product": ["petroleum-coke", 6]
         },
         {
             "name": "Heavy Modular Frame",

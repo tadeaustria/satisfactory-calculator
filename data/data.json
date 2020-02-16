@@ -993,7 +993,7 @@
             "time": 8,
             "ingredients": [
                 ["copper-ingot", 3],
-				["water", 3]
+                ["water", 3]
             ],
             "product": ["copper-sheet", 3]
         },
@@ -1393,7 +1393,7 @@
             "time": 5,
             "ingredients": [
                 ["caterium-ore", 2],
-				["water", 2]
+                ["water", 2]
             ],
             "product": ["caterium-ingot", 1]
         },
@@ -1623,8 +1623,8 @@
             "ingredients": [
                 ["beacon", 1],
                 ["steel-pipe", 10],
-				["black-powder", 10],
-				["rubber", 10]
+                ["black-powder", 10],
+                ["rubber", 10]
             ],
             "product": ["cartridge", 5]
         },
@@ -1955,8 +1955,8 @@
         {
             "key_name": "uranium",
             "category": "mineral"
-        }
-		{
+        },
+		    {
             "key_name": "water",
             "category": "water"
         }

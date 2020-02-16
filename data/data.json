@@ -858,7 +858,7 @@
             "name": "Alternate: Rubber Concrete",
             "key_name": "alt-rubber-concrete",
             "category": "crafting2",
-            "time": 212,
+            "time": 12,
             "ingredients": [
                 ["limestone", 10],
                 ["rubber", 4]
@@ -1207,7 +1207,6 @@
             "product": ["polymer-resin", 13]
         },
         {
-		{
             "name": "Plastic",
             "key_name": "plastic",
             "category": "refining",
@@ -1480,7 +1479,7 @@
         },
 		{
             "name": "Alternate: Polyester Fabric",
-            "key_name": "alt-poly-fabric",
+            "key_name": "alt-polyester-fabric",
             "category": "refinery",
             "time": 12,
             "ingredients": [

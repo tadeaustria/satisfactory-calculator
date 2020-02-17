@@ -619,6 +619,18 @@
             "stack_size": 100
         },
         {
+            "name": "Sulfuric Acid",
+            "key_name": "sulfuric-acid",
+            "tier": 7,
+            "stack_size": 50
+        },
+        {
+            "name": "Uranium Pellet",
+            "key_name": "uranium-pellet",
+            "tier": 7,
+            "stack_size": 200
+        },
+        {
             "name": "Uranium Cell",
             "key_name": "uranium-cell",
             "tier": 7,
@@ -1977,12 +1989,34 @@
             "product": ["battery", 3]
         },
         {
-            "name": "Uranium Cell",
+            "name": "Sulfuric Acid",
+            "key_name": "sulfuric-acid",
+            "category": "refining",
+            "time": 6,
+            "ingredients": [
+                ["sulfur", 5],
+                ["water", 5]
+            ],
+            "product": ["sulfuric-acid", 10]
+        },
+        {
+            "name": "Uranium Pellet",
+            "key_name": "uranium-pellet",
+            "category": "refining",
+            "time": 6,
+            "ingredients": [
+                ["uranium", 5],
+                ["sulfuric-acid", 8]
+            ],
+            "product": ["uranium-pellet", 5]
+        },
+        {
+            "name": "Encased Uranium Cell",
             "key_name": "uranium-cell",
             "category": "crafting2",
             "time": 60,
             "ingredients": [
-                ["uranium", 40],
+                ["uranium-pellet", 40],
                 ["concrete", 9]
             ],
             "product": ["uranium-cell", 10]
@@ -1993,7 +2027,7 @@
             "category": "crafting3",
             "time": 120,
             "ingredients": [
-                ["uranium", 40],
+                ["uranium-pellet", 40],
                 ["sulfur", 45],
                 ["silica", 45],
                 ["quickwire", 75]

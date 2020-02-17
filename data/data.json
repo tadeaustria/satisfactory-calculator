@@ -670,7 +670,7 @@
         {
             "name": "Alternate: Plastic Smart Plating",
             "key_name": "alt-plastic-smart-plating",
-            "category": "crafting4",
+            "category": "crafting3",
             "time": 24,
             "ingredients": [
                 ["reinforced-iron-plate", 1],
@@ -690,18 +690,6 @@
             ],
             "product": ["versatile-framework", 2]
         },
-        {
-                "name": "Alternate: Flexible Framework",
-                "key_name": "alt-flexible-framework",
-                "category": "crafting3",
-                "time": 16,
-                "ingredients": [
-                    ["modular-frame", 1],
-                    ["steel-beam", 6],
-                    ["rubber", 8]
-                ],
-                "product": ["versatile-framework", 2]
-            },
 		{
             "name": "Automated Wiring",
             "key_name": "automated-wiring",
@@ -1580,6 +1568,18 @@
                     ["fuel", 6]
                 ],
                 "product": ["rubber", 12]
+            },
+        {
+                    "name": "Alternate: Flexible Framework",
+                    "key_name": "alt-flexible-framework",
+                    "category": "crafting3",
+                    "time": 16,
+                    "ingredients": [
+                        ["modular-frame", 1],
+                        ["steel-beam", 6],
+                        ["rubber", 8]
+                    ],
+                    "product": ["versatile-framework", 2]
             },
 		{
             "name": "Petroleum Coke",

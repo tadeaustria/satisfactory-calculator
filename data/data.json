@@ -667,6 +667,18 @@
             ],
             "product": ["smart-plating", 1]
         },
+        {
+            "name": "Alternate: Plastic Smart Plating",
+            "key_name": "alt-plastic-smart-plating",
+            "category": "crafting4",
+            "time": 24,
+            "ingredients": [
+                ["reinforced-iron-plate", 1],
+                ["rotor", 2],
+                ["plastic", 3]
+            ],
+            "product": ["smart-plating", 2]
+        },
 		{
             "name": "Versatile Framework",
             "key_name": "versatile-framework",
@@ -678,6 +690,18 @@
             ],
             "product": ["versatile-framework", 2]
         },
+        {
+                "name": "Alternate: Flexible Framework",
+                "key_name": "alt-flexible-framework",
+                "category": "crafting3",
+                "time": 16,
+                "ingredients": [
+                    ["modular-frame", 1],
+                    ["steel-beam", 6],
+                    ["rubber", 8]
+                ],
+                "product": ["versatile-framework", 2]
+            },
 		{
             "name": "Automated Wiring",
             "key_name": "automated-wiring",
@@ -758,6 +782,28 @@
             "product": ["copper-ingot", 1]
         },
         {
+            "name": "Alternate: Copper Alloy Ingot",
+            "key_name": "alt-copper-alloy-ingot",
+            "category": "smelting2",
+            "time": 12,
+            "ingredients": [
+                ["copper-ore", 10],
+                ["iron-ore", 5]
+            ],
+            "product": ["copper-ingot", 20]
+        },
+        {
+            "name": "Alternate: Pure Copper Ingot",
+            "key_name": "alt-pure-copper-ingot",
+            "category": "refining",
+            "time": 24,
+            "ingredients": [
+                ["copper-ore", 6],
+                ["water", 4]
+            ],
+            "product": ["copper-ingot", 15]
+        },
+        {
             "name": "Steel Ingot",
             "key_name": "steel-ingot",
             "category": "smelting2",
@@ -791,6 +837,17 @@
             "product": ["steel-ingot", 10]
         },
         {
+            "name": "Alternate: Coke Steel Ingot",
+            "key_name": "alt-coke-steel-ingot",
+            "category": "smelting2",
+            "time": 12,
+            "ingredients": [
+                ["iron-ore", 15],
+                ["petroleum-coke", 15]
+            ],
+            "product": ["steel-ingot", 20]
+        },
+        {
             "name": "Iron Plate",
             "key_name": "iron-plate",
             "category": "crafting1",
@@ -801,6 +858,28 @@
             "product": ["iron-plate", 2]
         },
         {
+            "name": "Alternate: Coated Iron Plate",
+            "key_name": "alt-coated-iron-plate",
+            "category": "crafting2",
+            "time": 12,
+            "ingredients": [
+                ["iron-ingot", 10],
+                ["plastic", 4]
+            ],
+            "product": ["iron-plate", 15]
+        },
+        {
+            "name": "Alternate: Steel Iron Plate",
+            "key_name": "alt-steel-iron-plate",
+            "category": "crafting2",
+            "time": 24,
+            "ingredients": [
+                ["steel-ingot", 4],
+                ["plastic", 4]
+            ],
+            "product": ["iron-plate", 15]
+        },
+        {
             "name": "Iron Rod",
             "key_name": "iron-rod",
             "category": "crafting1",
@@ -809,6 +888,16 @@
                 ["iron-ingot", 1]
             ],
             "product": ["iron-rod", 1]
+        },
+        {
+            "name": "Alternate: Steel Rod",
+            "key_name": "alt-steel-rod",
+            "category": "crafting1",
+            "time": 5,
+            "ingredients": [
+                ["steel-ingot", 1]
+            ],
+            "product": ["iron-rod", 4]
         },
         {
             "name": "Wire",
@@ -839,6 +928,17 @@
                 ["caterium-ingot", 1]
             ],
             "product": ["wire", 8]
+        },
+        {
+            "name": "Alternate: Fused Wire",
+            "key_name": "alt-fused-wire",
+            "category": "crafting2",
+            "time": 20,
+            "ingredients": [
+                ["copper-ingot", 4],
+                ["caterium-ingot", 1]
+            ],
+            "product": ["wire", 30]
         },
         {
             "name": "Cable",
@@ -1124,6 +1224,17 @@
             "product": ["rotor", 1]
         },
         {
+            "name": "Alternate: Copper Rotor",
+            "key_name": "alt-copper-rotor",
+            "category": "crafting2",
+            "time": 16,
+            "ingredients": [
+                ["copper-sheet", 6],
+                ["screw", 52]
+            ],
+            "product": ["rotor", 3]
+        },
+        {
             "name": "Modular Frame",
             "key_name": "modular-frame",
             "category": "crafting2",
@@ -1330,6 +1441,17 @@
             ],
             "product": ["turbofuel", 5]
         },
+        {
+            "name": "Alternate: Turbo Heavy Fuel",
+            "key_name": "alt-turbo-heavy-fuel",
+            "category": "refining",
+            "time": 8,
+            "ingredients": [
+                ["heavy-oil-residue", 5],
+                ["compacted-coal", 4]
+            ],
+            "product": ["turbofuel", 4]
+        },
 		{
             "name": "Empty Canister",
             "key_name": "empty-canister",
@@ -1448,6 +1570,17 @@
             ],
             "product": ["rubber", 1]
         },
+        {
+                "name": "Alternate: Recycled Rubber",
+                "key_name": "alt-recycled-rubber",
+                "category": "refining",
+                "time": 12,
+                "ingredients": [
+                    ["plastic", 5],
+                    ["fuel", 6]
+                ],
+                "product": ["rubber", 12]
+            },
 		{
             "name": "Petroleum Coke",
             "key_name": "petroleum-coke",
@@ -1691,6 +1824,17 @@
                 ["raw-quartz", 5]
             ],
             "product": ["quartz-crystal", 3]
+        },
+        {
+            "name": "Alternate: Pure Quartz Crystal",
+            "key_name": "alt-pure-quartz-crystal",
+            "category": "refining",
+            "time": 8,
+            "ingredients": [
+                ["raw-quartz", 9],
+                ["water", 5]
+            ],
+            "product": ["quartz-crystal", 7]
         },
         {
             "name": "Crystal Oscillator",

@@ -1234,6 +1234,17 @@
             "product": ["modular-frame", 2]
         },
         {
+            "name": "Alternate: Bolted Frame",
+            "key_name": "alt-bolted-frame",
+            "category": "crafting2",
+            "time": 24,
+            "ingredients": [
+                ["reinforced-iron-plate", 3],
+                ["screw", 56]
+            ],
+            "product": ["modular-frame", 2]
+        },
+        {
             "name": "Alternate: Steeled Frame",
             "key_name": "alt-modular-frame",
             "category": "crafting2",

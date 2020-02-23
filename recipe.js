@@ -21,8 +21,8 @@ export class Ingredient {
 }
 
 class Recipe {
-    constructor(key, name, category, time, ingredients, product, byproduct) {
-//    constructor(key, name, category, time, ingredients, product) {
+    //constructor(key, name, category, time, ingredients, product, byproduct) {
+    constructor(key, name, category, time, ingredients, product) {
         this.key = key
         this.name = name
         this.category = category
@@ -66,13 +66,14 @@ function makeRecipe(data, items, d) {
         let item = items.get(item_key)
         ingredients.push(new Ingredient(item, Rational.from_float(amount)))
     }
-    return new Recipe(d.key_name, d.name, d.category, time, ingredients, product, byproduct)
-    //return new Recipe(d.key_name, d.name, d.category, time, ingredients, byproduct)
+//    return new Recipe(d.key_name, d.name, d.category, time, ingredients, product, byproduct)
+    return new Recipe(d.key_name, d.name, d.category, time, ingredients, product)
 }
 
 class ResourceRecipe extends Recipe {
     constructor(item, category) {
-        super(item.key, item.name, category, zero, [], new Ingredient(item, one), new Ingredient(item, one))
+        //super(item.key, item.name, category, zero, [], new Ingredient(item, one), new Ingredient(item, one))
+        super(item.key, item.name, category, zero, [], new Ingredient(item, one))
     }
 }
 

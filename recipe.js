@@ -56,11 +56,11 @@ class Recipe {
 function makeRecipe(data, items, d) {
     let time = Rational.from_float(d.time)
     let [item_key, amount] = d.product
-    let [item_key2, amount2] = d.byproduct
+    let [byproduct_key, byproduct_amount] = d.byproduct
     let item = items.get(item_key)
-	let item2 = items.get(item_key2)
+	let byproduct_item = items.get(byproduct_key)
     let product = new Ingredient(item, Rational.from_float(amount))
-	let byproduct = new Ingredient(item2, Rational.from_float(amount2))
+	let byproduct = new Ingredient(byproduct_item, Rational.from_float(byproduct_amount))
     let ingredients = []
     for (let [item_key, amount] of d.ingredients) {
         let item = items.get(item_key)

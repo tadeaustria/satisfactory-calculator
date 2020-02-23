@@ -52,7 +52,7 @@ function makeRecipe(data, items, d) {
     let item = items.get(item_key)
     let product = new Ingredient(item, Rational.from_float(amount))
     let ingredients = []
-    let byproduct = []
+    let byproduct = ["copper-ingot", 999]
     for (let [item_key, amount] of d.ingredients) {
         let item = items.get(item_key)
         ingredients.push(new Ingredient(item, Rational.from_float(amount)))

@@ -1524,7 +1524,7 @@
             "ingredients": [
                 ["heavy-oil-residue", 3]
             ],
-            "product": ["fuel", 4]
+            "product": ["fuel", 2]
         },
 		{
             "name": "Packaged Turbofuel",

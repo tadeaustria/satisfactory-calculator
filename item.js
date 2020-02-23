@@ -19,10 +19,14 @@ export class Item {
         this.name = name
         this.tier = tier
         this.recipes = []
+		this.byproduct = []
         this.uses = []
     }
     addRecipe(recipe) {
         this.recipes.push(recipe)
+	}
+	addByproduct(byproduct) {
+		this.byproduct.push(byproduct)
     }
     addUse(recipe) {
         this.uses.push(recipe)
@@ -31,6 +35,7 @@ export class Item {
         let totals = new Totals()
         let recipe = spec.getRecipe(this)
         let gives = recipe.gives(this)
+        let byproduct = recipe.byproduct(this)
         rate = rate.div(gives)
         totals.add(recipe, rate)
         totals.updateHeight(recipe, 0)

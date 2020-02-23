@@ -21,7 +21,8 @@ export class Ingredient {
 }
 
 class Recipe {
-    constructor(key, name, category, time, ingredients, product, byproduct) {
+//    constructor(key, name, category, time, ingredients, product, byproduct) {
+    constructor(key, name, category, time, ingredients, product) {
         this.key = key
         this.name = name
         this.category = category
@@ -32,8 +33,8 @@ class Recipe {
         }
         this.product = product
         product.item.addRecipe(this)
-	//this.byproduct = byproduct
-	//byproduct.item.addRecipe(this)
+//		this.byproduct = byproduct
+//		byproduct.item.addRecipe(this)
     }
     gives(item) {
         if (this.product.item === item) {
@@ -52,12 +53,13 @@ function makeRecipe(data, items, d) {
     let item = items.get(item_key)
     let product = new Ingredient(item, Rational.from_float(amount))
     let ingredients = []
-    let byproduct = ["copper-ingot", 999]
+	let byproduct = ["copper-ingot", 999]
     for (let [item_key, amount] of d.ingredients) {
         let item = items.get(item_key)
         ingredients.push(new Ingredient(item, Rational.from_float(amount)))
     }
-    return new Recipe(d.key_name, d.name, d.category, time, ingredients, product, byproduct)
+    //return new Recipe(d.key_name, d.name, d.category, time, ingredients, product, byproduct)
+    return new Recipe(d.key_name, d.name, d.category, time, ingredients, product)
 }
 
 class ResourceRecipe extends Recipe {

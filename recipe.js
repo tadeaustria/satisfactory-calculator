@@ -32,8 +32,8 @@ class Recipe {
         }
         this.product = product
         product.item.addRecipe(this)
-		this.byproduct = byproduct
-		byproduct.item.addRecipe(this)
+	//this.byproduct = byproduct
+	//byproduct.item.addRecipe(this)
     }
     gives(item) {
         if (this.product.item === item) {

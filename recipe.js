@@ -33,7 +33,6 @@ class Recipe {
         }
         this.product = product
         product.item.addRecipe(this)
-        product.item.addRecipe(this)
 //		this.byproduct = byproduct
 //		byproduct.item.addRecipe(this)
     }
@@ -60,7 +59,7 @@ function makeRecipe(data, items, d) {
         ingredients.push(new Ingredient(item, Rational.from_float(amount)))
     }
     //return new Recipe(d.key_name, d.name, d.category, time, ingredients, product, byproduct)
-    return new Recipe(d.key_name, d.name, d.category, time, ingredients, product)
+    return new Recipe(d.key_name, d.name, d.category, time, ingredients, byproduct)
 }
 
 class ResourceRecipe extends Recipe {

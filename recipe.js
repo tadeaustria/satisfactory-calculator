@@ -21,7 +21,7 @@ export class Ingredient {
 }
 
 class Recipe {
-    constructor(key, name, category, time, ingredients, product) {
+    constructor(key, name, category, time, ingredients, product, byproduct) {
         this.key = key
         this.name = name
         this.category = category
@@ -32,6 +32,8 @@ class Recipe {
         }
         this.product = product
         product.item.addRecipe(this)
+		this.byproduct = byproduct
+		byproduct.item.addRecipe(this)
     }
     gives(item) {
         if (this.product.item === item) {

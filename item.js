@@ -19,8 +19,8 @@ export class Item {
         this.name = name
         this.tier = tier
         this.recipes = []
-		this.byproduct = []
         this.uses = []
+		this.byproduct = []
     }
     addRecipe(recipe) {
         this.recipes.push(recipe)

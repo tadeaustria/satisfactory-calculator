@@ -52,11 +52,12 @@ function makeRecipe(data, items, d) {
     let item = items.get(item_key)
     let product = new Ingredient(item, Rational.from_float(amount))
     let ingredients = []
+    let byproduct = []
     for (let [item_key, amount] of d.ingredients) {
         let item = items.get(item_key)
         ingredients.push(new Ingredient(item, Rational.from_float(amount)))
     }
-    return new Recipe(d.key_name, d.name, d.category, time, ingredients, product)
+    return new Recipe(d.key_name, d.name, d.category, time, ingredients, product, byproduct)
 }
 
 class ResourceRecipe extends Recipe {

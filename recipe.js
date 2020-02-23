@@ -72,7 +72,7 @@ function makeRecipe(data, items, d) {
 
 class ResourceRecipe extends Recipe {
     constructor(item, category) {
-        super(item.key, item.name, category, zero, [], new Ingredient(item, one), [])
+        super(item.key, item.name, category, zero, [], new Ingredient(item, one), new Ingredient(item, one))
     }
 }
 

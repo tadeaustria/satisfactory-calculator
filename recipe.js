@@ -33,6 +33,7 @@ class Recipe {
         }
         this.product = product
         product.item.addRecipe(this)
+        product.item.addRecipe(this)
 //		this.byproduct = byproduct
 //		byproduct.item.addRecipe(this)
     }

@@ -21,8 +21,8 @@ export class Ingredient {
 }
 
 class Recipe {
-//    constructor(key, name, category, time, ingredients, product, byproduct) {
-    constructor(key, name, category, time, ingredients, product) {
+    constructor(key, name, category, time, ingredients, product, byproduct) {
+//    constructor(key, name, category, time, ingredients, product) {
         this.key = key
         this.name = name
         this.category = category
@@ -33,12 +33,18 @@ class Recipe {
         }
         this.product = product
         product.item.addRecipe(this)
-//		this.byproduct = byproduct
-//		byproduct.item.addRecipe(this)
+		this.byproduct = byproduct
+		byproduct.item.addByproduct(this)
     }
     gives(item) {
         if (this.product.item === item) {
             return this.product.amount
+        }
+        return null
+    }
+    byproduct(item) {
+        if (this.byproduct.item === item) {
+            return this.byproduct.amount
         }
         return null
     }
@@ -50,16 +56,18 @@ class Recipe {
 function makeRecipe(data, items, d) {
     let time = Rational.from_float(d.time)
     let [item_key, amount] = d.product
+    let [item_key2, amount2] = d.byproduct
     let item = items.get(item_key)
+	let item2 = items.get(item_key2)
     let product = new Ingredient(item, Rational.from_float(amount))
+	let byproduct = new Ingredient(item2, Rational.from_float(amount2))
     let ingredients = []
-	let byproduct = new Ingredient["copper-ingot", Rational.from_float(999)]
     for (let [item_key, amount] of d.ingredients) {
         let item = items.get(item_key)
         ingredients.push(new Ingredient(item, Rational.from_float(amount)))
     }
-    //return new Recipe(d.key_name, d.name, d.category, time, ingredients, product, byproduct)
-    return new Recipe(d.key_name, d.name, d.category, time, ingredients, byproduct)
+    return new Recipe(d.key_name, d.name, d.category, time, ingredients, product, byproduct)
+    //return new Recipe(d.key_name, d.name, d.category, time, ingredients, byproduct)
 }
 
 class ResourceRecipe extends Recipe {

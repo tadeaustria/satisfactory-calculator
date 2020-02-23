@@ -33,8 +33,8 @@ class Recipe {
         }
         this.product = product
         product.item.addRecipe(this)
-		this.byproduct = byproduct
-		byproduct.item.addByproduct(this)
+		//this.byproduct = byproduct
+		//byproduct.item.addByproduct(this)
     }
     gives(item) {
         if (this.product.item === item) {
@@ -42,12 +42,12 @@ class Recipe {
         }
         return null
     }
-    byproduct(item) {
-        if (this.byproduct.item === item) {
-            return this.byproduct.amount
-        }
-        return null
-    }
+    //byproduct(item) {
+    //    if (this.byproduct.item === item) {
+    //        return this.byproduct.amount
+    //    }
+    //    return null
+    //}
     iconPath() {
         return this.product.item.iconPath()
     }

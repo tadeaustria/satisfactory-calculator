@@ -1403,7 +1403,7 @@
             "time": 24,
             "ingredients": [
                 ["copper-sheet", 11],
-                ["silica", 1]
+                ["silica", 11]
             ],
             "product": ["circuit-board", 5],
             "byproduct": ["copper-ingot", 999]

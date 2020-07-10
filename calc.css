@@ -64,6 +64,9 @@ img.icon {
 .ignore {
     opacity: 0.3;
 }
+.hide-building, .hide-power-shard {
+    visibility: hidden;
+}
 /* build targets */
 .targetButton {
     height: 2em;

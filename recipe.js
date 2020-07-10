@@ -21,6 +21,7 @@ export class Ingredient {
 }
 
 class Recipe {
+    //constructor(key, name, category, time, ingredients, product, byproduct) {
     constructor(key, name, category, time, ingredients, product) {
         this.key = key
         this.name = name
@@ -32,6 +33,8 @@ class Recipe {
         }
         this.product = product
         product.item.addRecipe(this)
+		//this.byproduct = byproduct
+		//byproduct.item.addByproduct(this)
     }
     gives(item) {
         if (this.product.item === item) {
@@ -39,6 +42,12 @@ class Recipe {
         }
         return null
     }
+    //byproduct(item) {
+    //    if (this.byproduct.item === item) {
+    //        return this.byproduct.amount
+    //    }
+    //    return null
+    //}
     iconPath() {
         return this.product.item.iconPath()
     }
@@ -47,18 +56,23 @@ class Recipe {
 function makeRecipe(data, items, d) {
     let time = Rational.from_float(d.time)
     let [item_key, amount] = d.product
+    let [byproduct_key, byproduct_amount] = d.byproduct
     let item = items.get(item_key)
+	let byproduct_item = items.get(byproduct_key)
     let product = new Ingredient(item, Rational.from_float(amount))
+	let byproduct = new Ingredient(byproduct_item, Rational.from_float(byproduct_amount))
     let ingredients = []
     for (let [item_key, amount] of d.ingredients) {
         let item = items.get(item_key)
         ingredients.push(new Ingredient(item, Rational.from_float(amount)))
     }
+//    return new Recipe(d.key_name, d.name, d.category, time, ingredients, product, byproduct)
     return new Recipe(d.key_name, d.name, d.category, time, ingredients, product)
 }
 
 class ResourceRecipe extends Recipe {
     constructor(item, category) {
+        //super(item.key, item.name, category, zero, [], new Ingredient(item, one), new Ingredient(item, one))
         super(item.key, item.name, category, zero, [], new Ingredient(item, one))
     }
 }

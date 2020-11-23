@@ -1569,7 +1569,7 @@
 		{
             "name": "Packaged Water",
             "key_name": "packaged-water",
-            "category": "refining",
+            "category": "packaging",
             "time": 2,
             "ingredients": [
                 ["water", 1],
@@ -1581,7 +1581,7 @@
 		{
             "name": "Packaged Oil",
             "key_name": "packaged-oil",
-            "category": "refining",
+            "category": "packaging",
             "time": 5,
             "ingredients": [
                 ["crude-oil", 1],
@@ -1593,7 +1593,7 @@
 		{
             "name": "Packaged Heavy Oil Residue",
             "key_name": "packaged-heavy-oil-residue",
-            "category": "refining",
+            "category": "packaging",
             "time": 6,
             "ingredients": [
                 ["heavy-oil-residue", 1],
@@ -1605,7 +1605,7 @@
 		{
             "name": "Packaged Fuel",
             "key_name": "packaged-fuel",
-            "category": "refining",
+            "category": "packaging",
             "time": 3,
             "ingredients": [
                 ["fuel", 1],
@@ -1617,7 +1617,7 @@
 		{
             "name": "Alternate: Diluted Packaged Fuel",
             "key_name": "alt-diluted-packaged-fuel",
-            "category": "refining",
+            "category": "packaging",
             "time": 4,
             "ingredients": [
                 ["packaged-heavy-oil-residue", 1],
@@ -1640,7 +1640,7 @@
 		{
             "name": "Packaged Turbofuel",
             "key_name": "packaged-turbofuel",
-            "category": "refining",
+            "category": "packaging",
             "time": 6,
             "ingredients": [
                 ["turbofuel", 1],
@@ -1652,7 +1652,7 @@
 		{
             "name": "Packaged Liquid Biofuel",
             "key_name": "packaged-liquid-biofuel",
-            "category": "refining",
+            "category": "packaging",
             "time": 4,
             "ingredients": [
                 ["liquid-biofuel", 1],

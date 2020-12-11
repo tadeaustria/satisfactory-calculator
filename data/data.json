@@ -112,6 +112,13 @@
             "category": "oil",
             "base_rate": 120,
             "power": 40
+        },
+        {
+            "name": "FICSMAS Gift Tree",
+            "key_name": "ficsmas-gift-tree",
+            "category": "gift-tree",
+            "base_rate": 15,
+            "power": 0
         }
     ],
     "items": [
@@ -367,7 +374,7 @@
             "tier": 5,
             "stack_size": 100
         },
-    {
+        {
             "name": "Rubber",
             "key_name": "rubber",
             "tier": 5,
@@ -660,6 +667,84 @@
             "key_name": "iodine-infused-filter",
             "tier": 7,
             "stack_size": 100
+        },
+        {
+            "name": "FICSMAS Gift",
+            "key_name": "ficsmas-gift",
+            "tier": 0,
+            "stack_size": 500
+        },
+        {
+            "name": "FICSMAS Tree Branch",
+            "key_name": "ficsmas-tree-branch",
+            "tier": 0,
+            "stack_size": 500
+        },
+        {
+            "name": "Candy Cane",
+            "key_name": "candy-cane",
+            "tier": 0,
+            "stack_size": 500
+        },
+        {
+            "name": "FICSMAS Bow",
+            "key_name": "ficsmas-bow",
+            "tier": 0,
+            "stack_size": 500
+        },
+        {
+            "name": "Red FICSMAS Ornament",
+            "key_name": "red-ficsmas-ornament",
+            "tier": 0,
+            "stack_size": 500
+        },
+        {
+            "name": "Blue FICSMAS Ornament",
+            "key_name": "blue-ficsmas-ornament",
+            "tier": 0,
+            "stack_size": 500
+        },
+        {
+            "name": "Copper FICSMAS Ornament",
+            "key_name": "copper-ficsmas-ornament",
+            "tier": 0,
+            "stack_size": 200
+        },
+        {
+            "name": "Iron FICSMAS Ornament",
+            "key_name": "iron-ficsmas-ornament",
+            "tier": 0,
+            "stack_size": 200
+        },
+        {
+            "name": "Actual Snow",
+            "key_name": "actual-snow",
+            "tier": 0,
+            "stack_size": 500
+        },
+        {
+            "name": "FICSMAS Ornament Bundle",
+            "key_name": "ficsmas-ornament-bundle",
+            "tier": 0,
+            "stack_size": 100
+        },
+        {
+            "name": "FICSMAS Decoration",
+            "key_name": "ficsmas-decoration",
+            "tier": 0,
+            "stack_size": 100
+        },
+        {
+            "name": "FICSMAS Wonder Star",
+            "key_name": "ficsmas-wonder-star",
+            "tier": 0,
+            "stack_size": 50
+        },
+        {
+            "name": "Snowball",
+            "key_name": "snowball",
+            "tier": 0,
+            "stack_size": 500
         }
     ],
     "recipes": [
@@ -2432,6 +2517,143 @@
             ],
             "product": ["iodine-infused-filter", 1],
             "byproduct": ["copper-ingot", 999]
+        },
+        {
+            "name": "FICSMAS Tree Branch",
+            "key_name": "ficsmas-tree-branch",
+            "category": "crafting1",
+            "time": 6,
+            "ingredients": [
+                ["ficsmas-gift", 1]
+            ],
+            "product": ["ficsmas-tree-branch", 1],
+            "byproduct": ["copper-ingot", 999]
+        },
+        {
+            "name": "Candy Cane",
+            "key_name": "candy-cane",
+            "category": "crafting1",
+            "time": 12,
+            "ingredients": [
+                ["ficsmas-gift", 3]
+            ],
+            "product": ["candy-cane", 1],
+            "byproduct": ["copper-ingot", 999]
+        },
+        {
+            "name": "FICSMAS Bow",
+            "key_name": "ficsmas-bow",
+            "category": "crafting1",
+            "time": 12,
+            "ingredients": [
+                ["ficsmas-gift", 2]
+            ],
+            "product": ["ficsmas-bow", 1],
+            "byproduct": ["copper-ingot", 999]
+        },
+        {
+            "name": "Red FICSMAS Ornament",
+            "key_name": "red-ficsmas-ornament",
+            "category": "smelting1",
+            "time": 12,
+            "ingredients": [
+                ["ficsmas-gift", 1]
+            ],
+            "product": ["red-ficsmas-ornament", 1],
+            "byproduct": ["copper-ingot", 999]
+        },
+        {
+            "name": "Blue FICSMAS Ornament",
+            "key_name": "blue-ficsmas-ornament",
+            "category": "smelting1",
+            "time": 12,
+            "ingredients": [
+                ["ficsmas-gift", 1]
+            ],
+            "product": ["blue-ficsmas-ornament", 2],
+            "byproduct": ["copper-ingot", 999]
+        },
+        {
+            "name": "Copper FICSMAS Ornament",
+            "key_name": "copper-ficsmas-ornament",
+            "category": "smelting2",
+            "time": 12,
+            "ingredients": [
+                ["red-ficsmas-ornament", 2],
+                ["copper-ingot", 2]
+            ],
+            "product": ["copper-ficsmas-ornament", 1],
+            "byproduct": ["copper-ingot", 999]
+        },
+        {
+            "name": "Iron FICSMAS Ornament",
+            "key_name": "iron-ficsmas-ornament",
+            "category": "smelting2",
+            "time": 12,
+            "ingredients": [
+                ["blue-ficsmas-ornament", 3],
+                ["iron-ingot", 3]
+            ],
+            "product": ["iron-ficsmas-ornament", 1],
+            "byproduct": ["copper-ingot", 999]
+        },
+        {
+            "name": "Actual Snow",
+            "key_name": "actual-snow",
+            "category": "crafting1",
+            "time": 12,
+            "ingredients": [
+                ["ficsmas-gift", 5]
+            ],
+            "product": ["actual-snow", 2],
+            "byproduct": ["copper-ingot", 999]
+        },
+        {
+            "name": "FICSMAS Ornament Bundle",
+            "key_name": "ficsmas-ornament-bundle",
+            "category": "crafting2",
+            "time": 30,
+            "ingredients": [
+                ["copper-ficsmas-ornament", 1],
+                ["iron-ficsmas-ornament", 1]
+            ],
+            "product": ["ficsmas-ornament-bundle", 1],
+            "byproduct": ["copper-ingot", 999]
+        },
+        {
+            "name": "FICSMAS Decoration",
+            "key_name": "ficsmas-decoration",
+            "category": "crafting2",
+            "time": 60,
+            "ingredients": [
+                ["ficsmas-tree-branch", 25],
+                ["ficsmas-ornament-bundle", 5]
+            ],
+            "product": ["ficsmas-decoration", 1],
+            "byproduct": ["copper-ingot", 999]
+        },
+        {
+            "name": "FICSMAS Wonder Star",
+            "key_name": "ficsmas-wonder-star",
+            "category": "crafting2",
+            "time": 120,
+            "ingredients": [
+                ["candy-cane", 50],
+                ["ficsmas-decoration", 5]
+            ],
+            "product": ["ficsmas-wonder-star", 1],
+            "byproduct": ["copper-ingot", 999]
+        },
+        {
+            "name": "Snowball",
+            "key_name": "snowball",
+            "category": "crafting1",
+            "time": 12,
+            "ingredients": [
+                ["actual-snow", 3]
+            ],
+            "product": ["snowball", 1],
+            "byproduct": ["copper-ingot", 999]
         }
     ],
     "resources": [
@@ -2475,9 +2697,13 @@
             "key_name": "uranium",
             "category": "mineral"
         },
-		    {
+		{
             "key_name": "water",
             "category": "water"
+        },
+		{
+            "key_name": "ficsmas-gift",
+            "category": "gift-tree"
         }
     ]
 }

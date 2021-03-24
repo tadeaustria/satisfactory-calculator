@@ -12,7 +12,8 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.*/
 import { spec } from "./factory.js"
-import { formatSettings } from "./fragment.js"
+import { loadSettings } from "./fragment.js"
+import { loadData } from "./init.js"
 
 // build target events
 
@@ -57,4 +58,9 @@ export function changeRatePrecision(event) {
 export function changeCountPrecision(event) {
     spec.format.countPrecision = Number(event.target.value)
     spec.updateSolution()
+}
+
+export function changeDataFile(event){
+    let settings = loadSettings(window.location.hash)
+    loadData(settings, event.target.value)
 }

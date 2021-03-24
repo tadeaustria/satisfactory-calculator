@@ -20,12 +20,13 @@
         var handlers = {}
     </script>
     <script type="module">
-        import { plusHandler, clickTab, changeRatePrecision, changeCountPrecision } from "./events.js"
+        import { plusHandler, clickTab, changeRatePrecision, changeCountPrecision, changeDataFile } from "./events.js"
         import { init } from "./init.js"
         handlers.plusHandler = plusHandler
         handlers.clickTab = clickTab
         handlers.changeRatePrecision = changeRatePrecision
         handlers.changeCountPrecision = changeCountPrecision
+        handlers.changeDataFile = changeDataFile
         handlers.init = init
     </script>
 </head>
@@ -89,6 +90,13 @@ limitations under the License.-->
         <tr class="setting-section">
         <td colspan="2"><span>Display</span><hr></td>
         </tr>
+            <tr class="setting-row">
+            <td class="setting-label top">Datafile:</td>
+            <td><select name="datafile" id="datafile" selected="data/data.json" onchange="handlers.changeDataFile(event)">
+                <option value="data/data.json">Update3</option>
+                <!-- <option value="data/update4.json">Update4</option> -->
+              </select></td>
+            </tr>
 
             <tr class="setting-row">
             <td class="setting-label top">Display rates as:</td>

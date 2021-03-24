@@ -19,13 +19,15 @@ import { getItems } from "./item.js"
 import { getRecipes } from "./recipe.js"
 import { renderSettings } from "./settings.js"
 
-function loadData(settings) {
-    d3.json("data/data.json").then(function(data) {
+export const DEFAULT_DATAFILE = "data/data.json"
+
+export function loadData(settings, datafile) {
+    d3.json(datafile).then(function(data) {
         let items = getItems(data)
         let recipes = getRecipes(data, items)
         let buildings = getBuildings(data)
         let belts = getBelts(data)
-        spec.setData(items, recipes, buildings, belts)
+        spec.setData(datafile, items, recipes, buildings, belts)
 
         renderSettings(settings)
 
@@ -35,5 +37,5 @@ function loadData(settings) {
 
 export function init() {
     let settings = loadSettings(window.location.hash)
-    loadData(settings)
+    loadData(settings, DEFAULT_DATAFILE)
 }

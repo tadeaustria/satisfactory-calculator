@@ -35,6 +35,8 @@ export let DEFAULT_BELT = "belt1"
 
 class FactorySpecification {
     constructor() {
+        this.datafile = null
+
         // Game data definitions
         this.items = null
         this.recipes = null
@@ -61,7 +63,8 @@ class FactorySpecification {
 
         this.format = new Formatter()
     }
-    setData(items, recipes, buildings, belts) {
+    setData(datafile, items, recipes, buildings, belts) {
+        this.datafile = datafile
         this.items = items
         let tierMap = new Map()
         for (let [itemKey, item] of items) {

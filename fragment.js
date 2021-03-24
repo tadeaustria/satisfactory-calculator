@@ -15,9 +15,13 @@ import { DEFAULT_RATE, DEFAULT_RATE_PRECISION, DEFAULT_COUNT_PRECISION } from ".
 import { DEFAULT_TAB, currentTab } from "./events.js"
 import { spec, DEFAULT_PURITY, DEFAULT_BELT } from "./factory.js"
 import { Rational } from "./rational.js"
+import { DEFAULT_DATAFILE } from "./init.js"
 
 export function formatSettings() {
     let settings = ""
+    if (spec.datafile !== DEFAULT_DATAFILE) {
+        settings += "datafile=" + spec.datafile + "&"
+    }
     if (currentTab !== DEFAULT_TAB) {
         settings += "tab=" + currentTab + "&"
     }

@@ -63,7 +63,7 @@
             "max": 2
         },
         {
-            "name": "Refinery",
+            "name": "Oil Refinery",
             "key_name": "refinery",
             "category": "refining",
             "power": 50,

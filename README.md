@@ -2,7 +2,7 @@
 
 ## Description
 
-This calculator is meant to help all Satisfactorians helping plan their awesome factories. A [Sankey diagram](https://en.wikipedia.org/wiki/Sankey_diagram) helps to visualize the amount of material flow. Unwanted products can be hidden intuitively to focus on relevant ones.
+This calculator is meant to help all **Satisfactorians** helping plan their awesome factories. A [Sankey diagram](https://en.wikipedia.org/wiki/Sankey_diagram) helps to visualize the amount of material flow. Unwanted products can be hidden intuitively to focus on relevant ones.
 
 ## Setup 
 
@@ -23,7 +23,9 @@ Receipts for update 3 with FICSMAS holiday special are included.
 
 * Multiple products are not yet supported
 * Only one receipt per product can be selected, no mixture is possible
+* Fluids transport is using belts instead of pipes
 
-## Remarks
+## Acknowledgment
 
-This implementation is based on the [factorio-calculator](https://github.com/KirkMcDonald/kirkmcdonald.github.io) by KirkMcDonald.
+This implementation is based on the [factorio-calculator](https://github.com/KirkMcDonald/kirkmcdonald.github.io) by KirkMcDonald.<br>
+Receipts and icons are from [Satisfactory-Wiki](https://satisfactory.fandom.com/wiki/Satisfactory_Wiki).

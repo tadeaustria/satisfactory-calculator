@@ -64,7 +64,11 @@ function makeRecipe(data, items, d) {
     let ingredients = []
     for (let [item_key, amount] of d.ingredients) {
         let item = items.get(item_key)
-        ingredients.push(new Ingredient(item, Rational.from_float(amount)))
+        if(item == undefined){
+            console.log(item_key + " of " + d.key_name + " not found")
+        }else{
+            ingredients.push(new Ingredient(item, Rational.from_float(amount)))
+        }
     }
 //    return new Recipe(d.key_name, d.name, d.category, time, ingredients, product, byproduct)
     return new Recipe(d.key_name, d.name, d.category, time, ingredients, product)

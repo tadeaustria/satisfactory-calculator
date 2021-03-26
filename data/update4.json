@@ -297,7 +297,7 @@
         {
             "name": "Solid Biofuel",
             "key_name": "solid-biofuel",
-            "tier": 1,
+            "tier": 2,
             "stack_size": 200
         },
         {
@@ -379,10 +379,22 @@
             "stack_size": 50
         },
 		{
+            "name": "Packaged Oil",
+            "key_name": "packaged-oil",
+            "tier": 5,
+            "stack_size": 100
+        },
+		{
             "name": "Heavy Oil Residue",
             "key_name": "heavy-oil-residue",
             "tier": 5,
             "stack_size": 50
+        },
+		{
+            "name": "Packaged Heavy Oil Residue",
+            "key_name": "packaged-heavy-oil-residue",
+            "tier": 5,
+            "stack_size": 100
         },
 		{
             "name": "Polymer Resin",
@@ -393,6 +405,12 @@
         {
             "name": "Fuel",
             "key_name": "fuel",
+            "tier": 5,
+            "stack_size": 100
+        },
+		{
+            "name": "Packaged Fuel",
+            "key_name": "packaged-fuel",
             "tier": 5,
             "stack_size": 100
         },
@@ -423,30 +441,6 @@
 		{
             "name": "Packaged Water",
             "key_name": "packaged-water",
-            "tier": 5,
-            "stack_size": 100
-        },
-		{
-            "name": "Packaged Oil",
-            "key_name": "packaged-oil",
-            "tier": 5,
-            "stack_size": 100
-        },
-		{
-            "name": "Packaged Fuel",
-            "key_name": "packaged-fuel",
-            "tier": 5,
-            "stack_size": 100
-        },
-		{
-            "name": "Packaged Turbofuel",
-            "key_name": "packaged-turbofuel",
-            "tier": 5,
-            "stack_size": 100
-        },
-		{
-            "name": "Packaged Heavy Oil Residue",
-            "key_name": "packaged-heavy-oil-residue",
             "tier": 5,
             "stack_size": 100
         },
@@ -513,7 +507,7 @@
         {
             "name": "Fabric",
             "key_name": "fabric",
-            "tier": 1,
+            "tier": 2,
             "stack_size": 100
         },
         {
@@ -585,7 +579,7 @@
         {
             "name": "Compacted Coal",
             "key_name": "compacted-coal",
-            "tier": 4,
+            "tier": 6,
             "stack_size": 100
         },
         {
@@ -593,6 +587,12 @@
             "key_name": "turbofuel",
             "tier": 6,
             "stack_size": 50
+        },
+		{
+            "name": "Packaged Turbofuel",
+            "key_name": "packaged-turbofuel",
+            "tier": 6,
+            "stack_size": 100
         },
         {
             "name": "Silica",
@@ -649,12 +649,6 @@
             "stack_size": 100
         },
         {
-            "name": "Turbo Motor",
-            "key_name": "turbo-motor",
-            "tier": 8,
-            "stack_size": 100
-        },
-        {
             "name": "Battery",
             "key_name": "battery",
             "tier": 7,
@@ -677,6 +671,24 @@
             "key_name": "packaged-sulfuric-acid",
             "tier": 7,
             "stack_size": 100
+        },
+        {
+            "name": "Turbo Motor",
+            "key_name": "turbo-motor",
+            "tier": 8,
+            "stack_size": 100
+        },
+        {
+            "name": "Cooling System",
+            "key_name": "cooling-system",
+            "tier": 8,
+            "stack_size": 100
+        },
+        {
+            "name": "Fused Modular Frame",
+            "key_name": "fused-modular-frame",
+            "tier": 8,
+            "stack_size": 50
         },
         {
             "name": "Uranium Pellet",
@@ -721,24 +733,6 @@
             "stack_size": 200
         },
         {
-            "name": "Empty Fluid Tank",
-            "key_name": "empty-fluid-tank",
-            "tier": 8,
-            "stack_size": 100
-        },
-        {
-            "name": "Cooling System",
-            "key_name": "cooling-system",
-            "tier": 8,
-            "stack_size": 100
-        },
-        {
-            "name": "Fused Modular Frame",
-            "key_name": "fused-modular-frame",
-            "tier": 8,
-            "stack_size": 50
-        },
-        {
             "name": "Non-fissile Uranium",
             "key_name": "non-fissile-uranium",
             "tier": 8,
@@ -779,6 +773,18 @@
             "key_name": "pressure-conversion-cube",
             "tier": 8,
             "stack_size": 50
+        },
+        {
+            "name": "Nuclear Pasta",
+            "key_name": "nuclear-pasta",
+            "tier": 8,
+            "stack_size": 50
+        },
+        {
+            "name": "Empty Fluid Tank",
+            "key_name": "empty-fluid-tank",
+            "tier": 8,
+            "stack_size": 100
         },
         {
             "name": "Nitrogen Gas",
@@ -823,87 +829,81 @@
             "stack_size": 50
         },
         {
-            "name": "Nuclear Pasta",
-            "key_name": "nuclear-pasta",
-            "tier": 8,
-            "stack_size": 50
-        },
-        {
             "name": "FICSMAS Gift",
             "key_name": "ficsmas-gift",
-            "tier": 0,
+            "tier": 99,
             "stack_size": 500
         },
         {
             "name": "FICSMAS Tree Branch",
             "key_name": "ficsmas-tree-branch",
-            "tier": 0,
+            "tier": 99,
             "stack_size": 500
         },
         {
             "name": "Candy Cane",
             "key_name": "candy-cane",
-            "tier": 0,
+            "tier": 99,
             "stack_size": 500
         },
         {
             "name": "FICSMAS Bow",
             "key_name": "ficsmas-bow",
-            "tier": 0,
+            "tier": 99,
             "stack_size": 500
         },
         {
             "name": "Red FICSMAS Ornament",
             "key_name": "red-ficsmas-ornament",
-            "tier": 0,
+            "tier": 99,
             "stack_size": 500
         },
         {
             "name": "Blue FICSMAS Ornament",
             "key_name": "blue-ficsmas-ornament",
-            "tier": 0,
+            "tier": 99,
             "stack_size": 500
         },
         {
             "name": "Copper FICSMAS Ornament",
             "key_name": "copper-ficsmas-ornament",
-            "tier": 0,
+            "tier": 99,
             "stack_size": 200
         },
         {
             "name": "Iron FICSMAS Ornament",
             "key_name": "iron-ficsmas-ornament",
-            "tier": 0,
+            "tier": 99,
             "stack_size": 200
         },
         {
             "name": "Actual Snow",
             "key_name": "actual-snow",
-            "tier": 0,
+            "tier": 99,
             "stack_size": 500
         },
         {
             "name": "FICSMAS Ornament Bundle",
             "key_name": "ficsmas-ornament-bundle",
-            "tier": 0,
+            "tier": 99,
             "stack_size": 100
         },
         {
             "name": "FICSMAS Decoration",
             "key_name": "ficsmas-decoration",
-            "tier": 0,
+            "tier": 99,
             "stack_size": 100
         },
         {
             "name": "FICSMAS Wonder Star",
             "key_name": "ficsmas-wonder-star",
-            "tier": 0,
+            "tier": 99,
             "stack_size": 50
         },
         {
             "name": "Snowball",
             "key_name": "snowball",
-            "tier": 0,
+            "tier": 99,
             "stack_size": 500
         }
     ],

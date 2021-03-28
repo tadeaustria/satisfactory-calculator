@@ -240,6 +240,13 @@ export class Rational {
     }
 }
 
+export function minimum(one, two){
+    if(one.less(two)){
+        return one
+    }
+    return two
+}
+
 // Decimal approximations.
 var _one_third = new Rational(bigInt(33333), bigInt(100000))
 var _two_thirds = new Rational(bigInt(33333), bigInt(50000))

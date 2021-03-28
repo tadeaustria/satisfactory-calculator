@@ -21,7 +21,7 @@ export class Ingredient {
 }
 
 class Recipe {
-    constructor(key, name, category, time, ingredients, product, maximumPower, averagePower) {
+    constructor(key, name, category, time, ingredients, product, byproduct, maximumPower, averagePower) {
     // constructor(key, name, category, time, ingredients, product) {
         this.key = key
         this.name = name
@@ -33,7 +33,7 @@ class Recipe {
         }
         this.product = product
         product.item.addRecipe(this)
-		// this.byproduct = byproduct
+		this.byproduct = byproduct
         this.maximumPower = maximumPower
         this.averagePower = averagePower
 		// byproduct.item.addByproduct(this)
@@ -44,12 +44,15 @@ class Recipe {
         }
         return null
     }
-    //byproduct(item) {
-    //    if (this.byproduct.item === item) {
-    //        return this.byproduct.amount
-    //    }
-    //    return null
-    //}
+    getByproduct(){
+        return this.byproduct
+    }
+    byproduct(item) {
+       if (this.byproduct.item === item) {
+           return this.byproduct.amount
+       }
+       return null
+    }
     iconPath() {
         return this.product.item.iconPath()
     }
@@ -62,7 +65,10 @@ function makeRecipe(data, items, d) {
     let item = items.get(item_key)
 	let byproduct_item = items.get(byproduct_key)
     let product = new Ingredient(item, Rational.from_float(amount))
-	let byproduct = new Ingredient(byproduct_item, Rational.from_float(byproduct_amount))
+	let byproduct = null
+    if (byproduct_amount != 999){
+        byproduct = new Ingredient(byproduct_item, Rational.from_float(byproduct_amount))
+    }
     let maximumPower = null
     if (d.maxpower != undefined){
         maximumPower = Rational.from_float(d.maxpower)
@@ -80,14 +86,14 @@ function makeRecipe(data, items, d) {
             ingredients.push(new Ingredient(item, Rational.from_float(amount)))
         }
     }
-//    return new Recipe(d.key_name, d.name, d.category, time, ingredients, product, byproduct, maximumPower, averagePower)
-    return new Recipe(d.key_name, d.name, d.category, time, ingredients, product, maximumPower, averagePower)
+    return new Recipe(d.key_name, d.name, d.category, time, ingredients, product, byproduct, maximumPower, averagePower)
+    // return new Recipe(d.key_name, d.name, d.category, time, ingredients, product, maximumPower, averagePower)
 }
 
 class ResourceRecipe extends Recipe {
     constructor(item, category) {
-        //super(item.key, item.name, category, zero, [], new Ingredient(item, one), new Ingredient(item, one))
-        super(item.key, item.name, category, zero, [], new Ingredient(item, one))
+        super(item.key, item.name, category, zero, [], new Ingredient(item, one), null)
+        // super(item.key, item.name, category, zero, [], new Ingredient(item, one))
     }
 }
 

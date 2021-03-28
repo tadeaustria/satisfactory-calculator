@@ -23,6 +23,9 @@ const nodePadding = 20
 const columnWidth = 150
 const maxNodeHeight = 175
 
+const OUTPUT_NODE_NAME = "output"
+const OUTPUT_BYPRODUCT_NODE_NAME = "byproducts"
+
 function makeGraph(totals, targets, ignore) {
     let outputs = []
     let rates = new Map()
@@ -39,21 +42,32 @@ function makeGraph(totals, targets, ignore) {
         outputs.push(ing)
     }
     let nodes = [{
-        "name": "output",
+        "name": OUTPUT_NODE_NAME,
         "ingredients": outputs,
+        "recipe": null,
+        "building": null,
+        "count": zero,
+        "rate": null,
+        "ignore": false,
+    },{
+        "name": OUTPUT_BYPRODUCT_NODE_NAME,
+        "ingredients": [],
+        "recipe": null,
         "building": null,
         "count": zero,
         "rate": null,
         "ignore": false,
     }]
     let nodeMap = new Map()
-    nodeMap.set("output", nodes[0])
+    for(let node of nodes){
+        nodeMap.set(node.name, node)
+    }
 
     for (let [recipe, rate] of totals.rates) {
         let building = spec.getBuilding(recipe)
         let count = spec.getCount(recipe, rate)
         let node = {
-            "name": recipe.name,
+            "name": recipe.product.item.name,
             "ingredients": recipe.ingredients,
             "recipe": recipe,
             "building": building,
@@ -70,9 +84,68 @@ function makeGraph(totals, targets, ignore) {
         if (node.ignore) {
             continue
         }
+
+        if (node.recipe && node.recipe.getByproduct() != null){
+            let leftoverByproductRate = totals.byproductratesFull.get(node.recipe.getByproduct().item)
+            let byproductUse = totals.byproductUsages.get(node.recipe)
+            if (byproductUse != undefined){
+                // for(let byproductUse of totals.byproductUsages.get(node.recipe)){
+                let byproductRate = byproductUse[1]
+                let link = {
+                    "source": node,
+                    "target": nodeMap.get(byproductUse[0].name),
+                    "value": byproductRate.toFloat(),
+                    "rate": byproductRate,
+                    "itemname": node.recipe.getByproduct().item.name
+                }
+                let belts = []
+                let beltCountExact = 1
+                if(node.recipe.getByproduct().item.isFluid()){
+                    beltCountExact = spec.getPipeCount(byproductRate)
+                }else{
+                    beltCountExact = spec.getBeltCount(byproductRate)
+                }
+                let beltCount = beltCountExact.toFloat()
+                for (let j = one; j.less(beltCountExact); j = j.add(one)) {
+                    let i = j.toFloat()
+                    belts.push({link, i, beltCount})
+                }
+                link.belts = belts
+                // omit circular links for now
+                if(link.source != link.target){
+                    links.push(link)
+                    leftoverByproductRate = leftoverByproductRate.sub(byproductRate)
+                }
+                // }
+            }
+            if(!leftoverByproductRate.isZero()){
+                let link = {
+                    "source": node,
+                    "target": nodeMap.get(OUTPUT_BYPRODUCT_NODE_NAME),
+                    "value": leftoverByproductRate.toFloat(),
+                    "rate": leftoverByproductRate,
+                    "itemname": node.recipe.getByproduct().item.name
+                }
+                let belts = []
+                let beltCountExact = 1
+                if(node.recipe.getByproduct().item.isFluid()){
+                    beltCountExact = spec.getPipeCount(leftoverByproductRate)
+                }else{
+                    beltCountExact = spec.getBeltCount(leftoverByproductRate)
+                }
+                let beltCount = beltCountExact.toFloat()
+                for (let j = one; j.less(beltCountExact); j = j.add(one)) {
+                    let i = j.toFloat()
+                    belts.push({link, i, beltCount})
+                }
+                link.belts = belts
+                links.push(link)
+            }
+        }
+
         for (let ing of node.ingredients) {
             let rate
-            if (node.name == "output") {
+            if (node.name == OUTPUT_NODE_NAME || node.name == OUTPUT_BYPRODUCT_NODE_NAME) {
                 rate = ing.amount
             } else {
                 rate = totals.rates.get(node.recipe).mul(ing.amount)
@@ -84,6 +157,7 @@ function makeGraph(totals, targets, ignore) {
                         "target": node,
                         "value": rate.toFloat(),
                         "rate": rate,
+                        "itemname": ing.item.name
                     }
                     let belts = []
                     let beltCountExact = 1
@@ -255,7 +329,7 @@ export function renderTotals(totals, targets, ignore) {
         .attr("height", d => d.y1 - d.y0)
         .attr("width", d => d.x1 - d.x0)
         .attr("fill", d => d3.color(color(d.name)).darker())
-    rects.filter(d => d.name != "output")
+    rects.filter(d => d.name != OUTPUT_NODE_NAME && d.name != OUTPUT_BYPRODUCT_NODE_NAME && d.recipe.byproduct == null)
         .append("image")
             .classed("ignore", d => ignore.has(d.recipe))
             .attr("x", d => d.x0 + 2)
@@ -263,6 +337,23 @@ export function renderTotals(totals, targets, ignore) {
             .attr("height", iconSize)
             .attr("width", iconSize)
             .attr("xlink:href", d => d.recipe.iconPath())
+
+    rects.filter(d => d.name != OUTPUT_NODE_NAME && d.name != OUTPUT_BYPRODUCT_NODE_NAME && d.recipe.byproduct != null)
+        .append("image")
+            .classed("ignore", d => ignore.has(d.recipe))
+            .attr("x", d => d.x0 + 2)
+            .attr("y", d => d.y0 + (d.y1 - d.y0) / 2 - iconSize)
+            .attr("height", iconSize)
+            .attr("width", iconSize)
+            .attr("xlink:href", d => d.recipe.iconPath())
+    rects.filter(d => d.name != OUTPUT_NODE_NAME && d.name != OUTPUT_BYPRODUCT_NODE_NAME && d.recipe.byproduct != null)
+        .append("image")
+            .classed("ignore", d => ignore.has(d.recipe))
+            .attr("x", d => d.x0 + 2)
+            .attr("y", d => d.y0 + (d.y1 - d.y0) / 2)
+            .attr("height", iconSize)
+            .attr("width", iconSize)
+            .attr("xlink:href", d => d.recipe.byproduct.item.iconPath())
 
     // For nodes without an associated machine, display the rate on a single line:
     rects.filter(d => d.count.isZero())
@@ -272,6 +363,15 @@ export function renderTotals(totals, targets, ignore) {
             .attr("dy", "0.35em")
             .attr("text-anchor", "start")
             .text(getRateString)
+
+    rects.filter(d => d.name == OUTPUT_NODE_NAME || d.name == OUTPUT_BYPRODUCT_NODE_NAME)
+    .append("text")
+        .classed("ignore", d => ignore.has(d.recipe))
+        .attr("x", d => d.x0 + 2)
+        .attr("y", d => d.y0 + (d.y1 - d.y0) / 2)
+        .attr("dy", "0.5em")
+        .attr("text-anchor", "start")
+        .text(d => d.name)
 
     // For nodes with an associated machine, display the machine count on one
     // line, and the overclock rate on the next line:
@@ -294,12 +394,12 @@ export function renderTotals(totals, targets, ignore) {
         .selectAll("g")
         .data(links)
         .join("g")
-            //.style("mix-blend-mode", "multiply")
+        .style("mix-blend-mode", "multiply")
     link.append("path")
         .attr("fill", "none")
         .attr("stroke-opacity", 0.3)
         .attr("d", d3.sankeyLinkHorizontal())
-        .attr("stroke", d => color(d.source.name))
+        .attr("stroke", d => color(d.itemname))
         .attr("stroke-width", d => Math.max(1, d.width))
     // Don't draw belts if we have less than three pixels per belt.
     if (beltDensity >= 3) {
@@ -310,7 +410,7 @@ export function renderTotals(totals, targets, ignore) {
                 .attr("fill", "none")
                 .attr("stroke-opacity", 0.3)
                 .attr("d", beltPath)
-                .attr("stroke", d => color(d.link.source.name))
+                .attr("stroke", d => color(d.link.itemname))
                 .attr("stroke-width", 1)
     }
     link.append("title")

@@ -11,6 +11,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.*/
+import { minimum } from "./rational.js"
 import { Totals } from "./totals.js"
 
 export class Item {
@@ -42,15 +43,28 @@ export class Item {
         let recipe = spec.getRecipe(this)
         let gives = recipe.gives(this)
         //let byproduct = recipe.byproduct(this)
-        rate = rate.div(gives)
-        totals.add(recipe, rate)
+        let productrate = rate.div(gives)
+        totals.add(recipe, productrate)
         totals.updateHeight(recipe, 0)
         if (ignore.has(recipe)) {
             return totals
         }
+        if (recipe.byproduct != null){
+            totals.addByproduct(recipe, rate.div(recipe.byproduct.amount))
+        }
         for (let ing of recipe.ingredients) {
-            let subtotals = ing.item.produce(spec, rate.mul(ing.amount), ignore)
-            totals.combine(subtotals)
+            let requiredRate = productrate.mul(ing.amount)
+            if(totals.byproductrates.has(ing.item)){
+                // find maximum value that the byproduct can provide
+                let minimal = minimum(totals.byproductrates.get(ing.item), requiredRate)
+                totals.addByproductUse(recipe, ing.item, minimal)
+                // Look if there is still rate unsatisfied
+                requiredRate = requiredRate.sub(minimal)
+            }
+            if(!requiredRate.isZero()){
+                let subtotals = ing.item.produce(spec, requiredRate, ignore)
+                totals.combine(subtotals)
+            }
         }
         return totals
     }

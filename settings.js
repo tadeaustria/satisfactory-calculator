@@ -278,9 +278,19 @@ function renderAltRecipes(settings) {
 
     let productSpan = recipeLabel.append("span")
         .selectAll("span")
-        .data(d => [d.product])
+        .data(d => { 
+            if (d.byproduct != null){
+                return [d.product, d.byproduct]
+            }
+            return [d.product]
+        })
         .join("span")
     renderIngredient(productSpan)
+    // let byproductSpan = recipeLabel.append("span")
+    //     .selectAll("span")
+    //     .data(d => [d.byproduct])
+    //     .join("span")
+    // renderIngredient(byproductSpan)
     recipeLabel.append("span")
         .classed("arrow", true)
         .text("\u21d0")

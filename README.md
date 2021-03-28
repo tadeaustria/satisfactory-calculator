@@ -24,6 +24,8 @@ Receipts for update 3 with FICSMAS holiday special are included.
 * Multiple products are not yet supported
 * Only one receipt per product can be selected, no mixture is possible
 
+Feel free to create issues if you have any problems.
+
 ## Acknowledgment
 
 This implementation is based on the [factorio-calculator](https://github.com/KirkMcDonald/kirkmcdonald.github.io) by KirkMcDonald.<br>

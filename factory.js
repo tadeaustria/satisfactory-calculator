@@ -32,6 +32,7 @@ export let resourcePurities = [
 export let DEFAULT_PURITY = resourcePurities[1]
 
 export let DEFAULT_BELT = "belt1"
+export let DEFAULT_PIPE = "pipe1"
 
 class FactorySpecification {
     constructor() {
@@ -42,6 +43,7 @@ class FactorySpecification {
         this.recipes = null
         this.buildings = null
         this.belts = null
+        this.pipes = null
 
         this.itemTiers = []
 
@@ -63,7 +65,7 @@ class FactorySpecification {
 
         this.format = new Formatter()
     }
-    setData(datafile, items, recipes, buildings, belts) {
+    setData(datafile, items, recipes, buildings, belts, pipes) {
         this.datafile = datafile
         this.items = items
         let tierMap = new Map()
@@ -95,6 +97,8 @@ class FactorySpecification {
         }
         this.belts = belts
         this.belt = belts.get(DEFAULT_BELT)
+        this.pipes = pipes
+        this.pipe = pipes.get(DEFAULT_PIPE)
         this.initMinerSettings()
     }
     initMinerSettings() {
@@ -172,6 +176,9 @@ class FactorySpecification {
     }
     getBeltCount(rate) {
         return rate.div(this.belt.rate)
+    }
+    getPipeCount(rate) {
+        return rate.div(this.pipe.rate)
     }
     getPowerUsage(recipe, rate, itemCount) {
         let building = this.getBuilding(recipe)

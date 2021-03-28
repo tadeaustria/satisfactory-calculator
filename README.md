@@ -23,7 +23,6 @@ Receipts for update 3 with FICSMAS holiday special are included.
 
 * Multiple products are not yet supported
 * Only one receipt per product can be selected, no mixture is possible
-* Fluids transport is using belts instead of pipes
 
 ## Acknowledgment
 

@@ -12,6 +12,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.*/
 import { getBelts } from "./belt.js"
+import { getPipes } from "./pipe.js"
 import { getBuildings } from "./building.js"
 import { spec } from "./factory.js"
 import { loadSettings } from "./fragment.js"
@@ -27,7 +28,8 @@ export function loadData(settings, datafile) {
         let recipes = getRecipes(data, items)
         let buildings = getBuildings(data)
         let belts = getBelts(data)
-        spec.setData(datafile, items, recipes, buildings, belts)
+        let pipes = getPipes(data)
+        spec.setData(datafile, items, recipes, buildings, belts, pipes)
 
         renderSettings(settings)
 

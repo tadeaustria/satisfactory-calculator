@@ -14,7 +14,7 @@ limitations under the License.*/
 import { DEFAULT_RATE, DEFAULT_RATE_PRECISION, DEFAULT_COUNT_PRECISION, longRateNames } from "./align.js"
 import { dropdown } from "./dropdown.js"
 import { DEFAULT_TAB, clickTab } from "./events.js"
-import { spec, resourcePurities, DEFAULT_BELT } from "./factory.js"
+import { spec, resourcePurities, DEFAULT_BELT, DEFAULT_PIPE } from "./factory.js"
 import { Rational } from "./rational.js"
 
 // There are several things going on with this control flow. Settings should
@@ -177,6 +177,46 @@ function renderBelts(settings) {
         .on("change", beltHandler)
     beltOption.append("label")
         .attr("for", d => "belt." + d.key)
+        .append("img")
+            .classed("icon", true)
+            .attr("src", d => d.iconPath())
+            .attr("width", 32)
+            .attr("height", 32)
+            .attr("title", d => d.name)
+}
+
+// pipe
+
+function pipeHandler(pipe) {
+    spec.pipe = pipe
+    spec.updateSolution()
+}
+
+function renderPipes(settings) {
+    let pipeKey = DEFAULT_PIPE
+    if (settings.has("pipe")) {
+        pipeKey = settings.get("pipe")
+    }
+    spec.pipe = spec.pipes.get(pipeKey)
+
+    let pipes = []
+    for (let [pipeKey, pipe] of spec.pipes) {
+        pipes.push(pipe)
+    }
+    let form = d3.select("#pipe_selector")
+    form.selectAll("*").remove()
+    let pipeOption = form.selectAll("span")
+        .data(pipes)
+        .join("span")
+    pipeOption.append("input")
+        .attr("id", d => "pipe." + d.key)
+        .attr("type", "radio")
+        .attr("name", "pipe")
+        .attr("value", d => d.key)
+        .attr("checked", d => d === spec.pipe ? "" : null)
+        .on("change", pipeHandler)
+    pipeOption.append("label")
+        .attr("for", d => "pipe." + d.key)
         .append("img")
             .classed("icon", true)
             .attr("src", d => d.iconPath())
@@ -353,6 +393,7 @@ export function renderSettings(settings) {
     renderRateOptions(settings)
     renderPrecisions(settings)
     renderBelts(settings)
+    renderPipes(settings)
     renderAltRecipes(settings)
     renderResources(settings)
     renderTab(settings)

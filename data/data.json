@@ -26,6 +26,18 @@
             "rate": 780
         }
     ],
+    "pipes": [
+        {
+            "name": "Pipeline Mk.1",
+            "key_name": "pipe1",
+            "rate": 300
+        },
+        {
+            "name": "Pipeline Mk.2",
+            "key_name": "pipe2",
+            "rate": 600
+        }
+    ],
     "buildings": [
         {
             "name": "Constructor",
@@ -348,13 +360,13 @@
             "name": "Crude Oil",
             "key_name": "crude-oil",
             "tier": 5,
-            "stack_size": 50
+            "stack_size": -1
         },
 		{
             "name": "Heavy Oil Residue",
             "key_name": "heavy-oil-residue",
             "tier": 5,
-            "stack_size": 50
+            "stack_size": -1
         },
 		{
             "name": "Polymer Resin",
@@ -366,13 +378,13 @@
             "name": "Fuel",
             "key_name": "fuel",
             "tier": 5,
-            "stack_size": 100
+            "stack_size": -1
         },
 		{
             "name": "Liquid Biofuel",
             "key_name": "liquid-biofuel",
             "tier": 5,
-            "stack_size": 100
+            "stack_size": -1
         },
         {
             "name": "Rubber",
@@ -432,7 +444,7 @@
             "name": "Water",
             "key_name": "water",
             "tier": 2,
-            "stack_size": 50
+            "stack_size": -1
         },
         {
             "name": "Heavy Modular Frame",
@@ -564,7 +576,7 @@
             "name": "Turbofuel",
             "key_name": "turbofuel",
             "tier": 6,
-            "stack_size": 50
+            "stack_size": -1
         },
         {
             "name": "Silica",
@@ -582,7 +594,7 @@
             "name": "Alumina Solution",
             "key_name": "alumina-solution",
             "tier": 7,
-            "stack_size": 50
+            "stack_size": -1
         },
 		{
             "name": "Aluminum Scrap",
@@ -636,7 +648,7 @@
             "name": "Sulfuric Acid",
             "key_name": "sulfuric-acid",
             "tier": 7,
-            "stack_size": 50
+            "stack_size": -1
         },
         {
             "name": "Uranium Pellet",

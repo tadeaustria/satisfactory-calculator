@@ -14,12 +14,13 @@ limitations under the License.*/
 import { Totals } from "./totals.js"
 
 export class Item {
-    constructor(key, name, tier) {
+    constructor(key, name, tier, stack_size) {
         this.key = key
         this.name = name
         this.tier = tier
         this.recipes = []
         this.uses = []
+        this.stack_size = stack_size
 		//this.byproduct = []
     }
     addRecipe(recipe) {
@@ -31,6 +32,11 @@ export class Item {
     addUse(recipe) {
         this.uses.push(recipe)
     }
+
+    isFluid(){
+        return this.stack_size == -1
+    }
+
     produce(spec, rate, ignore) {
         let totals = new Totals()
         let recipe = spec.getRecipe(this)
@@ -56,7 +62,7 @@ export class Item {
 export function getItems(data) {
     let items = new Map()
     for (let d of data.items) {
-        items.set(d.key_name, new Item(d.key_name, d.name, d.tier))
+        items.set(d.key_name, new Item(d.key_name, d.name, d.tier, d.stack_size))
     }
     return items
 }

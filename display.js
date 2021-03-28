@@ -76,7 +76,7 @@ export function displayItems(spec, totals, ignore) {
 
     let headers = [
         new Header("items/" + spec.format.rateName, 2),
-        new Header("belts", 2),
+        new Header("belts/pipes", 2),
         new Header("buildings", 2),
         new Header("overclock", powerShardsUsed ? 3 : 1),
         new Header("power", 1),
@@ -170,10 +170,25 @@ export function displayItems(spec, totals, ignore) {
     row.selectAll("tt.item-rate")
         .text(d => spec.format.alignRate(d.itemRate))
     row.selectAll("img.belt-icon")
-        .attr("src", spec.belt.iconPath())
-        .attr("title", spec.belt.name)
+        .attr("src", d => { if (d.item.isFluid()){
+            return spec.pipe.iconPath()
+        }else{
+            return spec.belt.iconPath()
+        } } )
+        .attr("title", d => { if (d.item.isFluid()){
+            return spec.pipe.name
+        }else{
+            return spec.belt.name
+        } })
     row.selectAll("tt.belt-count")
-        .text(d => spec.format.alignCount(spec.getBeltCount(d.itemRate)))
+        .text(d => { 
+        let value = 0
+        if (d.item.isFluid()){
+            value = spec.getPipeCount(d.itemRate)
+        }else{
+            value = spec.getBeltCount(d.itemRate)
+        }
+        return spec.format.alignCount(value) } )
     let buildingRow = row.filter(d => d.building !== null)
     buildingRow.selectAll("img.building-icon")
         .attr("src", d => d.building.iconPath())

@@ -86,7 +86,12 @@ function makeGraph(totals, targets, ignore) {
                         "rate": rate,
                     }
                     let belts = []
-                    let beltCountExact = spec.getBeltCount(rate)
+                    let beltCountExact = 1
+                    if(ing.item.isFluid()){
+                        beltCountExact = spec.getPipeCount(rate)
+                    }else{
+                        beltCountExact = spec.getBeltCount(rate)
+                    }
                     let beltCount = beltCountExact.toFloat()
                     for (let j = one; j.less(beltCountExact); j = j.add(one)) {
                         let i = j.toFloat()

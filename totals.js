@@ -17,10 +17,10 @@ export class Totals {
     constructor() {
         this.rates = new Map()
         this.heights = new Map()
-        this.topo = []
+        this.topo = new Set()
     }
     add(recipe, rate) {
-        this.topo.push(recipe)
+        this.topo.add(recipe)
         this.rates.set(recipe, (this.rates.get(recipe) || zero).add(rate))
     }
     updateHeight(recipe, height) {
@@ -30,17 +30,9 @@ export class Totals {
         }
     }
     combine(other) {
-        let newTopo = []
-        for (let recipe of this.topo) {
-            if (!other.rates.has(recipe)) {
-                newTopo.push(recipe)
-            }
-        }
-        newTopo = newTopo.concat(other.topo)
         for (let [recipe, rate] of other.rates) {
             this.add(recipe, rate)
         }
-        this.topo = newTopo
         for (let [recipe, height] of other.heights) {
             this.updateHeight(recipe, height + 1)
         }

@@ -1573,6 +1573,17 @@
             "byproduct": ["heavy-oil-residue", 2]
         },
         {
+            "name": "Alternate: Heavy Oil Residue",
+            "key_name": "alt-heavy-oil-residue",
+            "category": "refining",
+            "time": 6,
+            "ingredients": [
+                ["crude-oil", 3]
+            ],
+            "product": ["heavy-oil-residue", 4],
+            "byproduct": ["polymer-resin", 2]
+        },
+        {
             "name": "Plastic",
             "key_name": "plastic",
             "category": "refining",
@@ -1807,17 +1818,17 @@
             "byproduct": ["copper-ingot", 999]
         },
         {
-                "name": "Alternate: Recycled Rubber",
-                "key_name": "alt-recycled-rubber",
-                "category": "refining",
-                "time": 12,
-                "ingredients": [
-                    ["plastic", 6],
-                    ["fuel", 6]
-                ],
-                "product": ["rubber", 12],
-                "byproduct": ["copper-ingot", 999]
-            },
+            "name": "Alternate: Recycled Rubber",
+            "key_name": "alt-recycled-rubber",
+            "category": "refining",
+            "time": 12,
+            "ingredients": [
+                ["plastic", 6],
+                ["fuel", 6]
+            ],
+            "product": ["rubber", 12],
+            "byproduct": ["copper-ingot", 999]
+        },
 		{
             "name": "Petroleum Coke",
             "key_name": "petroleum-coke",

@@ -1733,6 +1733,17 @@
             "byproduct": ["heavy-oil-residue", 2]
         },
         {
+            "name": "Alternate: Heavy Oil Residue",
+            "key_name": "alt-heavy-oil-residue",
+            "category": "refining",
+            "time": 6,
+            "ingredients": [
+                ["crude-oil", 3]
+            ],
+            "product": ["heavy-oil-residue", 4],
+            "byproduct": ["polymer-resin", 2]
+        },
+        {
             "name": "Plastic",
             "key_name": "plastic",
             "category": "refining",
@@ -1790,6 +1801,29 @@
             "product": ["fuel", 4],
             "byproduct": ["polymer-resin", 3]
         },
+		{
+            "name": "Residual Fuel",
+            "key_name": "alt-residual-fuel",
+            "category": "refining",
+            "time": 6,
+            "ingredients": [
+                ["heavy-oil-residue", 6]
+            ],
+            "product": ["fuel", 4],
+            "byproduct": ["copper-ingot", 999]
+        },
+		{
+            "name": "Diluted Fuel",
+            "key_name": "alt-diluted-fuel",
+            "category": "blending",
+            "time": 6,
+            "ingredients": [
+                ["heavy-oil-residue", 5],
+                ["water", 10]
+            ],
+            "product": ["fuel", 10],
+            "byproduct": ["copper-ingot", 999]
+        },
         {
             "name": "Turbofuel",
             "key_name": "turbofuel",
@@ -1812,6 +1846,20 @@
                 ["compacted-coal", 4]
             ],
             "product": ["turbofuel", 4],
+            "byproduct": ["copper-ingot", 999]
+        },
+        {
+            "name": "Alternate: Turbo Blend Fuel",
+            "key_name": "alt-turbo-blend-fuel",
+            "category": "blending",
+            "time": 8,
+            "ingredients": [
+                ["fuel", 2],
+                ["heavy-oil-residue", 4],
+                ["sulfur", 3],
+                ["petroleum-coke", 3]
+            ],
+            "product": ["turbofuel", 6],
             "byproduct": ["copper-ingot", 999]
         },
 		{
@@ -1909,17 +1957,6 @@
             "byproduct": ["copper-ingot", 999]
         },
 		{
-            "name": "Residual Fuel",
-            "key_name": "fuel",
-            "category": "refining",
-            "time": 6,
-            "ingredients": [
-                ["heavy-oil-residue", 6]
-            ],
-            "product": ["fuel", 4],
-            "byproduct": ["copper-ingot", 999]
-        },
-		{
             "name": "Packaged Turbofuel",
             "key_name": "packaged-turbofuel",
             "category": "packaging",
@@ -1967,17 +2004,17 @@
             "byproduct": ["copper-ingot", 999]
         },
         {
-                "name": "Alternate: Recycled Rubber",
-                "key_name": "alt-recycled-rubber",
-                "category": "refining",
-                "time": 12,
-                "ingredients": [
-                    ["plastic", 6],
-                    ["fuel", 6]
-                ],
-                "product": ["rubber", 12],
-                "byproduct": ["copper-ingot", 999]
-            },
+            "name": "Alternate: Recycled Rubber",
+            "key_name": "alt-recycled-rubber",
+            "category": "refining",
+            "time": 12,
+            "ingredients": [
+                ["plastic", 6],
+                ["fuel", 6]
+            ],
+            "product": ["rubber", 12],
+            "byproduct": ["copper-ingot", 999]
+        },
 		{
             "name": "Petroleum Coke",
             "key_name": "petroleum-coke",

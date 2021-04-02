@@ -703,12 +703,6 @@
             "stack_size": 50
         },
         {
-            "name": "Uranium Pellet",
-            "key_name": "uranium-pellet",
-            "tier": 8,
-            "stack_size": 200
-        },
-        {
             "name": "Uranium Cell",
             "key_name": "uranium-cell",
             "tier": 8,
@@ -2512,13 +2506,27 @@
             "name": "Alternate: Electrode-Aluminum Scrap",
             "key_name": "alt-aluminum-scrap",
             "category": "refining",
-            "time": 2,
+            "time": 4,
             "ingredients": [
-                ["alumina-solution", 3],
-                ["coal", 1]
+                ["alumina-solution", 12],
+                ["petroleum-coke", 4]
             ],
-            "product": ["aluminum-scrap", 8],
-            "byproduct": ["water", 2]
+            "product": ["aluminum-scrap", 20],
+            "byproduct": ["water", 7]
+        },
+		{
+            "name": "Alternate: Instant Scrap",
+            "key_name": "alt-instant-scrap",
+            "category": "blending",
+            "time": 6,
+            "ingredients": [
+                ["bauxite", 15],
+                ["coal", 10],
+                ["sulfuric-acid", 5],
+                ["water", 6]
+            ],
+            "product": ["aluminum-scrap", 30],
+            "byproduct": ["water", 5]
         },
         {
             "name": "Aluminum Ingot",
@@ -2536,11 +2544,11 @@
             "name": "Alternate: Pure Aluminum Ingot",
             "key_name": "alt-aluminum-ingot",
             "category": "smelting1",
-            "time": 20,
+            "time": 2,
             "ingredients": [
-                ["aluminum-scrap", 18]
+                ["aluminum-scrap", 2]
                ],
-            "product": ["aluminum-ingot", 9],
+            "product": ["aluminum-ingot", 1],
             "byproduct": ["copper-ingot", 999]
         },
         {
@@ -2559,24 +2567,24 @@
             "name": "Heat Sink",
             "key_name": "heat-sink",
             "category": "crafting2",
-            "time": 12,
+            "time": 8,
             "ingredients": [
-                ["alclad-aluminum-sheet", 8],
-                ["copper-sheet", 9]
+                ["alclad-aluminum-sheet", 5],
+                ["copper-sheet", 3]
             ],
-            "product": ["heat-sink", 2],
+            "product": ["heat-sink", 1],
             "byproduct": ["copper-ingot", 999]
         },
         {
             "name": "Alternate: Heat Exchanger",
             "key_name": "alt-heat-sink",
             "category": "crafting2",
-            "time": 12,
+            "time": 6,
             "ingredients": [
                 ["aluminum-casing", 3],
-                ["rubber", 4]
+                ["rubber", 3]
             ],
-            "product": ["heat-sink", 2],
+            "product": ["heat-sink", 1],
             "byproduct": ["copper-ingot", 999]
         },
         {
@@ -2585,7 +2593,7 @@
             "category": "crafting3",
             "time": 48,
             "ingredients": [
-                ["aluminum-casing", 24],
+                ["aluminum-casing", 32],
                 ["crystal-oscillator", 1],
                 ["computer", 1]
             ],
@@ -2600,7 +2608,7 @@
             "ingredients": [
                 ["crystal-oscillator", 1],
                 ["circuit-board", 10],
-                ["aluminum-casing", 45],
+                ["aluminum-casing", 60],
                 ["rubber", 30]
             ],
             "product": ["radio-control-unit", 3],
@@ -2634,15 +2642,15 @@
             "byproduct": ["copper-ingot", 999]
         },
         {
-            "name": "Alternate: Turbo Rigour Motor",
+            "name": "Alternate: Turbo Electric Motor",
             "key_name": "alt-turbo-motor",
             "category": "crafting3",
             "time": 64,
             "ingredients": [
                 ["motor", 7],
-                ["radio-control-unit", 5],
-                ["em-control-rod", 7],
-                ["rotor", 9]
+                ["radio-control-unit", 9],
+                ["em-control-rod", 5],
+                ["rotor", 7]
             ],
             "product": ["turbo-motor", 3],
             "byproduct": ["copper-ingot", 999]
@@ -2651,14 +2659,14 @@
             "name": "Alternate: Turbo Pressure Motor",
             "key_name": "alt-turbo-pressure-motor",
             "category": "crafting3",
-            "time": 16,
+            "time": 32,
             "ingredients": [
-                ["motor", 2],
+                ["motor", 4],
                 ["pressure-conversion-cube", 1],
-                ["packaged-nitrogen-gas", 15],
-                ["stator", 6]
+                ["packaged-nitrogen-gas", 24],
+                ["stator", 8]
             ],
-            "product": ["turbo-motor", 1],
+            "product": ["turbo-motor", 2],
             "byproduct": ["copper-ingot", 999]
         },
         {
@@ -2724,18 +2732,6 @@
             "byproduct": ["empty-canister", 1]
         },
         {
-            "name": "Uranium Pellet",
-            "key_name": "uranium-pellet",
-            "category": "refining",
-            "time": 6,
-            "ingredients": [
-                ["uranium", 5],
-                ["sulfuric-acid", 8]
-            ],
-            "product": ["uranium-pellet", 5],
-            "byproduct": ["sulfuric-acid", 2]
-        },
-        {
             "name": "Uranium Cell",
             "key_name": "uranium-cell",
             "category": "blending",
@@ -2752,14 +2748,14 @@
             "name": "Alternate: Infused Uranium Cell",
             "key_name": "alt-uranium-cell",
             "category": "crafting3",
-            "time": 8,
+            "time": 12,
             "ingredients": [
-                ["uranium-pellet", 2],
+                ["uranium", 5],
                 ["silica", 3],
-                ["sulfur", 4],
-                ["quickwire", 5]
+                ["sulfur", 5],
+                ["quickwire", 15]
             ],
-            "product": ["uranium-cell", 3],
+            "product": ["uranium-cell", 4],
             "byproduct": ["copper-ingot", 999]
         },
         {
@@ -2832,9 +2828,9 @@
             "time": 12,
             "ingredients": [
                 ["nuclear-waste", 15],
-                ["nitric-acid", 3],
-                ["sulfuric-acid", 6],
-                ["silica", 5]
+                ["silica", 5],
+                ["nitric-acid", 6],
+                ["sulfuric-acid", 3]
             ],
             "product": ["non-fissile-uranium", 10],
             "byproduct": ["water", 3]
@@ -2847,11 +2843,11 @@
             "ingredients": [
                 ["uranium", 5],
                 ["nuclear-waste", 10],
-                ["nitric-acid", 15],
-                ["sulfuric-acid", 15]
+                ["nitric-acid", 8],
+                ["sulfuric-acid", 8]
             ],
             "product": ["non-fissile-uranium", 20],
-            "byproduct": ["copper-ingot", 999]
+            "byproduct": ["water", 8]
         },
         {
             "name": "Plutonium Pellets",
@@ -2869,10 +2865,10 @@
             "name": "Encased Plutonium Cell",
             "key_name": "plutonium-cell",
             "category": "crafting2",
-            "time": 6,
+            "time": 12,
             "ingredients": [
-                ["plutonium-pellets", 1],
-                ["concrete", 2]
+                ["plutonium-pellets", 2],
+                ["concrete", 4]
             ],
             "product": ["plutonium-cell", 1],
             "byproduct": ["copper-ingot", 999]
@@ -2881,25 +2877,25 @@
             "name": "Alternate: Instant Plutonium Cell",
             "key_name": "alt-plutonium-cell",
             "category": "particleacceleration",
-            "time": 60,
+            "time": 120,
             "ingredients": [
-                ["non-fissile-uranium", 75],
-                ["aluminum-casing", 25],
-                ["nitrogen-gas", 25]
+                ["non-fissile-uranium", 150],
+                ["aluminum-casing", 50],
+                ["nitrogen-gas", 20]
             ],
-            "product": ["plutonium-cell", 25],
+            "product": ["plutonium-cell", 20],
             "byproduct": ["copper-ingot", 999]
         },
         {
             "name": "Plutonium Fuel Rod",
             "key_name": "plutonium-fuel-rod",
             "category": "crafting3",
-            "time": 120,
+            "time": 240,
             "ingredients": [
-                ["plutonium-cell", 15],
-                ["steel-beam", 8],
-                ["em-control-rod", 3],
-                ["heat-sink", 5]
+                ["plutonium-cell", 30],
+                ["steel-beam", 18],
+                ["em-control-rod", 6],
+                ["heat-sink", 10]
             ],
             "product": ["plutonium-fuel-rod", 1],
             "byproduct": ["copper-ingot", 999]
@@ -2908,9 +2904,9 @@
             "name": "Alternate: Instant Plutonium Cell",
             "key_name": "alt-plutonium-fuel-rod",
             "category": "crafting2",
-            "time": 60,
+            "time": 120,
             "ingredients": [
-                ["plutonium-cell", 10],
+                ["plutonium-cell", 20],
                 ["pressure-conversion-cube", 1]
             ],
             "product": ["plutonium-fuel-rod", 1],
@@ -2920,12 +2916,12 @@
             "name": "Plutonium Waste",
             "key_name": "plutonium-waste",
             "category": "nuclearpowerplant",
-            "time": 300,
+            "time": 600,
             "ingredients": [
                 ["plutonium-fuel-rod", 1],
-                ["water", 1500]
+                ["water", 3000]
             ],
-            "product": ["plutonium-waste", 5],
+            "product": ["plutonium-waste", 10],
             "byproduct": ["copper-ingot", 999]
         },
         {
@@ -2976,12 +2972,12 @@
             "byproduct": ["copper-ingot", 999]
         },
         {
-            "name": "Alternate: Aluminum Casing",
+            "name": "Alternate: Alcclad Casing",
             "key_name": "alt-cluminum-casing",
             "category": "crafting2",
             "time": 8,
             "ingredients": [
-                ["aluminum-ingot", 15],
+                ["aluminum-ingot", 20],
                 ["copper-ingot", 10]
             ],
             "product": ["aluminum-casing", 15],
@@ -3018,7 +3014,7 @@
             "category": "blending",
             "time": 32,
             "ingredients": [
-                ["heat-sink", 2],
+                ["heat-sink", 5],
                 ["motor", 1],
                 ["nitrogen-gas", 24]
             ],

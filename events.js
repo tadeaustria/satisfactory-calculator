@@ -62,5 +62,6 @@ export function changeCountPrecision(event) {
 
 export function changeDataFile(event){
     let settings = loadSettings(window.location.hash)
-    loadData(settings, event.target.value)
+    settings.set("datafile", event.target.value)
+    loadData(settings)
 }

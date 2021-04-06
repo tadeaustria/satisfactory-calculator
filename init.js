@@ -22,7 +22,11 @@ import { renderSettings } from "./settings.js"
 
 export const DEFAULT_DATAFILE = "data/data.json"
 
-export function loadData(settings, datafile) {
+export function loadData(settings) {
+    let datafile = DEFAULT_DATAFILE;
+    if(settings.has("datafile")){
+        datafile=settings.get("datafile")
+    }
     d3.json(datafile).then(function(data) {
         let items = getItems(data)
         let recipes = getRecipes(data, items)

@@ -13,6 +13,8 @@ See the License for the specific language governing permissions and
 limitations under the License.*/
 import { Rational } from "./rational.js"
 
+export const CATEGORYPARTICLE = "particleacceleration"
+
 class Building {
     constructor(key, name, category, power, max) {
         this.key = key

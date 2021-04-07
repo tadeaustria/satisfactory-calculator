@@ -21,8 +21,8 @@ export class Ingredient {
 }
 
 class Recipe {
-    //constructor(key, name, category, time, ingredients, product, byproduct) {
-    constructor(key, name, category, time, ingredients, product) {
+    constructor(key, name, category, time, ingredients, product, maximumPower, averagePower) {
+    // constructor(key, name, category, time, ingredients, product) {
         this.key = key
         this.name = name
         this.category = category
@@ -33,8 +33,10 @@ class Recipe {
         }
         this.product = product
         product.item.addRecipe(this)
-		//this.byproduct = byproduct
-		//byproduct.item.addByproduct(this)
+		// this.byproduct = byproduct
+        this.maximumPower = maximumPower
+        this.averagePower = averagePower
+		// byproduct.item.addByproduct(this)
     }
     gives(item) {
         if (this.product.item === item) {
@@ -61,6 +63,14 @@ function makeRecipe(data, items, d) {
 	let byproduct_item = items.get(byproduct_key)
     let product = new Ingredient(item, Rational.from_float(amount))
 	let byproduct = new Ingredient(byproduct_item, Rational.from_float(byproduct_amount))
+    let maximumPower = null
+    if (d.maxpower != undefined){
+        maximumPower = Rational.from_float(d.maxpower)
+    }
+    let averagePower = null
+    if (d.avgpower != undefined){
+        averagePower = Rational.from_float(d.avgpower)
+    }
     let ingredients = []
     for (let [item_key, amount] of d.ingredients) {
         let item = items.get(item_key)
@@ -70,8 +80,8 @@ function makeRecipe(data, items, d) {
             ingredients.push(new Ingredient(item, Rational.from_float(amount)))
         }
     }
-//    return new Recipe(d.key_name, d.name, d.category, time, ingredients, product, byproduct)
-    return new Recipe(d.key_name, d.name, d.category, time, ingredients, product)
+//    return new Recipe(d.key_name, d.name, d.category, time, ingredients, product, byproduct, maximumPower, averagePower)
+    return new Recipe(d.key_name, d.name, d.category, time, ingredients, product, maximumPower, averagePower)
 }
 
 class ResourceRecipe extends Recipe {

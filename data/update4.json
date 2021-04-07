@@ -2859,7 +2859,9 @@
                 ["nuclear-waste", 50]
             ],
             "product": ["plutonium-pellets", 30],
-            "byproduct": ["copper-ingot", 999]
+            "byproduct": ["copper-ingot", 999],
+            "maxpower": 750,
+            "avgpower": 500
         },
         {
             "name": "Encased Plutonium Cell",
@@ -2884,7 +2886,9 @@
                 ["nitrogen-gas", 20]
             ],
             "product": ["plutonium-cell", 20],
-            "byproduct": ["copper-ingot", 999]
+            "byproduct": ["copper-ingot", 999],
+            "maxpower": 500,
+            "avgpower": 375
         },
         {
             "name": "Plutonium Fuel Rod",
@@ -3156,7 +3160,9 @@
                 ["pressure-conversion-cube", 1]
             ],
             "product":  ["nuclear-pasta", 1],
-            "byproduct": ["copper-ingot", 999]
+            "byproduct": ["copper-ingot", 999],
+            "maxpower": 1500,
+            "avgpower": 750
         },
         {
             "name": "FICSMAS Tree Branch",

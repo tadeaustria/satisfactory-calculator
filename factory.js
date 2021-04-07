@@ -18,6 +18,7 @@ import { Rational, zero, half, one } from "./rational.js"
 import { BuildTarget } from "./target.js"
 import { Totals } from "./totals.js"
 import { renderTotals } from "./visualize.js"
+import { CATEGORYPARTICLE } from "./building.js"
 
 const DEFAULT_ITEM_KEY = "supercomputer"
 
@@ -185,9 +186,18 @@ class FactorySpecification {
         if (building === null || this.ignore.has(recipe)) {
             return {average: zero, peak: zero}
         }
+        let average = building.power
+        let peak = building.power
+
+        // For particle accelerator the recipe determines the power usage
+        if (building.category == CATEGORYPARTICLE){
+            average = recipe.averagePower
+            peak = recipe.maximumPower
+        }
+
         let count = this.getCount(recipe, rate)
-        let average = building.power.mul(count)
-        let peak = building.power.mul(count.ceil())
+        average = average.mul(count)
+        peak = peak.mul(count.ceil())
         let overclock = this.overclock.get(recipe)
         if (overclock !== undefined) {
             // The result of this exponent will typically be irrational, so

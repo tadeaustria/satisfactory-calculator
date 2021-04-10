@@ -721,7 +721,7 @@
             "stack_size": 50
         },
         {
-            "name": "Nuclear Waste",
+            "name": "Uranium Waste",
             "key_name": "nuclear-waste",
             "tier": 8,
             "stack_size": 500
@@ -2810,7 +2810,7 @@
             "byproduct": ["copper-ingot", 999]
         },
         {
-            "name": "Nuclear Waste",
+            "name": "Uranium Waste",
             "key_name": "nuclear-waste",
             "category": "nuclearpowerplant",
             "time": 300,
@@ -2818,22 +2818,22 @@
                 ["nuclear-fuel-rod", 1],
                 ["water", 1500]
             ],
-            "product": ["nuclear-waste", 100],
+            "product": ["nuclear-waste", 50],
             "byproduct": ["copper-ingot", 999]
         },
         {
             "name": "Non-fissile Uranium",
             "key_name": "non-fissile-uranium",
             "category": "blending",
-            "time": 12,
+            "time": 24,
             "ingredients": [
                 ["nuclear-waste", 15],
-                ["silica", 5],
+                ["silica", 10],
                 ["nitric-acid", 6],
-                ["sulfuric-acid", 3]
+                ["sulfuric-acid", 6]
             ],
-            "product": ["non-fissile-uranium", 10],
-            "byproduct": ["water", 3]
+            "product": ["non-fissile-uranium", 20],
+            "byproduct": ["water", 6]
         },
         {
             "name": "Alternate: Fertile Uranium",
@@ -2842,9 +2842,9 @@
             "time": 12,
             "ingredients": [
                 ["uranium", 5],
-                ["nuclear-waste", 10],
-                ["nitric-acid", 8],
-                ["sulfuric-acid", 8]
+                ["nuclear-waste", 5],
+                ["nitric-acid", 3],
+                ["sulfuric-acid", 5]
             ],
             "product": ["non-fissile-uranium", 20],
             "byproduct": ["water", 8]
@@ -2856,7 +2856,7 @@
             "time": 60,
             "ingredients": [
                 ["non-fissile-uranium", 100],
-                ["nuclear-waste", 50]
+                ["nuclear-waste", 25]
             ],
             "product": ["plutonium-pellets", 30],
             "byproduct": ["copper-ingot", 999],
@@ -2882,8 +2882,7 @@
             "time": 120,
             "ingredients": [
                 ["non-fissile-uranium", 150],
-                ["aluminum-casing", 50],
-                ["nitrogen-gas", 20]
+                ["aluminum-casing", 20]
             ],
             "product": ["plutonium-cell", 20],
             "byproduct": ["copper-ingot", 999],

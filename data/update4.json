@@ -2705,7 +2705,7 @@
                 ["sulfur", 5],
                 ["water", 5]
             ],
-            "product": ["sulfuric-acid", 10],
+            "product": ["sulfuric-acid", 5],
             "byproduct": ["copper-ingot", 999]
         },
 		{

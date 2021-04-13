@@ -20,7 +20,7 @@ import { getItems } from "./item.js"
 import { getRecipes } from "./recipe.js"
 import { renderSettings } from "./settings.js"
 
-export const DEFAULT_DATAFILE = "data/data.json"
+export const DEFAULT_DATAFILE = "data/update4.json"
 
 export function loadData(settings) {
     let datafile = DEFAULT_DATAFILE;
@@ -43,5 +43,5 @@ export function loadData(settings) {
 
 export function init() {
     let settings = loadSettings(window.location.hash)
-    loadData(settings, DEFAULT_DATAFILE)
+    loadData(settings)
 }

@@ -17,7 +17,7 @@ Live version can be found here:
 
 ## Content
 
-Receipts for update 3 with FICSMAS holiday special are included.
+Receipts for update 4 with FICSMAS holiday special are included.
 
 ## Known issues
 

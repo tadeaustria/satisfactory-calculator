@@ -2497,7 +2497,7 @@
             "time": 1,
             "ingredients": [
                 ["alumina-solution", 4],
-                ["petroleum-coke", 2]
+                ["coal", 2]
             ],
             "product": ["aluminum-scrap", 6],
             "byproduct": ["water", 2]

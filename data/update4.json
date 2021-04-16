@@ -196,7 +196,7 @@
             "name": "Copper Sheet",
             "key_name": "copper-sheet",
             "tier": 2,
-            "stack_size": 100
+            "stack_size": 200
         },
 		{
             "name": "Iron Ore",
@@ -238,13 +238,13 @@
             "name": "Iron Plate",
             "key_name": "iron-plate",
             "tier": -1,
-            "stack_size": 100
+            "stack_size": 200
         },
         {
             "name": "Iron Rod",
             "key_name": "iron-rod",
             "tier": -1,
-            "stack_size": 100
+            "stack_size": 200
         },
         {
             "name": "Wire",
@@ -256,7 +256,7 @@
             "name": "Cable",
             "key_name": "cable",
             "tier": 0,
-            "stack_size": 100
+            "stack_size": 200
         },
         {
             "name": "Biomass",
@@ -268,7 +268,7 @@
             "name": "Concrete",
             "key_name": "concrete",
             "tier": 0,
-            "stack_size": 100
+            "stack_size": 500
         },
         {
             "name": "Leaves",
@@ -316,7 +316,7 @@
             "name": "Color Cartridge",
             "key_name": "color-cartridge",
             "tier": 2,
-            "stack_size": 100
+            "stack_size": 200
         },
         {
             "name": "Power Shard",
@@ -328,13 +328,13 @@
             "name": "Steel Beam",
             "key_name": "steel-beam",
             "tier": 4,
-            "stack_size": 100
+            "stack_size": 200
         },
         {
             "name": "Steel Pipe",
             "key_name": "steel-pipe",
             "tier": 4,
-            "stack_size": 100
+            "stack_size": 200
         },
         {
             "name": "Reinforced Iron Plate",
@@ -382,7 +382,7 @@
             "name": "Plastic",
             "key_name": "plastic",
             "tier": 5,
-            "stack_size": 100
+            "stack_size": 200
         },
         {
             "name": "Crude Oil",
@@ -436,7 +436,7 @@
             "name": "Rubber",
             "key_name": "rubber",
             "tier": 5,
-            "stack_size": 100
+            "stack_size": 200
         },
 		{
             "name": "Petroleum Coke",
@@ -472,13 +472,13 @@
             "name": "Heavy Modular Frame",
             "key_name": "heavy-modular-frame",
             "tier": 4,
-            "stack_size": 100
+            "stack_size": 50
         },
         {
             "name": "Computer",
             "key_name": "computer",
             "tier": 5,
-            "stack_size": 100
+            "stack_size": 50
         },
         {
             "name": "Caterium Ore",
@@ -508,7 +508,7 @@
             "name": "High-Speed Connector",
             "key_name": "high-speed-connector",
             "tier": 5,
-            "stack_size": 100
+            "stack_size": 50
         },
         {
             "name": "A.I. Limiter",
@@ -526,7 +526,7 @@
             "name": "Filter",
             "key_name": "filter",
             "tier": 6,
-            "stack_size": 100
+            "stack_size": 50
         },
         {
             "name": "Flower Petals",
@@ -646,7 +646,7 @@
             "name": "Alclad Aluminum Sheet",
             "key_name": "alclad-aluminum-sheet",
             "tier": 7,
-            "stack_size": 100
+            "stack_size": 200
         },
         {
             "name": "Heat Sink",
@@ -658,7 +658,7 @@
             "name": "Radio Control Unit",
             "key_name": "radio-control-unit",
             "tier": 7,
-            "stack_size": 100
+            "stack_size": 50
         },
         {
             "name": "Battery",
@@ -688,7 +688,7 @@
             "name": "Turbo Motor",
             "key_name": "turbo-motor",
             "tier": 8,
-            "stack_size": 100
+            "stack_size": 50
         },
         {
             "name": "Cooling System",
@@ -730,7 +730,7 @@
             "name": "Iodine Infused Filter",
             "key_name": "iodine-infused-filter",
             "tier": 7,
-            "stack_size": 100
+            "stack_size": 50
         },
         {
             "name": "Aluminum Casing",

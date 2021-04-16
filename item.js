@@ -38,7 +38,7 @@ export class Item {
         return this.stack_size == -1
     }
 
-    produce(spec, rate, ignore) {
+    produce(spec, rate, ignore, solver) {
         let totals = new Totals()
         let recipe = spec.getRecipe(this)
         let gives = recipe.gives(this)
@@ -46,12 +46,20 @@ export class Item {
         let productrate = rate.div(gives)
         totals.add(recipe, productrate)
         totals.updateHeight(recipe, 0)
+        let recipeFactor = spec.getRecipeRate(recipe)
+        solver.addProduct(recipe.product.item, recipe, recipeFactor.mul(gives))
         if (ignore.has(recipe)) {
+            solver.addRecipeDone(recipe)
             return totals
         }
         if (recipe.byproduct != null){
             totals.addByproduct(recipe, rate.div(recipe.byproduct.amount))
+            solver.addProduct(recipe.byproduct.item, recipe, recipeFactor.mul(recipe.byproduct.amount))
         }
+        for (let ing of recipe.ingredients) {
+            solver.addRequirement(ing.item, recipe, recipeFactor.mul(ing.amount))
+        }
+        solver.addRecipeDone(recipe)
         for (let ing of recipe.ingredients) {
             let requiredRate = productrate.mul(ing.amount)
             if(totals.byproductrates.has(ing.item)){
@@ -62,7 +70,7 @@ export class Item {
                 requiredRate = requiredRate.sub(minimal)
             }
             if(!requiredRate.isZero()){
-                let subtotals = ing.item.produce(spec, requiredRate, ignore)
+                let subtotals = ing.item.produce(spec, requiredRate, ignore, solver)
                 totals.combine(subtotals)
             }
         }

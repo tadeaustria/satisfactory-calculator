@@ -19,6 +19,7 @@ import { BuildTarget } from "./target.js"
 import { Totals } from "./totals.js"
 import { renderTotals } from "./visualize.js"
 import { CATEGORYPARTICLE } from "./building.js"
+import { Solver } from "./solver.js"
 
 const DEFAULT_ITEM_KEY = "supercomputer"
 
@@ -237,10 +238,14 @@ class FactorySpecification {
     }
     solve() {
         let totals = new Totals()
+        let solver = new Solver()
         for (let target of this.buildTargets) {
-            let subtotals = target.item.produce(this, target.getRate(), this.ignore)
+            let subtotals = target.item.produce(this, target.getRate(), this.ignore, solver)
             totals.combine(subtotals)
+            solver.addWanted(target.item, target.getRate())
         }
+        console.log(solver.matrix.data, solver.solution)
+        console.log(solver.calculate())
         return totals
     }
     setHash() {

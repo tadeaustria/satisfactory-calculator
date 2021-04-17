@@ -87,38 +87,38 @@ function makeGraph(totals, targets, ignore) {
 
         if (node.recipe && node.recipe.getByproduct() != null){
             let leftoverByproductRate = totals.byproductratesFull.get(node.recipe.getByproduct().item)
-            let byproductUse = totals.byproductUsages.get(node.recipe)
-            if (byproductUse != undefined){
-                // for(let byproductUse of totals.byproductUsages.get(node.recipe)){
-                let byproductRate = byproductUse[1]
-                let link = {
-                    "source": node,
-                    "target": nodeMap.get(byproductUse[0].name),
-                    "value": byproductRate.toFloat(),
-                    "rate": byproductRate,
-                    "itemname": node.recipe.getByproduct().item.name
-                }
-                let belts = []
-                let beltCountExact = 1
-                if(node.recipe.getByproduct().item.isFluid()){
-                    beltCountExact = spec.getPipeCount(byproductRate)
-                }else{
-                    beltCountExact = spec.getBeltCount(byproductRate)
-                }
-                let beltCount = beltCountExact.toFloat()
-                for (let j = one; j.less(beltCountExact); j = j.add(one)) {
-                    let i = j.toFloat()
-                    belts.push({link, i, beltCount})
-                }
-                link.belts = belts
-                // omit circular links for now
-                if(link.source != link.target){
-                    links.push(link)
-                    leftoverByproductRate = leftoverByproductRate.sub(byproductRate)
-                }
-                // }
-            }
-            if(!leftoverByproductRate.isZero()){
+            // let byproductUse = totals.byproductUsages.get(node.recipe)
+            // if (byproductUse != undefined){
+            //     // for(let byproductUse of totals.byproductUsages.get(node.recipe)){
+            //     let byproductRate = byproductUse[1]
+            //     let link = {
+            //         "source": node,
+            //         "target": nodeMap.get(byproductUse[0].name),
+            //         "value": byproductRate.toFloat(),
+            //         "rate": byproductRate,
+            //         "itemname": node.recipe.getByproduct().item.name
+            //     }
+            //     let belts = []
+            //     let beltCountExact = 1
+            //     if(node.recipe.getByproduct().item.isFluid()){
+            //         beltCountExact = spec.getPipeCount(byproductRate)
+            //     }else{
+            //         beltCountExact = spec.getBeltCount(byproductRate)
+            //     }
+            //     let beltCount = beltCountExact.toFloat()
+            //     for (let j = one; j.less(beltCountExact); j = j.add(one)) {
+            //         let i = j.toFloat()
+            //         belts.push({link, i, beltCount})
+            //     }
+            //     link.belts = belts
+            //     // omit circular links for now
+            //     if(link.source != link.target){
+            //         links.push(link)
+            //         leftoverByproductRate = leftoverByproductRate.sub(byproductRate)
+            //     }
+            //     // }
+            // }
+            if(leftoverByproductRate != undefined && !leftoverByproductRate.isZero()){
                 let link = {
                     "source": node,
                     "target": nodeMap.get(OUTPUT_BYPRODUCT_NODE_NAME),

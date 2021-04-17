@@ -245,8 +245,13 @@ class FactorySpecification {
             solver.addWanted(target.item, target.getRate())
         }
         console.log(solver.matrix.data, solver.solution)
-        console.log(solver.calculate())
-        return totals
+        let solutionVector = solver.calculate()
+        let alternativeTotals = new Totals()
+        for(let rec of solver.recipeIndices.keys()){
+            alternativeTotals.add(rec, this.getRecipeRate(rec).mul(Rational.from_float(solutionVector.get(rec))))
+        }
+        alternativeTotals.heights = totals.heights
+        return alternativeTotals
     }
     setHash() {
         window.location.hash = "#" + formatSettings()

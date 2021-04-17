@@ -248,7 +248,7 @@ class FactorySpecification {
         let solutionVector = solver.calculate()
         let alternativeTotals = new Totals()
         for(let rec of solver.recipeIndices.keys()){
-            alternativeTotals.add(rec, this.getRecipeRate(rec).mul(Rational.from_float(solutionVector.get(rec))))
+            alternativeTotals.add(rec, this.getRecipeRate(rec).mul(solutionVector.get(rec)))
         }
         alternativeTotals.heights = totals.heights
         return alternativeTotals

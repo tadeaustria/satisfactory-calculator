@@ -2673,14 +2673,14 @@
             "name": "Battery",
             "key_name": "battery",
             "category": "blending",
-            "time": 3,
+            "time": 6,
             "ingredients": [
-                ["sulfuric-acid", 3],
-                ["alumina-solution", 2],
-                ["aluminum-casing", 1]
+                ["sulfuric-acid", 5],
+                ["alumina-solution", 4],
+                ["aluminum-casing", 2]
             ],
-            "product": ["battery", 1],
-            "byproduct": ["water", 2]
+            "product": ["battery", 2],
+            "byproduct": ["water", 3]
         },
         {
             "name": "Alternate: Classic Battery",

@@ -24,7 +24,7 @@ export class Solver {
         this.solution = []
         this.recipeIndices = new Map()
         this.productIndices = new Map()
-        this.doneRecipes = new Set()
+        this.recipes = new Set()
     }
 
     getItemIndex(item) {
@@ -58,21 +58,19 @@ export class Solver {
     }
 
     addRequirement(item, recipe, rate) {
-        if(this.doneRecipes.has(recipe)) return
         let rowIdx = this.getItemIndex(item)
         let colIdx = this.getRecipeIndex(recipe)
         this.matrix.data[rowIdx][colIdx] = this.matrix.data[rowIdx][colIdx].sub(rate)
     }
 
     addProduct(item, recipe, rate) {
-        if(this.doneRecipes.has(recipe)) return
         let rowIdx = this.getItemIndex(item)
         let colIdx = this.getRecipeIndex(recipe)
         this.matrix.data[rowIdx][colIdx] = this.matrix.data[rowIdx][colIdx].add(rate)
     }
 
-    addRecipeDone(recipe){
-        this.doneRecipes.add(recipe)
+    addRecipe(recipe){
+        this.recipes.add(recipe)
     }
 
     calculate() {

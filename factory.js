@@ -19,7 +19,6 @@ import { BuildTarget } from "./target.js"
 import { Totals } from "./totals.js"
 import { renderTotals } from "./visualize.js"
 import { CATEGORYPARTICLE } from "./building.js"
-import { Solver } from "./solver.js"
 
 const DEFAULT_ITEM_KEY = "supercomputer"
 
@@ -238,20 +237,18 @@ class FactorySpecification {
     }
     solve() {
         let totals = new Totals()
-        let solver = new Solver()
         for (let target of this.buildTargets) {
-            let subtotals = target.item.produce(this, target.getRate(), this.ignore, solver)
-            totals.combine(subtotals)
-            solver.addWanted(target.item, target.getRate())
+            target.item.produce(this, this.ignore, totals, 0)
+            totals.solver.addWanted(target.item, target.getRate())
         }
-        console.log(solver.matrix.data, solver.solution)
-        let solutionVector = solver.calculate()
-        let alternativeTotals = new Totals()
-        for(let rec of solver.recipeIndices.keys()){
-            alternativeTotals.add(rec, this.getRecipeRate(rec).mul(solutionVector.get(rec)))
+        for(let rec of totals.solver.recipes){
+            rec.addToSolver(this, totals.solver, this.ignore)
         }
-        alternativeTotals.heights = totals.heights
-        return alternativeTotals
+        let solutionVector = totals.solver.calculate()
+        for(let rec of totals.solver.recipeIndices.keys()){
+            totals.add(rec, this.getRecipeRate(rec).mul(solutionVector.get(rec)))
+        }
+        return totals
     }
     setHash() {
         window.location.hash = "#" + formatSettings()

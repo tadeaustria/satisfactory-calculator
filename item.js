@@ -37,44 +37,17 @@ export class Item {
     isFluid(){
         return this.stack_size == -1
     }
-
-    produce(spec, rate, ignore, solver) {
-        let totals = new Totals()
+    produce(spec, ignore, totals, height) {
         let recipe = spec.getRecipe(this)
-        let gives = recipe.gives(this)
-        //let byproduct = recipe.byproduct(this)
-        let productrate = rate.div(gives)
-        totals.add(recipe, productrate)
-        totals.updateHeight(recipe, 0)
-        let recipeFactor = spec.getRecipeRate(recipe)
-        solver.addProduct(recipe.product.item, recipe, recipeFactor.mul(gives))
+        totals.solver.addRecipe(recipe)
+        totals.updateHeight(recipe, height)
         if (ignore.has(recipe)) {
-            solver.addRecipeDone(recipe)
-            return totals
-        }
-        if (recipe.byproduct != null){
-            totals.addByproduct(recipe, rate.div(recipe.byproduct.amount))
-            solver.addProduct(recipe.byproduct.item, recipe, recipeFactor.mul(recipe.byproduct.amount))
+            return
         }
         for (let ing of recipe.ingredients) {
-            solver.addRequirement(ing.item, recipe, recipeFactor.mul(ing.amount))
+            ing.item.produce(spec, ignore, totals, height + 2)
         }
-        solver.addRecipeDone(recipe)
-        for (let ing of recipe.ingredients) {
-            let requiredRate = productrate.mul(ing.amount)
-            if(totals.byproductrates.has(ing.item)){
-                // find maximum value that the byproduct can provide
-                let minimal = minimum(totals.byproductrates.get(ing.item), requiredRate)
-                totals.addByproductUse(recipe, ing.item, minimal)
-                // Look if there is still rate unsatisfied
-                requiredRate = requiredRate.sub(minimal)
-            }
-            if(!requiredRate.isZero()){
-                let subtotals = ing.item.produce(spec, requiredRate, ignore, solver)
-                totals.combine(subtotals)
-            }
-        }
-        return totals
+        return
     }
     iconPath() {
         return "images/" + this.name + ".png"

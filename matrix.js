@@ -77,4 +77,11 @@ export class Matrix {
     return arr
   }
 
+  clone(){
+    let newMatrix = new Matrix()
+    for(let i = 0; i < this.data.length; i++){
+      newMatrix.data[i] = this.data[i].map((x) => x)
+    }
+  }
+
 }

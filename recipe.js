@@ -56,6 +56,18 @@ class Recipe {
     iconPath() {
         return this.product.item.iconPath()
     }
+    addToSolver(spec, solver, ignore){
+        let recipeFactor = spec.getRecipeRate(this)
+        solver.addProduct(this.product.item, this, recipeFactor.mul(this.product.amount))
+        if (this.byproduct != null){
+            solver.addProduct(this.byproduct.item, this, recipeFactor.mul(this.byproduct.amount))
+        }
+        if(ignore.has(this))
+            return
+        for (let ing of this.ingredients) {
+            solver.addRequirement(ing.item, this, recipeFactor.mul(ing.amount))
+        }
+    }
 }
 
 function makeRecipe(data, items, d) {

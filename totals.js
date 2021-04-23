@@ -12,6 +12,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.*/
 import { zero } from "./rational.js"
+import { Solver } from "./solver.js"
 
 export class Totals {
     constructor() {
@@ -22,6 +23,7 @@ export class Totals {
         this.byproductUsages = new Map()
         this.heights = new Map()
         this.topo = new Set()
+        this.solver = new Solver()
     }
     add(recipe, rate) {
         this.topo.add(recipe)

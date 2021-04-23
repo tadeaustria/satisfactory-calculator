@@ -2841,6 +2841,17 @@
             "category": "nuclearpowerplant",
             "time": 300,
             "ingredients": [
+                ["nuclear-fuel-rod", 1]
+            ],
+            "product": ["nuclear-waste", 50],
+            "byproduct": ["copper-ingot", 999]
+        },
+        {
+            "name": "Uranium Waste with Water",
+            "key_name": "nuclear-waste-inclWater",
+            "category": "nuclearpowerplant",
+            "time": 300,
+            "ingredients": [
                 ["nuclear-fuel-rod", 1],
                 ["water", 1500]
             ],
@@ -2944,6 +2955,17 @@
         {
             "name": "Plutonium Waste",
             "key_name": "plutonium-waste",
+            "category": "nuclearpowerplant",
+            "time": 600,
+            "ingredients": [
+                ["plutonium-fuel-rod", 1]
+            ],
+            "product": ["plutonium-waste", 10],
+            "byproduct": ["copper-ingot", 999]
+        },
+        {
+            "name": "Plutonium Waste with Water",
+            "key_name": "plutonium-waste-inclWater",
             "category": "nuclearpowerplant",
             "time": 600,
             "ingredients": [

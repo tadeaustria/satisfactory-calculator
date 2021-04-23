@@ -26,6 +26,10 @@ const maxNodeHeight = 175
 const OUTPUT_NODE_NAME = "output"
 const OUTPUT_BYPRODUCT_NODE_NAME = "byproducts"
 
+function makeGraph2(totals, targets, ignore) {
+
+}
+
 function makeGraph(totals, targets, ignore) {
     let outputs = []
     let rates = new Map()
@@ -302,9 +306,9 @@ export function renderTotals(totals, targets, ignore) {
     let height = largestEstimate
 
     let svg = d3.select("svg#graph")
-        .attr("viewBox", `0,0,${width+20},${height+20}`)
-        .style("width", width+20)
-        .style("height", height+20)
+        .attr("viewBox", `0,0,${width},${height}`)
+        .style("width", width)
+        .style("height", height)
 
     svg.selectAll("g").remove()
 
@@ -312,7 +316,7 @@ export function renderTotals(totals, targets, ignore) {
         .nodeWidth(nodeWidth)
         .nodePadding(nodePadding)
         .nodeAlign(d3.sankeyRight)
-        .extent([[10, 10], [width + 10, height + 10]])
+        .extent([[10, 10], [width - 10, height - 10]])
     let {nodes, links} = sankey(data)
 
     // Node rects

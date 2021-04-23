@@ -24,6 +24,7 @@ export class Totals {
         this.heights = new Map()
         this.topo = new Set()
         this.solver = new Solver()
+        this.solutionVector = []
     }
     add(recipe, rate) {
         this.topo.add(recipe)
@@ -68,5 +69,8 @@ export class Totals {
         for (let [recipe, height] of other.heights) {
             this.updateHeight(recipe, height + 1)
         }
+    }
+    getBuildingFactor(recipe){
+        return this.solutionVector.get(recipe);
     }
 }

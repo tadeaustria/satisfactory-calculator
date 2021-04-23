@@ -23,11 +23,24 @@ const nodePadding = 20
 const columnWidth = 150
 const maxNodeHeight = 175
 
-const OUTPUT_NODE_NAME = "output"
-const OUTPUT_BYPRODUCT_NODE_NAME = "byproducts"
-
 function makeGraph2(totals, targets, ignore) {
 
+}
+
+function calcBelts(isFluid, spec, rate, link){
+    let belts = []
+    let beltCountExact = 1
+    if(isFluid){
+        beltCountExact = spec.getPipeCount(rate)
+    }else{
+        beltCountExact = spec.getBeltCount(rate)
+    }
+    let beltCount = beltCountExact.toFloat()
+    for (let j = one; j.less(beltCountExact); j = j.add(one)) {
+        let i = j.toFloat()
+        belts.push({link, i, beltCount})
+    }
+    return belts
 }
 
 function makeGraph(totals, targets, ignore) {
@@ -45,32 +58,28 @@ function makeGraph(totals, targets, ignore) {
         let ing = new Ingredient(item, rate)
         outputs.push(ing)
     }
-    let nodes = [{
-        "name": OUTPUT_NODE_NAME,
-        "ingredients": outputs,
-        "recipe": null,
-        "building": null,
-        "count": zero,
-        "rate": null,
-        "ignore": false,
-    },{
-        "name": OUTPUT_BYPRODUCT_NODE_NAME,
-        "ingredients": [],
-        "recipe": null,
-        "building": null,
-        "count": zero,
-        "rate": null,
-        "ignore": false,
-    }]
-    let nodeMap = new Map()
-    for(let node of nodes){
-        nodeMap.set(node.name, node)
-    }
+    let nodes = []
+    let recipeNodeMap = new Map()
+    let productNodeMap = new Map()
 
     for (let [recipe, rate] of totals.rates) {
         let building = spec.getBuilding(recipe)
         let count = spec.getCount(recipe, rate)
-        let node = {
+        if(!ignore.has(recipe)){
+            let buildingNode = {
+                "name": recipe.product.item.name,
+                "ingredients": recipe.ingredients,
+                "recipe": recipe,
+                "building": building,
+                "count": count,
+                "rate": rate,
+                "ignore": ignore.has(recipe),
+                "icon": building.iconPath()
+            }
+            nodes.push(buildingNode)
+            recipeNodeMap.set(recipe, buildingNode)
+        }
+        let productNode = {
             "name": recipe.product.item.name,
             "ingredients": recipe.ingredients,
             "recipe": recipe,
@@ -78,109 +87,40 @@ function makeGraph(totals, targets, ignore) {
             "count": count,
             "rate": rate,
             "ignore": ignore.has(recipe),
+            "icon": recipe.product.item.iconPath()
         }
-        nodes.push(node)
-        nodeMap.set(recipe.name, node)
+        nodes.push(productNode)
+        productNodeMap.set(recipe.product.item, productNode)
     }
 
     let links = []
-    for (let node of nodes) {
-        if (node.ignore) {
-            continue
-        }
 
-        if (node.recipe && node.recipe.getByproduct() != null){
-            let leftoverByproductRate = totals.byproductratesFull.get(node.recipe.getByproduct().item)
-            // let byproductUse = totals.byproductUsages.get(node.recipe)
-            // if (byproductUse != undefined){
-            //     // for(let byproductUse of totals.byproductUsages.get(node.recipe)){
-            //     let byproductRate = byproductUse[1]
-            //     let link = {
-            //         "source": node,
-            //         "target": nodeMap.get(byproductUse[0].name),
-            //         "value": byproductRate.toFloat(),
-            //         "rate": byproductRate,
-            //         "itemname": node.recipe.getByproduct().item.name
-            //     }
-            //     let belts = []
-            //     let beltCountExact = 1
-            //     if(node.recipe.getByproduct().item.isFluid()){
-            //         beltCountExact = spec.getPipeCount(byproductRate)
-            //     }else{
-            //         beltCountExact = spec.getBeltCount(byproductRate)
-            //     }
-            //     let beltCount = beltCountExact.toFloat()
-            //     for (let j = one; j.less(beltCountExact); j = j.add(one)) {
-            //         let i = j.toFloat()
-            //         belts.push({link, i, beltCount})
-            //     }
-            //     link.belts = belts
-            //     // omit circular links for now
-            //     if(link.source != link.target){
-            //         links.push(link)
-            //         leftoverByproductRate = leftoverByproductRate.sub(byproductRate)
-            //     }
-            //     // }
-            // }
-            if(leftoverByproductRate != undefined && !leftoverByproductRate.isZero()){
-                let link = {
-                    "source": node,
-                    "target": nodeMap.get(OUTPUT_BYPRODUCT_NODE_NAME),
-                    "value": leftoverByproductRate.toFloat(),
-                    "rate": leftoverByproductRate,
-                    "itemname": node.recipe.getByproduct().item.name
-                }
-                let belts = []
-                let beltCountExact = 1
-                if(node.recipe.getByproduct().item.isFluid()){
-                    beltCountExact = spec.getPipeCount(leftoverByproductRate)
-                }else{
-                    beltCountExact = spec.getBeltCount(leftoverByproductRate)
-                }
-                let beltCount = beltCountExact.toFloat()
-                for (let j = one; j.less(beltCountExact); j = j.add(one)) {
-                    let i = j.toFloat()
-                    belts.push({link, i, beltCount})
-                }
-                link.belts = belts
-                links.push(link)
-            }
+    for(let [recipe, node] of recipeNodeMap){
+        let itemRate = node.rate.mul(recipe.product.amount)
+        let link = {
+            "source": node,
+            "target": productNodeMap.get(recipe.product.item),
+            "value": itemRate.toFloat(),
+            "rate": itemRate,
+            "itemname": node.recipe.product.item.name
         }
+        link.belts = calcBelts(recipe.product.item.isFluid(), spec, itemRate, link);
+        links.push(link)
 
         for (let ing of node.ingredients) {
-            let rate
-            if (node.name == OUTPUT_NODE_NAME || node.name == OUTPUT_BYPRODUCT_NODE_NAME) {
-                rate = ing.amount
-            } else {
-                rate = totals.rates.get(node.recipe).mul(ing.amount)
+            let ingRate = node.rate.mul(ing.amount)
+            let link = {
+                "source": productNodeMap.get(ing.item),
+                "target": node,
+                "value": ingRate.toFloat(),
+                "rate": ingRate,
+                "itemname": ing.item.name
             }
-            for (let subRecipe of ing.item.recipes) {
-                if (totals.rates.has(subRecipe)) {
-                    let link = {
-                        "source": nodeMap.get(subRecipe.name),
-                        "target": node,
-                        "value": rate.toFloat(),
-                        "rate": rate,
-                        "itemname": ing.item.name
-                    }
-                    let belts = []
-                    let beltCountExact = 1
-                    if(ing.item.isFluid()){
-                        beltCountExact = spec.getPipeCount(rate)
-                    }else{
-                        beltCountExact = spec.getBeltCount(rate)
-                    }
-                    let beltCount = beltCountExact.toFloat()
-                    for (let j = one; j.less(beltCountExact); j = j.add(one)) {
-                        let i = j.toFloat()
-                        belts.push({link, i, beltCount})
-                    }
-                    link.belts = belts
-                    links.push(link)
-                }
-            }
+            link.belts = calcBelts(ing.item.isFluid(), spec, ingRate, link);
+            links.push(link)
         }
     }
+
     return {"nodes": nodes, "links": links}
 }
 
@@ -333,31 +273,13 @@ export function renderTotals(totals, targets, ignore) {
         .attr("height", d => d.y1 - d.y0)
         .attr("width", d => d.x1 - d.x0)
         .attr("fill", d => d3.color(color(d.name)).darker())
-    rects.filter(d => d.name != OUTPUT_NODE_NAME && d.name != OUTPUT_BYPRODUCT_NODE_NAME && d.recipe.byproduct == null)
-        .append("image")
+    rects.append("image")
             .classed("ignore", d => ignore.has(d.recipe))
             .attr("x", d => d.x0 + 2)
             .attr("y", d => d.y0 + (d.y1 - d.y0) / 2 - (iconSize / 2))
             .attr("height", iconSize)
             .attr("width", iconSize)
-            .attr("xlink:href", d => d.recipe.iconPath())
-
-    rects.filter(d => d.name != OUTPUT_NODE_NAME && d.name != OUTPUT_BYPRODUCT_NODE_NAME && d.recipe.byproduct != null)
-        .append("image")
-            .classed("ignore", d => ignore.has(d.recipe))
-            .attr("x", d => d.x0 + 2)
-            .attr("y", d => d.y0 + (d.y1 - d.y0) / 2 - iconSize)
-            .attr("height", iconSize)
-            .attr("width", iconSize)
-            .attr("xlink:href", d => d.recipe.iconPath())
-    rects.filter(d => d.name != OUTPUT_NODE_NAME && d.name != OUTPUT_BYPRODUCT_NODE_NAME && d.recipe.byproduct != null)
-        .append("image")
-            .classed("ignore", d => ignore.has(d.recipe))
-            .attr("x", d => d.x0 + 2)
-            .attr("y", d => d.y0 + (d.y1 - d.y0) / 2)
-            .attr("height", iconSize)
-            .attr("width", iconSize)
-            .attr("xlink:href", d => d.recipe.byproduct.item.iconPath())
+            .attr("xlink:href", d => d.icon)
 
     // For nodes without an associated machine, display the rate on a single line:
     rects.filter(d => d.count.isZero())
@@ -367,15 +289,6 @@ export function renderTotals(totals, targets, ignore) {
             .attr("dy", "0.35em")
             .attr("text-anchor", "start")
             .text(getRateString)
-
-    rects.filter(d => d.name == OUTPUT_NODE_NAME || d.name == OUTPUT_BYPRODUCT_NODE_NAME)
-    .append("text")
-        .classed("ignore", d => ignore.has(d.recipe))
-        .attr("x", d => d.x0 + 2)
-        .attr("y", d => d.y0 + (d.y1 - d.y0) / 2)
-        .attr("dy", "0.5em")
-        .attr("text-anchor", "start")
-        .text(d => d.name)
 
     // For nodes with an associated machine, display the machine count on one
     // line, and the overclock rate on the next line:

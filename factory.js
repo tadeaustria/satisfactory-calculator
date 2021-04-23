@@ -18,7 +18,6 @@ import { Rational, zero, half, one } from "./rational.js"
 import { BuildTarget } from "./target.js"
 import { Totals } from "./totals.js"
 import { renderTotals } from "./visualize.js"
-import { CATEGORYPARTICLE } from "./building.js"
 
 const DEFAULT_ITEM_KEY = "supercomputer"
 
@@ -190,7 +189,7 @@ class FactorySpecification {
         let peak = building.power
 
         // For particle accelerator the recipe determines the power usage
-        if (building.category == CATEGORYPARTICLE){
+        if (building.isParticleAccelerator()){
             average = recipe.averagePower
             peak = recipe.maximumPower
         }
@@ -244,9 +243,9 @@ class FactorySpecification {
         for(let rec of totals.solver.recipes){
             rec.addToSolver(this, totals.solver, this.ignore)
         }
-        let solutionVector = totals.solver.calculate()
+        totals.solutionVector = totals.solver.calculate()
         for(let rec of totals.solver.recipeIndices.keys()){
-            totals.add(rec, this.getRecipeRate(rec).mul(solutionVector.get(rec)))
+            totals.add(rec, this.getRecipeRate(rec).mul(totals.getBuildingFactor(rec)))
         }
         return totals
     }

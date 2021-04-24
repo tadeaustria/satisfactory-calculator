@@ -2162,6 +2162,32 @@
             "byproduct": ["copper-ingot", 999]
         },
         {
+            "name": "OC Supercomputer",
+            "key_name": "alt-ocsupercomputer",
+            "category": "crafting2",
+            "time": 20,
+            "ingredients": [
+                ["radio-control-unit", 3],
+                ["cooling-system", 3]
+            ],
+            "product": ["supercomputer", 1],
+            "byproduct": ["copper-ingot", 999]
+        },
+        {
+            "name": "Super-State Computer",
+            "key_name": "alt-superstatecomputer",
+            "category": "crafting3",
+            "time": 50,
+            "ingredients": [
+                ["computer", 3],
+                ["em-control-rod", 2],
+                ["battery", 20],
+                ["wire", 45]
+            ],
+            "product": ["supercomputer", 2],
+            "byproduct": ["copper-ingot", 999]
+        },
+        {
             "name": "High-Speed Connector",
             "key_name": "high-speed-connector",
             "category": "crafting3",

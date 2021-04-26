@@ -21,7 +21,7 @@ Receipts for update 4 with FICSMAS holiday special are included.
 
 ## Known issues
 
-* Multiple products are not yet supported
+* Solutions are with respect to byproducts, but byproducts are not yet displayed in Sankey Diagram due to prohibited circularities, which can be introduced through byproducts.
 * Only one receipt per product can be selected, no mixture is possible
 
 Feel free to create issues if you have any problems.

@@ -19,7 +19,7 @@ import { BuildTarget } from "./target.js"
 import { Totals } from "./totals.js"
 import { renderTotals } from "./visualize.js"
 
-const DEFAULT_ITEM_KEY = "supercomputer"
+const DEFAULT_ITEM_KEY = "plutonium-waste"
 
 let minerCategories = new Set(["mineral", "oil", "water", "gift-tree", "fluid"])
 

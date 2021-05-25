@@ -62,12 +62,19 @@ function makeGraph(totals, targets, ignore) {
     let recipeNodeMap = new Map()
     let productNodeMap = new Map()
 
+    let maxHeight = 0;
+    for(let height of totals.heights.values()){
+        maxHeight = Math.max(maxHeight, height)
+    }
+
     for (let [recipe, rate] of totals.rates) {
         let building = spec.getBuilding(recipe)
         let count = spec.getCount(recipe, rate)
         if(!ignore.has(recipe)){
             let buildingNode = {
+                "order": maxHeight - totals.heights.get(recipe),
                 "name": recipe.product.item.name,
+                "id": recipe.product.item.name + "Building",
                 "ingredients": recipe.ingredients,
                 "recipe": recipe,
                 "building": building,
@@ -80,7 +87,9 @@ function makeGraph(totals, targets, ignore) {
             recipeNodeMap.set(recipe, buildingNode)
         }
         let productNode = {
+            "order": maxHeight - totals.heights.get(recipe) + 1,
             "name": recipe.product.item.name,
+            "id": recipe.product.item.name + "Product",
             "ingredients": recipe.ingredients,
             "recipe": recipe,
             "building": building,
@@ -252,11 +261,19 @@ export function renderTotals(totals, targets, ignore) {
 
     svg.selectAll("g").remove()
 
-    let sankey = d3.sankey()
+    // let sankey = d3.sankey()
+    let sankey = d3.sankeyCircular()
         .nodeWidth(nodeWidth)
         .nodePadding(nodePadding)
         .nodeAlign(d3.sankeyRight)
         .extent([[10, 10], [width - 10, height - 10]])
+        .nodeId(function (d) {
+            return d.id;
+        })
+        // .size([width - 20, height - 20])
+        .iterations(5)
+        .circularLinkGap(1)
+        .sortNodes("order")
     let {nodes, links} = sankey(data)
 
     // Node rects
@@ -305,17 +322,31 @@ export function renderTotals(totals, targets, ignore) {
         .attr("dy", "1em")
         .text(getOverclockString)
 
-    // Link paths
-    let link = svg.append("g")
-        .classed("links", true)
-        .selectAll("g")
-        .data(links)
-        .join("g")
-        .style("mix-blend-mode", "multiply")
+    // // Link paths
+    // let link = svg.append("g")
+    //     .classed("links", true)
+    //     .selectAll("g")
+    //     .data(links)
+    //     .join("g")
+    //     .style("mix-blend-mode", "multiply")
+    let linkG = svg.append("g")
+      .attr("class", "links")
+      .attr("fill", "none")
+      .attr("stroke-opacity", 0.2)
+      .selectAll("path");
+
+    let link = linkG.data(links)
+      .enter()
+      .append("g")
+
     link.append("path")
         .attr("fill", "none")
         .attr("stroke-opacity", 0.3)
-        .attr("d", d3.sankeyLinkHorizontal())
+        .attr("class", "sankey-link")
+        .attr("d", function(link){
+          return link.path;
+        })
+        // .attr("d", d3.sankeyLinkHorizontal())
         .attr("stroke", d => color(d.itemname))
         .attr("stroke-width", d => Math.max(1, d.width))
     // Don't draw belts if we have less than three pixels per belt.

@@ -19,9 +19,12 @@ Live version can be found here:
 
 Receipts for update 4 with FICSMAS holiday special are included.
 
+### Updates:
+
+* 01.06.2021 - Change to circular Sankey diagram. Has some effect on visualization alignment. Byproducts now included in calculations and visualization.
+
 ## Known issues
 
-* Solutions are with respect to byproducts, but byproducts are not yet displayed in Sankey Diagram due to prohibited circularities, which can be introduced through byproducts.
 * Only one receipt per product can be selected, no mixture is possible
 
 Feel free to create issues if you have any problems.

@@ -21,7 +21,7 @@ const iconSize = 48
 const nodePadding = 20
 
 const columnWidth = 150
-const maxNodeHeight = 175
+const maxNodeHeight = 250
 
 function makeGraph2(totals, targets, ignore) {
 
@@ -115,7 +115,36 @@ function makeGraph(totals, targets, ignore) {
         }
         link.belts = calcBelts(recipe.product.item.isFluid(), spec, itemRate, link);
         links.push(link)
-
+        if(recipe.byproduct != null){
+            // Check if byproduct node does not exist yet, since it is not produced
+            if(!productNodeMap.has(recipe.byproduct.item)){
+                let byproductNode = {
+                    "order": maxHeight + 1,
+                    "name": recipe.byproduct.item.name,
+                    "id": recipe.byproduct.item.name + "Product",
+                    "ingredients": recipe.ingredients,
+                    "recipe": recipe,
+                    "building": spec.getBuilding(recipe),
+                    "count": one,
+                    "rate": node.rate,
+                    "ignore": ignore.has(recipe),
+                    "icon": recipe.byproduct.item.iconPath()
+                }
+                nodes.push(byproductNode)
+                productNodeMap.set(recipe.byproduct.item, byproductNode)
+            }
+            let itemRate = node.rate.mul(recipe.byproduct.amount)
+            let link = {
+                "source": node,
+                "target": productNodeMap.get(recipe.byproduct.item),
+                "value": itemRate.toFloat(),
+                "rate": itemRate,
+                "itemname": node.recipe.byproduct.item.name
+            }
+            link.belts = calcBelts(recipe.byproduct.item.isFluid(), spec, itemRate, link);
+            links.push(link)
+        }
+        
         for (let ing of node.ingredients) {
             let ingRate = node.rate.mul(ing.amount)
             let link = {

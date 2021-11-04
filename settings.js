@@ -249,7 +249,9 @@ function renderAltRecipes(settings) {
         let alt = settings.get("alt").split(",")
         for (let recipeKey of alt) {
             let recipe = spec.recipes.get(recipeKey)
-            spec.setRecipe(recipe)
+            if (recipe){ //ignore wrong settings
+                spec.setRecipe(recipe)
+            }
         }
     }
 

@@ -19,7 +19,7 @@ import { BuildTarget } from "./target.js"
 import { Totals } from "./totals.js"
 import { renderTotals } from "./visualize.js"
 
-const DEFAULT_ITEM_KEY = "plutonium-waste"
+const DEFAULT_ITEM_KEY = "nuclear-fuel-rod"
 
 let minerCategories = new Set(["mineral", "oil", "water", "gift-tree", "fluid", "manual"])
 
@@ -211,10 +211,10 @@ class FactorySpecification {
         return {average, peak}
     }
     addTarget(itemKey) {
-        if (itemKey === undefined) {
-            itemKey = DEFAULT_ITEM_KEY
-        }
         let item = this.items.get(itemKey)
+        if (item === undefined){
+            item = this.items.get(DEFAULT_ITEM_KEY)
+        }
         let target = new BuildTarget(this.buildTargets.length, itemKey, item, this.itemTiers)
         this.buildTargets.push(target)
         d3.select("#targets").insert(() => target.element, "#plusButton")

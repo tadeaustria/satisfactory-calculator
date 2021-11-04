@@ -126,6 +126,13 @@
             "power": 40
         },
         {
+            "name": "Manual",
+            "key_name": "manual-gathering",
+            "category": "manual",
+            "base_rate": 300,
+            "power": 0
+        },
+        {
             "name": "FICSMAS Gift Tree",
             "key_name": "ficsmas-gift-tree",
             "category": "gift-tree",
@@ -2727,6 +2734,30 @@
 		{
             "key_name": "ficsmas-gift",
             "category": "gift-tree"
+        },
+		{
+            "key_name": "mycelia",
+            "category": "manual"
+        },
+		{
+            "key_name": "leaves",
+            "category": "manual"
+        },
+		{
+            "key_name": "wood",
+            "category": "manual"
+        },
+		{
+            "key_name": "alien-carapace",
+            "category": "manual"
+        },
+		{
+            "key_name": "alien-organs",
+            "category": "manual"
+        },
+		{
+            "key_name": "flower-petals",
+            "category": "manual"
         }
     ]
 }

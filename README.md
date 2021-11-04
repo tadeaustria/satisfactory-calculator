@@ -21,7 +21,14 @@ Receipts for update 4 with FICSMAS holiday special are included.
 
 ### Updates:
 
-* 01.06.2021 - Change to circular Sankey diagram. Has some effect on visualization alignment. Byproducts now included in calculations and visualization.
+* 01.06.2021
+  * Change to circular Sankey diagram. Has some effect on visualization alignment.
+  * Byproducts now included in calculations and visualization.
+* 04.11.2021 
+  * Fixing receipe resolution with manual ingredient
+  * Introduction of new *manual* building
+  * Fixes of chosen pipe in URL-settings
+  * Some error fixes in backwards compatibility with older data files
 
 ## Known issues
 

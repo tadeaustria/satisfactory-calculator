@@ -60,6 +60,7 @@ class FactorySpecification {
         this.altRecipes = new Map()
 
         this.belt = null
+        this.pipe = null
 
         this.ignore = new Set()
 

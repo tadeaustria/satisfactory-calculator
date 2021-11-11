@@ -605,7 +605,7 @@
             "name": "Silica",
             "key_name": "silica",
             "tier": 4,
-            "stack_size": 100
+            "stack_size": 200
         },
         {
             "name": "Bauxite",

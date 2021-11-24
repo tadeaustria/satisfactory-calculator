@@ -320,6 +320,12 @@
             "stack_size": 200
         },
         {
+            "name": "Color Cartridge",
+            "key_name": "color-cartridge",
+            "tier": 2,
+            "stack_size": 200
+        },
+        {
             "name": "Power Shard",
             "key_name": "power-shard",
             "tier": 2,
@@ -528,6 +534,12 @@
             "key_name": "filter",
             "tier": 6,
             "stack_size": 50
+        },
+        {
+            "name": "Flower Petals",
+            "key_name": "flower-petals",
+            "tier": -1,
+            "stack_size": 200
         },
         {
             "name": "Beacon",
@@ -1411,6 +1423,17 @@
                 ["biomass", 8]
             ],
             "product": ["solid-biofuel", 4],
+            "byproduct": ["copper-ingot", 999]
+        },
+        {
+            "name": "Color Cartridge",
+            "key_name": "color-cartridge",
+            "category": "crafting1",
+            "time": 8,
+            "ingredients": [
+                ["flower-petals", 5]
+            ],
+            "product": ["color-cartridge", 10],
             "byproduct": ["copper-ingot", 999]
         },
         {
@@ -3404,6 +3427,10 @@
         },
 		{
             "key_name": "alien-organs",
+            "category": "manual"
+        },
+		{
+            "key_name": "flower-petals",
             "category": "manual"
         }
     ]

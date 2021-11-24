@@ -12,23 +12,23 @@ For further information see e.g. [apache tutorial](https://ubuntu.com/tutorials/
 ## Live Versions
 
 Live version can be found here:
-[Stable Version](http://barthler.ddns.net/satisfactory-calculator/calc.html)
+[Stable Version](https://tadeaustria.github.io/satisfactory-calculator/calc.html)
 [Experimental Version](http://barthler.ddns.net/satisfactory-calculator-experimental/calc.html)
 
 ## Content
 
-Receipts for update 4 with FICSMAS holiday special are included.
+Receipts for update 5 with FICSMAS holiday special are included.
 
 ### Updates:
 
-* 01.06.2021
-  * Change to circular Sankey diagram. Has some effect on visualization alignment.
-  * Byproducts now included in calculations and visualization.
 * 04.11.2021 
   * Fixing receipe resolution with manual ingredient
   * Introduction of new *manual* building
   * Fixes of chosen pipe in URL-settings
   * Some error fixes in backwards compatibility with older data files
+* 01.06.2021
+  * Change to circular Sankey diagram. Has some effect on visualization alignment.
+  * Byproducts now included in calculations and visualization.
 
 ## Known issues
 

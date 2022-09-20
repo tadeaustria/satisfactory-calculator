@@ -161,6 +161,34 @@
             "power": 0
         },
         {
+            "name": "Fluffy tailed Hog",
+            "key_name": "hog-gathering",
+            "category": "hog",
+            "base_rate": 1,
+            "power": 0
+        },
+        {
+            "name": "Spitter",
+            "key_name": "spitter-gathering",
+            "category": "spitter",
+            "base_rate": 2,
+            "power": 0
+        },
+        {
+            "name": "Stinger spider",
+            "key_name": "stinger-gathering",
+            "category": "stinger",
+            "base_rate": 1,
+            "power": 0
+        },
+        {
+            "name": "Flying Crab Hatcher",
+            "key_name": "hatcher-gathering",
+            "category": "hatcher",
+            "base_rate": 1,
+            "power": 0
+        },
+        {
             "name": "FICSMAS Gift Tree",
             "key_name": "ficsmas-gift-tree",
             "category": "gift-tree",
@@ -302,10 +330,28 @@
             "stack_size": 100
         },
         {
-            "name": "Alien Carapace",
-            "key_name": "alien-carapace",
+            "name": "Hog Remains",
+            "key_name": "hog-remains",
             "tier": -1,
-            "stack_size": 100
+            "stack_size": 50
+        },
+        {
+            "name": "Plasma Spitter Remains",
+            "key_name": "plasma-spitter-remains",
+            "tier": -1,
+            "stack_size": 50
+        },
+        {
+            "name": "Stinger Remains",
+            "key_name": "stinger-remains",
+            "tier": -1,
+            "stack_size": 50
+        },
+        {
+            "name": "Hatcher Remains",
+            "key_name": "hatcher-remains",
+            "tier": -1,
+            "stack_size": 50
         },
         {
             "name": "Mycelia",
@@ -560,6 +606,12 @@
             "stack_size": 100
         },
         {
+            "name": "Silica",
+            "key_name": "silica",
+            "tier": 4,
+            "stack_size": 200
+        },
+        {
             "name": "Crystal Oscillator",
             "key_name": "crystal-oscillator",
             "tier": 4,
@@ -584,22 +636,10 @@
             "stack_size": 100
         },
         {
-            "name": "Alien Organs",
-            "key_name": "alien-organs",
-            "tier": -1,
-            "stack_size": 200
-        },
-        {
-            "name": "Spiked Rebar",
-            "key_name": "spiked-rebar",
-            "tier": 4,
-            "stack_size": 50
-        },
-        {
             "name": "Rifle Ammo",
             "key_name": "rifle-ammo",
             "tier": 5,
-            "stack_size": 100
+            "stack_size": 500
         },
         {
             "name": "Compacted Coal",
@@ -618,12 +658,6 @@
             "key_name": "packaged-turbofuel",
             "tier": 6,
             "stack_size": 100
-        },
-        {
-            "name": "Silica",
-            "key_name": "silica",
-            "tier": 4,
-            "stack_size": 200
         },
         {
             "name": "Bauxite",
@@ -847,6 +881,85 @@
             "tier": 8,
             "stack_size": 50
         },
+        {
+            "name": "Alien Protein",
+            "key_name": "alien-protein",
+            "tier": 3,
+            "stack_size": 100
+        },
+        {
+            "name": "Organic Data Capsule",
+            "key_name": "organic-data-capsule",
+            "tier": 3,
+            "stack_size": 50
+        },
+        {
+            "name": "Smokeless Powder",
+            "key_name": "smokeless-powder",
+            "tier": 4,
+            "stack_size": 100
+        },
+        {
+            "name": "Gas Nobelisk",
+            "key_name": "gas-nobelisk",
+            "tier": 4,
+            "stack_size": 50
+        },
+        {
+            "name": "Pulse Nobelisk",
+            "key_name": "pulse-nobelisk",
+            "tier": 4,
+            "stack_size": 50
+        },
+        {
+            "name": "Cluster Nobelisk",
+            "key_name": "cluster-nobelisk",
+            "tier": 5,
+            "stack_size": 50
+        },
+        {
+            "name": "Nuke Nobelisk",
+            "key_name": "nuke-nobelisk",
+            "tier": 8,
+            "stack_size": 50
+        },
+        {
+            "name": "Spiked Rebar",
+            "key_name": "spiked-rebar",
+            "tier": 0,
+            "stack_size": 100
+        },
+        {
+            "name": "Stun Rebar",
+            "key_name": "stun-rebar",
+            "tier": 3,
+            "stack_size": 100
+        },
+        {
+            "name": "Shatter Rebar",
+            "key_name": "shatter-rebar",
+            "tier": 4,
+            "stack_size": 100
+        },
+        {
+            "name": "Explosive Rebar",
+            "key_name": "explosive-rebar",
+            "tier": 4,
+            "stack_size": 100
+        },
+        {
+            "name": "Homing Rifle Ammo",
+            "key_name": "homing-rifle-ammo",
+            "tier": 5,
+            "stack_size": 500
+        },
+        {
+            "name": "Turbo Rifle Ammo",
+            "key_name": "turbo-rifle-ammo",
+            "tier": 6,
+            "stack_size": 500
+        },
+
         {
             "name": "FICSMAS Gift",
             "key_name": "ficsmas-gift",
@@ -1400,17 +1513,6 @@
         },
         {
             "name": "Biomass",
-            "key_name": "biomass-from-alien-carapace",
-            "category": "crafting1",
-            "time": 4,
-            "ingredients": [
-                ["alien-carapace", 1]
-            ],
-            "product": ["biomass", 100],
-            "byproduct": ["copper-ingot", 999]
-        },
-        {
-            "name": "Biomass",
             "key_name": "biomass-from-mycelia",
             "category": "crafting1",
             "time": 4,
@@ -1418,6 +1520,17 @@
                 ["mycelia", 10]
             ],
             "product": ["biomass", 10],
+            "byproduct": ["copper-ingot", 999]
+        },
+        {
+            "name": "Biomass",
+            "key_name": "biomass-from-alien-protein",
+            "category": "crafting1",
+            "time": 4,
+            "ingredients": [
+                ["alien-protein", 1]
+            ],
+            "product": ["biomass", 100],
             "byproduct": ["copper-ingot", 999]
         },
         {
@@ -2379,10 +2492,10 @@
             "name": "Nobelisk",
             "key_name": "nobelisk",
             "category": "crafting2",
-            "time": 20,
+            "time": 6,
             "ingredients": [
-                ["black-powder", 5],
-                ["steel-pipe", 10]
+                ["steel-pipe", 2],
+                ["black-powder", 2]
             ],
             "product": ["nobelisk", 1],
             "byproduct": ["copper-ingot", 999]
@@ -2401,39 +2514,15 @@
             "byproduct": ["copper-ingot", 999]
         },
         {
-            "name": "Biomass",
-            "key_name": "biomass-from-alien-organs",
-            "category": "crafting1",
-            "time": 8,
-            "ingredients": [
-                ["alien-organs", 1]
-            ],
-            "product": ["biomass", 200],
-            "byproduct": ["copper-ingot", 999]
-        },
-		{
-            "name": "Spiked Rebar",
-            "key_name": "spiked-rebar",
-            "category": "crafting1",
-            "time": 4,
-            "ingredients": [
-                ["iron-rod", 1]
-            ],
-            "product":  ["spiked-rebar", 1],
-            "byproduct": ["copper-ingot", 999]
-        },
-        {
             "name": "Rifle Ammo",
             "key_name": "rifle-ammo",
-            "category": "crafting3",
-            "time": 20,
+            "category": "crafting2",
+            "time": 12,
             "ingredients": [
-                ["beacon", 1],
-                ["steel-pipe", 10],
-                ["black-powder", 10],
-                ["rubber", 10]
+                ["copper-sheet", 3],
+                ["smokeless-powder", 2]
             ],
-            "product": ["rifle-ammo", 5],
+            "product": ["rifle-ammo", 15],
             "byproduct": ["copper-ingot", 999]
         },
         {
@@ -3235,6 +3324,209 @@
             "maxpower": 1500,
             "avgpower": 750
         },
+		{
+            "name": "Hog Protein",
+            "key_name": "hog-protein",
+            "category": "crafting1",
+            "time": 3,
+            "ingredients": [
+                ["hog-remains", 1]
+            ],
+            "product":  ["alien-protein", 1],
+            "byproduct": ["copper-ingot", 999]
+        },
+		{
+            "name": "Spitter Protein",
+            "key_name": "spitter-protein",
+            "category": "crafting1",
+            "time": 3,
+            "ingredients": [
+                ["plasma-spitter-remains", 1]
+            ],
+            "product":  ["alien-protein", 1],
+            "byproduct": ["copper-ingot", 999]
+        },
+		{
+            "name": "Stinger Protein",
+            "key_name": "stinger-protein",
+            "category": "crafting1",
+            "time": 3,
+            "ingredients": [
+                ["stinger-remains", 1]
+            ],
+            "product":  ["alien-protein", 1],
+            "byproduct": ["copper-ingot", 999]
+        },
+		{
+            "name": "Hatcher Protein",
+            "key_name": "hatcher-protein",
+            "category": "crafting1",
+            "time": 3,
+            "ingredients": [
+                ["hatcher-remains", 1]
+            ],
+            "product":  ["alien-protein", 1],
+            "byproduct": ["copper-ingot", 999]
+        },
+		{
+            "name": "Organic Data Capsule",
+            "key_name": "organic-data-capsule",
+            "category": "crafting1",
+            "time": 6,
+            "ingredients": [
+                ["alien-protein", 1]
+            ],
+            "product":  ["organic-data-capsule", 1],
+            "byproduct": ["copper-ingot", 999]
+        },
+		{
+            "name": "Smokeless Powder",
+            "key_name": "smokeless-powder",
+            "category": "refining",
+            "time": 6,
+            "ingredients": [
+                ["black-powder", 2],
+                ["heavy-oil-residue", 1]
+            ],
+            "product":  ["smokeless-powder", 2],
+            "byproduct": ["copper-ingot", 999]
+        },
+		{
+            "name": "Gas Nobelisk",
+            "key_name": "gas-nobelisk",
+            "category": "crafting2",
+            "time": 12,
+            "ingredients": [
+                ["nobelisk", 1],
+                ["biomass", 10]
+            ],
+            "product":  ["gas-nobelisk", 1],
+            "byproduct": ["copper-ingot", 999]
+        },
+		{
+            "name": "Pulse Nobelisk",
+            "key_name": "pulse-nobelisk",
+            "category": "crafting2",
+            "time": 60,
+            "ingredients": [
+                ["nobelisk", 5],
+                ["crystal-oscillator", 1]
+            ],
+            "product":  ["pulse-nobelisk", 5],
+            "byproduct": ["copper-ingot", 999]
+        },
+		{
+            "name": "Cluster Nobelisk",
+            "key_name": "cluster-nobelisk",
+            "category": "crafting2",
+            "time": 24,
+            "ingredients": [
+                ["nobelisk", 3],
+                ["smokeless-powder", 4]
+            ],
+            "product":  ["cluster-nobelisk", 1],
+            "byproduct": ["copper-ingot", 999]
+        },
+		{
+            "name": "Nuke Nobelisk",
+            "key_name": "nuke-nobelisk",
+            "category": "crafting3",
+            "time": 120,
+            "ingredients": [
+                ["nobelisk", 5],
+                ["uranium-cell", 20],
+                ["smokeless-powder", 10],
+                ["ai-limiter", 6]
+            ],
+            "product":  ["nuke-nobelisk", 1],
+            "byproduct": ["copper-ingot", 999]
+        },
+		{
+            "name": "Spiked Rebar",
+            "key_name": "spiked-rebar",
+            "category": "crafting1",
+            "time": 4,
+            "ingredients": [
+                ["iron-rod", 1]
+            ],
+            "product":  ["spiked-rebar", 1],
+            "byproduct": ["copper-ingot", 999]
+        },
+		{
+            "name": "Stun Rebar",
+            "key_name": "stun-rebar",
+            "category": "crafting2",
+            "time": 6,
+            "ingredients": [
+                ["spiked-rebar", 1],
+                ["quickwire", 5]
+            ],
+            "product":  ["stun-rebar", 1],
+            "byproduct": ["copper-ingot", 999]
+        },
+		{
+            "name": "Shatter Rebar",
+            "key_name": "shatter-rebar",
+            "category": "crafting2",
+            "time": 6,
+            "ingredients": [
+                ["spiked-rebar", 2],
+                ["quartz-crystal", 5]
+            ],
+            "product":  ["shatter-rebar", 1],
+            "byproduct": ["copper-ingot", 999]
+        },
+		{
+            "name": "Explosive Rebar",
+            "key_name": "explosive-rebar",
+            "category": "crafting3",
+            "time": 6,
+            "ingredients": [
+                ["iron-rod", 2],
+                ["smokeless-powder", 2],
+                ["steel-pipe", 2]
+            ],
+            "product":  ["explosive-rebar", 1],
+            "byproduct": ["copper-ingot", 999]
+        },
+		{
+            "name": "Homing Rifle Ammo",
+            "key_name": "homing-rifle-ammo",
+            "category": "crafting2",
+            "time": 24,
+            "ingredients": [
+                ["rifle-ammo", 20],
+                ["high-speed-connector", 1]
+            ],
+            "product":  ["homing-rifle-ammo", 10],
+            "byproduct": ["copper-ingot", 999]
+        },
+		{
+            "name": "Turbo Rifle Ammo",
+            "key_name": "turbo-rifle-ammo",
+            "category": "blending",
+            "time": 12,
+            "ingredients": [
+                ["rifle-ammo", 25],
+                ["aluminum-casing", 3],
+                ["turbofuel", 3]
+            ],
+            "product":  ["turbo-rifle-ammo", 50],
+            "byproduct": ["copper-ingot", 999]
+        },
+		{
+            "name": "Alternate: Turbo Rifle Ammo",
+            "key_name": "alt-turbo-rifle-ammo",
+            "category": "crafting3",
+            "time": 12,
+            "ingredients": [
+                ["rifle-ammo", 25],
+                ["aluminum-casing", 3],
+                ["packaged-turbofuel", 3]
+            ],
+            "product":  ["turbo-rifle-ammo", 50],
+            "byproduct": ["copper-ingot", 999]
+        },
         {
             "name": "FICSMAS Tree Branch",
             "key_name": "ficsmas-tree-branch",
@@ -3439,12 +3731,20 @@
             "category": "manual"
         },
 		{
-            "key_name": "alien-carapace",
-            "category": "manual"
+            "key_name": "hog-remains",
+            "category": "hog"
         },
 		{
-            "key_name": "alien-organs",
-            "category": "manual"
+            "key_name": "plasma-spitter-remains",
+            "category": "spitter"
+        },
+		{
+            "key_name": "stinger-remains",
+            "category": "stinger"
+        },
+		{
+            "key_name": "hatcher-remains",
+            "category": "hatcher"
         },
 		{
             "key_name": "flower-petals",

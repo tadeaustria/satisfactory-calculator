@@ -17,10 +17,17 @@ Live version can be found here:
 
 ## Content
 
-Receipts for update 5 with FICSMAS holiday special are included.
+Receipts for update 6 with FICSMAS holiday special are included.
 
 ### Updates:
 
+* 20.09.2022 
+  * Including iron rebar to update5
+  * Rename of Rifle Cartridge to Rifle Ammo
+  * Update 6 content; 
+    * New ammunition types, recipies
+    * New creature drops
+    * Icons
 * 04.11.2021 
   * Fixing receipe resolution with manual ingredient
   * Introduction of new *manual* building

@@ -568,8 +568,8 @@
             "stack_size": 200
         },
         {
-            "name": "Cartridge",
-            "key_name": "cartridge",
+            "name": "Rifle Ammo",
+            "key_name": "rifle-ammo",
             "tier": 5,
             "stack_size": 50
         },
@@ -2200,8 +2200,8 @@
             "byproduct": ["copper-ingot", 999]
         },
         {
-            "name": "Cartridge",
-            "key_name": "cartridge",
+            "name": "Rifle Ammo",
+            "key_name": "rifle-ammo",
             "category": "crafting3",
             "time": 20,
             "ingredients": [
@@ -2210,7 +2210,7 @@
                 ["black-powder", 10],
                 ["rubber", 10]
             ],
-            "product": ["cartridge", 5],
+            "product": ["rifle-ammo", 5],
             "byproduct": ["copper-ingot", 999]
         },
         {

@@ -2367,10 +2367,10 @@
             "name": "Alternate: Polyester Fabric",
             "key_name": "alt-polyester-fabric",
             "category": "refining",
-            "time": 12,
+            "time": 2,
             "ingredients": [
-                ["polymer-resin", 16],
-                ["water", 10]
+                ["polymer-resin", 1],
+                ["water", 1]
             ],
             "product": ["fabric", 1],
             "byproduct": ["copper-ingot", 999]

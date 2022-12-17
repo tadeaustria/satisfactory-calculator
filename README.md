@@ -21,10 +21,15 @@ Receipts for update 6 with FICSMAS holiday special are included.
 
 ### Updates:
 
+* 17.12.2022 
+  * Update 7 content:
+    * Reduce water usage of nuclear power plants
+    * Formular update for overclocking
+  * Rename Organic Data Capsule to Alien DNA Capsule
 * 20.09.2022 
   * Including iron rebar to update5
   * Rename of Rifle Cartridge to Rifle Ammo
-  * Update 6 content; 
+  * Update 6 content:
     * New ammunition types, recipies
     * New creature drops
     * Icons

@@ -205,7 +205,10 @@ class FactorySpecification {
             // to the range [0.01, 2.50], any imprecision introduced by this
             // approximation is minimal (and is probably less than is present
             // in the game itself).
-            let overclockFactor = Rational.from_float(Math.pow(overclock.toFloat(), 1.6))
+            let exponent = 1.6
+            if (this.datafile == 'data/update7.json')
+                exponent = 1.321928
+            let overclockFactor = Rational.from_float(Math.pow(overclock.toFloat(), exponent))
             average = average.mul(overclockFactor)
             peak = peak.mul(overclockFactor)
         }

@@ -2966,7 +2966,7 @@
             "time": 300,
             "ingredients": [
                 ["nuclear-fuel-rod", 1],
-                ["water", 1500]
+                ["water", 1200]
             ],
             "product": ["nuclear-waste", 50],
             "byproduct": ["copper-ingot", 999]
@@ -3083,7 +3083,7 @@
             "time": 600,
             "ingredients": [
                 ["plutonium-fuel-rod", 1],
-                ["water", 3000]
+                ["water", 2400]
             ],
             "product": ["plutonium-waste", 10],
             "byproduct": ["copper-ingot", 999]

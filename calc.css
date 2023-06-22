@@ -177,6 +177,13 @@ table.resource input[type="radio"] + label:hover {
 table.resource input[type="radio"]:checked + label {
     fill: var(--accent);
 }
+#alt_recipe_settings .description {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    padding-right: 15px;
+    color: var(--foreground);
+}
 #alt_recipe_settings .ingredient {
     position: relative;
     display: inline-block;

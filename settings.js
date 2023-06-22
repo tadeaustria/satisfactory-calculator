@@ -278,6 +278,9 @@ function renderAltRecipes(settings) {
         changeAltRecipe,
     )
 
+    recipeLabel.append("span")
+        .classed("description", true)
+        .text(d => `${d.name}`)
     let productSpan = recipeLabel.append("span")
         .selectAll("span")
         .data(d => { 

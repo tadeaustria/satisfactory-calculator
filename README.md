@@ -17,10 +17,13 @@ Live version can be found here:
 
 ## Content
 
-Receipts for update 6 with FICSMAS holiday special are included.
+Receipts for update 8 with FICSMAS holiday special are included.
 
 ### Updates:
 
+* 11.12.2023
+  * Update 8 content:
+    * Version bump, nothing changed
 * 17.12.2022 
   * Update 7 content:
     * Reduce water usage of nuclear power plants

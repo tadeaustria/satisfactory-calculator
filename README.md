@@ -54,4 +54,4 @@ Feel free to create issues if you have any problems.
 ## Acknowledgment
 
 This implementation is based on the [factorio-calculator](https://github.com/KirkMcDonald/kirkmcdonald.github.io) by KirkMcDonald.<br>
-Receipts and icons are from [Satisfactory-Wiki](https://satisfactory.fandom.com/wiki/Satisfactory_Wiki).
+Receipes and icons are from [Satisfactory-Wiki](https://satisfactory.wiki.gg).

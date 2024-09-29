@@ -17,10 +17,13 @@ Live version can be found here:
 
 ## Content
 
-Receipts for update 8 with FICSMAS holiday special are included.
+Receipes for Version 1.0 with FICSMAS holiday special are included.
 
 ### Updates:
 
+* 29.09.2024
+  * Version 1.0 content:
+    * Version bump
 * 11.12.2023
   * Update 8 content:
     * Version bump, nothing changed

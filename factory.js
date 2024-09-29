@@ -158,6 +158,7 @@ class FactorySpecification {
     getRecipeRate(recipe) {
         let building = this.getBuilding(recipe)
         if (building === null) {
+            console.log("Building for recipe " + recipe.name + " not found");
             return null
         }
         return building.getRecipeRate(this, recipe)
@@ -171,6 +172,7 @@ class FactorySpecification {
     getCount(recipe, rate) {
         let building = this.getBuilding(recipe)
         if (building === null) {
+            console.log("Building for recipe " + recipe.name + " not found");
             return zero
         }
         return building.getCount(this, recipe, rate)

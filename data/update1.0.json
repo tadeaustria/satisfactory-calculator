@@ -4046,10 +4046,10 @@
             "time": 120,
             "ingredients": [
                 ["assembly-director-system", 1],
-                ["ficsite-trigon", 2],
+                ["ficsite-trigon", 80],
                 ["water", 20]
             ],
-            "product":  ["biochemical-sculptor", 3],
+            "product":  ["biochemical-sculptor", 4],
             "byproduct": ["copper-ingot", 999]
         },
 		{

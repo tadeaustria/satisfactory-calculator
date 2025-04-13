@@ -4247,7 +4247,7 @@
                 ["iron-plate", 100],
                 ["concrete", 200]
             ],
-            "product":  ["singularity-cell", 1],
+            "product":  ["singularity-cell", 10],
             "byproduct": ["copper-ingot", 999]
         },
 		{

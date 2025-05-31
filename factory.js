@@ -21,7 +21,7 @@ import { renderTotals } from "./visualize.js"
 
 const DEFAULT_ITEM_KEY = "nuclear-fuel-rod"
 
-let minerCategories = new Set(["mineral", "oil", "water", "gift-tree", "fluid", "manual", "hog", "spitter", "hatcher", "stinger"])
+let minerCategories = new Set(["mineral", "oil", "water", "gift-tree", "fluid", "manual", "hog", "spitter", "hatcher", "stinger", "converter-creation"])
 
 export let resourcePurities = [
     {key: "0", name: "Impure", factor: half},
@@ -158,6 +158,7 @@ class FactorySpecification {
     getRecipeRate(recipe) {
         let building = this.getBuilding(recipe)
         if (building === null) {
+            console.log("Building for recipe " + recipe.name + " not found");
             return null
         }
         return building.getRecipeRate(this, recipe)
@@ -171,6 +172,7 @@ class FactorySpecification {
     getCount(recipe, rate) {
         let building = this.getBuilding(recipe)
         if (building === null) {
+            console.log("Building for recipe " + recipe.name + " not found");
             return zero
         }
         return building.getCount(this, recipe, rate)

@@ -20,7 +20,7 @@ import { getItems } from "./item.js"
 import { getRecipes } from "./recipe.js"
 import { renderSettings } from "./settings.js"
 
-export const DEFAULT_DATAFILE = "data/update7.json"
+export const DEFAULT_DATAFILE = "data/update1.0.json"
 
 export function loadData(settings) {
     let datafile = DEFAULT_DATAFILE;
